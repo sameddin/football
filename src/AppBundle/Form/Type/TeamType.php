@@ -9,7 +9,7 @@ class TeamType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('team', 'text', [
+            ->add('name', 'text', [
                 'attr' => [
                     'placeholder' => 'Enter your team name'
                 ]
@@ -24,6 +24,6 @@ class TeamType extends AbstractType
 
     public function getName()
     {
-        return 'team';
+        return 'name';
     }
 }

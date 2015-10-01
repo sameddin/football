@@ -17,6 +17,7 @@ class Team
 
     /**
      * @ORM\Column(type="string")
+     * @var string
      */
     protected $name;
 
@@ -47,7 +48,7 @@ class Team
     /**
      * @return mixed
      */
-    public function getTeam()
+    public function getName()
     {
         return $this->name;
     }
@@ -56,7 +57,7 @@ class Team
      * @param mixed $name
      * @return Team
      */
-    public function setTeam($name)
+    public function setName($name)
     {
         $this->name = $name;
         return $this;
