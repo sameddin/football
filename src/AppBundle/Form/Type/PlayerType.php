@@ -3,7 +3,6 @@ namespace AppBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceList;
 
 class PlayerType extends AbstractType
 {
@@ -12,14 +11,11 @@ class PlayerType extends AbstractType
         $builder
             ->add('name', 'text', [
                 'attr' => [
-                    'placeholder' => 'Enter your player name'
+                    'placeholder' => 'Введите имя игрока'
                 ]
             ])
             ->add('role', 'choice', [
-                'choice_list' => new ChoiceList(
-                    [1, 2, 3, 4],
-                    ['Вратарь', 'Защитник', 'Полузащитник', 'Нападающий']
-                ),
+                'choices' => ['Вратарь', 'Защитник', 'Полузащитник', 'Нападающий'],
                 'required'   => false,
                 'placeholder' => 'Выберите амплуа игрока',
                 'empty_data'  => null])

@@ -3,7 +3,6 @@ namespace AppBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\Extension\Core\ChoiceList\ChoiceList;
 
 class TeamType extends AbstractType
 {
@@ -12,17 +11,14 @@ class TeamType extends AbstractType
         $builder
             ->add('name', 'text', [
                 'attr' => [
-                    'placeholder' => 'Enter your team name'
+                    'placeholder' => 'Введите название команды'
                 ]
             ])
             ->add('country', 'choice', [
-                'choice_list' => new ChoiceList(
-                    [1, 2, 3, 4, 5],
-                    ['Англия', 'Испания', 'Италия', 'Германия', 'Франция']
-                ),
-                'placeholder' => 'Choose country of your team',
+                'choices' => ['Англия', 'Испания', 'Италия', 'Германия', 'Франция'],
+                'placeholder' => 'Выберите страну',
             ])
-            ->add('save', 'submit', ['label' => 'Add']);
+            ->add('save', 'submit', ['label' => 'Добавить']);
     }
 
     public function getName()
