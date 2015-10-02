@@ -6,12 +6,12 @@
     <ol>
         {% for player in players %}
             <li>{{ player.name }} <p><a class="btn btn-success btn-xs"
-                                      href="{{ path('player.edit', {'id': player.id  }) }}" role="button">Edit</a>&nbsp;<a
+                                      href="{{ path('player.edit', {'id': player.id  }) }}" role="button">Изменить</a>&nbsp;<a
                             class="btn btn-danger btn-xs" href="{{ path('player.delete',{'id': player.id}) }}"
-                            role="button">Delete</a></p></li>
+                            role="button">Удалить</a></p></li>
         {% endfor %}
     </ol>
 
-    <a class="btn btn-default" href="{{ path('player.add') }}" role="button">Add</a>
+    <a class="btn btn-default" href="{{ path('player.add') }}" role="button">Добавить</a>
 {% endblock %}
 
