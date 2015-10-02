@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Футболисты</h1>
+
+    <ol>
+        {% for player in players %}
+            <li>{{ player.name }} <p><a class="btn btn-success btn-xs"
+                                      href="{{ path('player.edit', {'id': player.id  }) }}" role="button">Edit</a>&nbsp;<a
+                            class="btn btn-danger btn-xs" href="{{ path('player.delete',{'id': player.id}) }}"
+                            role="button">Delete</a></p></li>
+        {% endfor %}
+    </ol>
+
+    <a class="btn btn-default" href="{{ path('player.add') }}" role="button">Add</a>
+{% endblock %}
+
