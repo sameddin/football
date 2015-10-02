@@ -5,57 +5,57 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Team;
 use AppBundle\Form\Type\TeamType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * @Route("/teams")
+ */
 class TeamController extends Controller
 {
-    /**
-     * @Route("/", name="homepage")
-     */
-    public function indexAction()
-    {
-        return $this->render('teamviews/index.html.twig', array(
-            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..'),
-        ));
 
-    }
 
     /**
-     * @Route("/list", name="team.list")
+     * @Route(name="team.list")
+     * @Template
      */
     public function listAction() {
 
         $teams = $this->getDoctrine()
             ->getRepository('AppBundle:Team')
             ->findAll();
-        $name = new Team();
-        $form = $this->createForm(new TeamType(), $name, array(
-            'action' => $this->generateUrl('team.add'),
-        ));
 
-        return $this->render('teamviews/home.html.twig', [
-            'teams' => $teams,
-            'form' => $form->createView(),
-        ]);
+        return [
+            'teams' => $teams
+        ];
     }
 
     /**
      * @Route("/add", name="team.add")
+     * @Template
      */
     public function addAction(Request $request)
     {
         $name = new Team();
         $form = $this->createForm(new TeamType(), $name);
+
         $form->handleRequest($request);
 
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($name);
-        $em->flush();
+        if ($form->isValid()) {
 
-        return $this->redirectToRoute('homepage');
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($name);
+            $em->flush();
+
+            return $this->redirectToRoute('team.list');
+        }
+
+        return [
+            'form' => $form->createView(),
+        ];
     }
 
     /**
@@ -68,13 +68,13 @@ class TeamController extends Controller
         $em->remove($name);
         $em->flush();
 
-        return $this->redirectToRoute('homepage');
+        return $this->redirectToRoute('team.list');
 
     }
 
     /**
      * @Route("/edit/{id}", name="team.edit")
-     *
+     * @Template
      * @param Request $request
      * @param Team $name
      * @return RedirectResponse|Response
@@ -91,11 +91,11 @@ class TeamController extends Controller
             $em->persist($name);
             $em->flush();
 
-            return $this->redirectToRoute('homepage');
+            return $this->redirectToRoute('team.list');
         }
 
-        return $this->render('teamviews/edit.html.twig', array(
+        return [
             'form' => $form->createView(),
-        ));
+        ];
     }
 }
