@@ -14,11 +14,6 @@ class TeamType extends AbstractType
                     'placeholder' => 'Enter your team name'
                 ]
             ])
-            ->add('country', 'text', [
-                'attr' => [
-                    'placeholder' => 'Enter your country'
-                ]
-            ])
             ->add('save', 'submit', ['label' => 'Add']);
     }
 
