@@ -32,6 +32,7 @@ class Player
         $this->id = $id;
         return $this;
     }
+
     /**
      * @ORM\Column(type="string")
      * @var string
@@ -53,6 +54,30 @@ class Player
     public function setName($name)
     {
         $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * @ORM\Column(type="string")
+     * @var string
+     */
+    protected $role;
+
+    /**
+     * @return string
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * @param string $role
+     * @return Player
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
         return $this;
     }
 }
