@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Футбольные соревнования</h1>
+
+    <ol>
+        {% for championship in championships %}
+            <li>{{ championship.country }} <p><a class="btn btn-success btn-xs"
+                                      href="{{ path('championship.edit', {'id': championship.id  }) }}" role="button">Изменить</a>&nbsp;<a
+                            class="btn btn-danger btn-xs" href="{{ path('championship.delete',{'id': championship.id}) }}"
+                            role="button">Удалить</a></p></li>
+        {% endfor %}
+    </ol>
+
+    <a class="btn btn-default" href="{{ path('championship.add') }}" role="button">Добавить</a>
+{% endblock %}
+
