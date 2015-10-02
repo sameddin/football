@@ -17,9 +17,14 @@ class Team
 
     /**
      * @ORM\Column(type="string")
-     * @var string
      */
     protected $name;
+
+    /**
+     * @ORM\Column(type="string")
+     * @var string
+     */
+    protected $country;
 
     /**
      * @return mixed
@@ -54,6 +59,24 @@ class Team
     public function setName($name)
     {
         $this->name = $name;
+        return $this;
+    }
+
+    /**
+    * @return string
+    */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+    * @param string $country
+    * @return Team
+    */
+    public function setCountry($country)
+    {
+        $this->country = $country;
         return $this;
     }
 }
