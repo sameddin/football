@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Футбольные клубы</h1>
+
+    <ol>
+        {% for team in teams %}
+            <li>{{ team.name }} <p><a class="btn btn-success btn-xs"
+                                      href="{{ path('team.edit', {'id': team.id  }) }}" role="button">Edit</a>&nbsp;<a
+                            class="btn btn-danger btn-xs" href="{{ path('team.delete',{'id': team.id}) }}"
+                            role="button">Delete</a></p></li>
+        {% endfor %}
+    </ol>
+
+    <a class="btn btn-default" href="{{ path('team.add') }}" role="button">Add</a>
+{% endblock %}
+
