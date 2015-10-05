@@ -7,7 +7,6 @@
     <table class="table table-condensed">
         <thead>
         <tr>
-            <th>ID</th>
             <th>Number</th>
             <th>Name</th>
             <th>Team</th>
@@ -17,7 +16,6 @@
         </thead>
         {% for player in players %}
             <tr>
-                <td>{{ player.id }}</td>
                 <td>{{ player.number }}</td>
                 <td>{{ player.name }}</td>
                 <td>{{ player.team.name }}</td>
