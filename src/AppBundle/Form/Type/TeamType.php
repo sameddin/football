@@ -14,10 +14,13 @@ class TeamType extends AbstractType
                     'placeholder' => 'Введите название команды'
                 ]
             ])
-            ->add('country', 'choice', [
-                'choices' => ['Англия', 'Испания', 'Италия', 'Германия', 'Франция'],
-                'placeholder' => 'Выберите страну',
-            ])
+
+            ->add('championship', 'entity', [
+                    'class' => 'AppBundle:Championship',
+                    'choice_label' => 'country',
+                    'placeholder' => 'Выберите лигу']
+            )
+
             ->add('save', 'submit', ['label' => 'Добавить']);
     }
 

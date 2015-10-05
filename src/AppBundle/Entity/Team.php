@@ -79,4 +79,28 @@ class Team
         $this->country = $country;
         return $this;
     }
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Championship")
+     */
+
+    protected $championship;
+
+    /**
+     * @return Championship
+     */
+    public function getChampionship()
+    {
+        return $this->championship;
+    }
+
+    /**
+     * @param Championship $championship
+     * @return Team
+     */
+    public function setChampionship(Championship $championship)
+    {
+        $this->championship = $championship;
+        return $this;
+    }
 }

@@ -14,7 +14,7 @@ class ChampionshipType extends AbstractType
                     'placeholder' => 'Введите название чемпионата'
                 ]
             ])
-            ->add('save', 'submit', ['label' => 'Добавить']);
+            ->add('save', 'submit', ['label' => 'common.add']);
     }
 
     public function getName()

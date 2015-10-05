@@ -14,7 +14,7 @@
         {% for team in teams %}
             <tr>
                 <td>{{ team.name }}</td>
-                <td>{{ team.country }}</td>
+                <td>{{ team.championship.country }}</td>
                 <td>
                     <a class="btn btn-success btn-xs"
                        href="{{ path('team.edit', {'id': team.id  }) }}" role="button">Изменить</a>&nbsp;<a
