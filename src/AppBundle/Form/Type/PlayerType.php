@@ -22,7 +22,9 @@ class PlayerType extends AbstractType
 
             ->add('team', 'entity', [
                 'class' => 'AppBundle:Team',
-                'choice_label' => 'name'])
+                'choice_label' => 'name',
+                'placeholder' => 'Выберите команду игрока']
+            )
 
             ->add('save', 'submit', ['label' => 'Добавить']);
     }
