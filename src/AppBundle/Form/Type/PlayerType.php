@@ -26,6 +26,12 @@ class PlayerType extends AbstractType
                 'placeholder' => 'Выберите команду игрока']
             )
 
+            ->add('number', 'text', [
+                'attr' => [
+                    'placeholder' => 'Введите номер игрока'
+                ]
+            ])
+
             ->add('save', 'submit', ['label' => 'Добавить']);
     }
 

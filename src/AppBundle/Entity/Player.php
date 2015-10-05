@@ -104,4 +104,27 @@ class Player
         $this->team = $team;
         return $this;
     }
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $number;
+
+    /**
+     * @return integer
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
+
+    /**
+     * @param integer $number
+     * @return Player
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+        return $this;
+    }
 }
