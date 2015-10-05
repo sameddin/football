@@ -56,31 +56,6 @@ class Player
         $this->name = $name;
         return $this;
     }
-
-    /**
-     * @ORM\Column(type="string")
-     * @var string
-     */
-    protected $role;
-
-    /**
-     * @return string
-     */
-    public function getRole()
-    {
-        return $this->role;
-    }
-
-    /**
-     * @param string $role
-     * @return Player
-     */
-    public function setRole($role)
-    {
-        $this->role = $role;
-        return $this;
-    }
-
     /**
      * @ORM\ManyToOne(targetEntity="Team")
      */
@@ -125,6 +100,30 @@ class Player
     public function setNumber($number)
     {
         $this->number = $number;
+        return $this;
+    }
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Role")
+     */
+
+    protected $role;
+
+    /**
+     * @return Role
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * @param Role $role
+     * @return Player
+     */
+    public function setRole(Role $role)
+    {
+        $this->role = $role;
         return $this;
     }
 }

@@ -14,11 +14,11 @@ class PlayerType extends AbstractType
                     'placeholder' => 'Введите имя игрока'
                 ]
             ])
-            ->add('role', 'choice', [
-                'choices' => ['Вратарь', 'Защитник', 'Полузащитник', 'Нападающий'],
-                'required'   => false,
-                'placeholder' => 'Выберите амплуа игрока',
-                'empty_data'  => null])
+            ->add('role', 'entity', [
+                'class' => 'AppBundle:Role',
+                'choice_label' => 'roles',
+                'placeholder' => 'Выберите амплуа игрока']
+            )
 
             ->add('team', 'entity', [
                 'class' => 'AppBundle:Team',
