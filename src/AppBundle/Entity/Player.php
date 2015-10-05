@@ -80,4 +80,28 @@ class Player
         $this->role = $role;
         return $this;
     }
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Team")
+     */
+
+    protected $team;
+
+    /**
+     * @return Team
+     */
+    public function getTeam()
+    {
+        return $this->team;
+    }// hmmmmmmm
+
+    /**
+     * @param Team $team
+     * @return Player
+     */
+    public function setTeam(Team $team)
+    {
+        $this->team = $team;
+        return $this;
+    }
 }
