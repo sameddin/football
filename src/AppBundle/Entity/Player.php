@@ -93,7 +93,7 @@ class Player
     public function getTeam()
     {
         return $this->team;
-    }// hmmmmmmm
+    }
 
     /**
      * @param Team $team
