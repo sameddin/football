@@ -11,28 +11,28 @@ class PlayerType extends AbstractType
         $builder
             ->add('name', 'text', [
                 'attr' => [
-                    'placeholder' => 'Введите имя игрока'
+                    'placeholder' => 'player.name.placeholder'
                 ]
             ])
             ->add('role', 'entity', [
                 'class' => 'AppBundle:Role',
                 'choice_label' => 'roles',
-                'placeholder' => 'Выберите амплуа игрока']
+                'placeholder' => 'player.role.placeholder']
             )
 
             ->add('team', 'entity', [
                 'class' => 'AppBundle:Team',
                 'choice_label' => 'name',
-                'placeholder' => 'Выберите команду игрока']
+                'placeholder' => 'player.team.placeholder']
             )
 
             ->add('number', 'text', [
                 'attr' => [
-                    'placeholder' => 'Введите номер игрока'
+                    'placeholder' => 'player.number.placeholder'
                 ]
             ])
 
-            ->add('save', 'submit', ['label' => 'Добавить']);
+            ->add('save', 'submit', ['label' => 'common.add']);
     }
 
     public function getName()

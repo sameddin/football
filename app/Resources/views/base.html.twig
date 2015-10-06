@@ -19,13 +19,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ path('homepage') }}">Главная</a>
+                <a class="navbar-brand" href="{{ path('homepage') }}">{{ 'homepage'|trans }}</a>
             </div>
 
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ path('championship.list') }}">Чемпионаты</a></li>
-                    <li><a href="{{ path('team.list') }}">Команды</a></li>
+                    <li><a href="{{ path('championship.list') }}">{{ 'championship.list'|trans }}</a></li>
+                    <li><a href="{{ path('team.list') }}">{{ 'team.list'|trans }}</a></li>
                     <li><a href="{{ path('player.list') }}">{{ 'player.list'|trans }}</a></li>
                 </ul>
             </div>

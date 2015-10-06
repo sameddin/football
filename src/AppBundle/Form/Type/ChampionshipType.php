@@ -11,7 +11,7 @@ class ChampionshipType extends AbstractType
         $builder
             ->add('country', 'text', [
                 'attr' => [
-                    'placeholder' => 'Введите название чемпионата'
+                    'placeholder' => 'championship.placeholder'
                 ]
             ])
             ->add('save', 'submit', ['label' => 'common.add']);

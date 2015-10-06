@@ -11,17 +11,17 @@ class TeamType extends AbstractType
         $builder
             ->add('name', 'text', [
                 'attr' => [
-                    'placeholder' => 'Введите название команды'
+                    'placeholder' => 'team.name.placeholder'
                 ]
             ])
 
             ->add('championship', 'entity', [
                     'class' => 'AppBundle:Championship',
                     'choice_label' => 'country',
-                    'placeholder' => 'Выберите лигу']
+                    'placeholder' => 'team.championship.placeholder']
             )
 
-            ->add('save', 'submit', ['label' => 'Добавить']);
+            ->add('save', 'submit', ['label' => 'common.add']);
     }
 
     public function getName()

@@ -7,10 +7,10 @@
     <table class="table table-condensed">
         <thead>
         <tr>
-            <th>Номер</th>
-            <th>Имя</th>
-            <th>Команда</th>
-            <th>Амплуа</th>
+            <th>{{ 'player.number'|trans }}</th>
+            <th>{{ 'player.name'|trans }}</th>
+            <th>{{ 'player.team'|trans }}</th>
+            <th>{{ 'player.role'|trans }}</th>
             <td></td>
         </tr>
         </thead>
@@ -22,15 +22,15 @@
                 <td>{{ player.role.roles }}</td>
                 <td>
                     <a class="btn btn-success btn-xs"
-                          href="{{ path('player.edit', {'id': player.id  }) }}" role="button">Изменить</a>&nbsp;<a
+                          href="{{ path('player.edit', {'id': player.id  }) }}" role="button">{{ 'common.edit'|trans }}</a>&nbsp;<a
                                 class="btn btn-danger btn-xs" href="{{ path('player.delete',{'id': player.id}) }}"
-                                role="button">Удалить</a>
+                                role="button">{{ 'common.delete'|trans }}</a>
                 </td>
             </tr>
         {% endfor %}
     </table>
 
 
-    <a class="btn btn-default" href="{{ path('player.add') }}" role="button">Добавить</a>
+    <a class="btn btn-default" href="{{ path('player.add') }}" role="button">{{ 'common.add'|trans }}</a>
 {% endblock %}
 
