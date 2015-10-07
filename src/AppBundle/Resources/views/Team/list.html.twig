@@ -5,15 +5,15 @@
     <table class="table table-condensed">
         <thead>
         <tr>
-            <th>{{ 'team.name'|trans }}</th>
             <th>{{ 'championship.name'|trans }}</th>
+            <th>{{ 'team.name'|trans }}</th>
             <td></td>
         </tr>
         </thead>
         {% for team in teams %}
             <tr>
-                <td>{{ team.name }}</td>
                 <td>{{ team.championship.country }}</td>
+                <td>{{ team.name }}</td>
                 <td>
                     <a class="btn btn-success btn-xs"
                        href="{{ path('team.edit', {'id': team.id  }) }}" role="button">{{ 'common.edit'|trans }}</a>&nbsp;<a
