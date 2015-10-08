@@ -7,6 +7,7 @@
         <tr>
             <th>{{ 'championship.name'|trans }}</th>
             <th>{{ 'team.name'|trans }}</th>
+            <th>{{ 'player.list'|trans }}</th>
             <td></td>
         </tr>
         </thead>
@@ -14,6 +15,13 @@
             <tr>
                 <td>{{ team.championship.country }}</td>
                 <td>{{ team.name }}</td>
+                <td>
+                    <ul class="list-unstyled">
+                        {% for player in team.players %}
+                            <li>{{ player.name }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
                 <td>
                     <a class="btn btn-success btn-xs"
                        href="{{ path('team.edit', {'id': team.id  }) }}" role="button">{{ 'common.edit'|trans }}</a>&nbsp;<a

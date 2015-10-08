@@ -56,8 +56,9 @@ class Player
         $this->name = $name;
         return $this;
     }
+
     /**
-     * @ORM\ManyToOne(targetEntity="Team")
+     * @ORM\ManyToOne(targetEntity="Team", inversedBy="players")
      */
 
     protected $team;

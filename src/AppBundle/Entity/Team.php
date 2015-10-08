@@ -2,7 +2,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * @ORM\Entity
  */
@@ -78,5 +78,31 @@ class Team
     {
         $this->championship = $championship;
         return $this;
+    }
+
+    /**
+     * @ORM\OneToMany(targetEntity="Player", mappedBy="team")
+     */
+
+    private $players;
+
+    /**
+     * @return mixed
+     */
+    public function getPlayers()
+    {
+        return $this->players;
+    }
+
+    /**
+     * @param $players
+     */
+    public function setPlayers($players)
+    {
+        $this->players = $players;
+    }
+
+    public function __construct() {
+        $this->players = new ArrayCollection();
     }
 }
