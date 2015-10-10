@@ -12,21 +12,25 @@
             <td></td>
         </tr>
         </thead>
-        {% for player in players %}
-            <tr>
+        {% for player in pagination %}
+            <tr {% if loop.index is odd %}class="color"{% endif %}>
                 <td>{{ player.number }}</td>
                 <td>{{ player.name }}</td>
                 <td>{{ player.team.name }}</td>
                 <td>{{ player.role ? player.role.roles : 'Я лузер без роли ёпт. Пойду убьюсь нах!' }}</td>
                 <td>
                     <a class="btn btn-success btn-xs"
-                          href="{{ path('player.edit', {'id': player.id  }) }}" role="button">{{ 'common.edit'|trans }}</a>&nbsp;<a
-                                class="btn btn-danger btn-xs" href="{{ path('player.delete',{'id': player.id}) }}"
-                                role="button">{{ 'common.delete'|trans }}</a>
+                       href="{{ path('player.edit', {'id': player.id  }) }}" role="button">{{ 'common.edit'|trans }}</a>&nbsp;<a
+                            class="btn btn-danger btn-xs" href="{{ path('player.delete',{'id': player.id}) }}"
+                            role="button">{{ 'common.delete'|trans }}</a>
                 </td>
             </tr>
         {% endfor %}
     </table>
+
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
 
 
     <a class="btn btn-default" href="{{ path('player.add') }}" role="button">{{ 'common.add'|trans }}</a>

@@ -21,14 +21,21 @@ class PlayerController extends Controller
      * @Route(name="player.list")
      * @Template
      */
-    public function listAction() {
+    public function listAction(Request $request) {
 
         $players = $this->getDoctrine()
             ->getRepository('AppBundle:Player')
             ->findAll();
 
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $players,
+            $request->query->getInt('page', 1)/*page number*/,
+            10/*limit per page*/
+        );
+
         return [
-            'players' => $players
+            'pagination' => $pagination
         ];
     }
 
