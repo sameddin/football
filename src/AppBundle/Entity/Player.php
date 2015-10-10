@@ -103,28 +103,4 @@ class Player
         $this->number = $number;
         return $this;
     }
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Role")
-     */
-
-    protected $role;
-
-    /**
-     * @return Role
-     */
-    public function getRole()
-    {
-        return $this->role;
-    }
-
-    /**
-     * @param Role $role
-     * @return Player
-     */
-    public function setRole(Role $role)
-    {
-        $this->role = $role;
-        return $this;
-    }
 }
