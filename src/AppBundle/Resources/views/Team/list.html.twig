@@ -5,7 +5,6 @@
     <table class="table table-condensed">
         <thead>
         <tr>
-            <th>{{ 'championship.name'|trans }}</th>
             <th>{{ 'team.name'|trans }}</th>
             <th>{{ 'player.list'|trans }}</th>
             <td></td>
@@ -13,7 +12,6 @@
         </thead>
         {% for team in teams %}
             <tr>
-                <td>{{ team.championship ? team.championship.country : 'Мы лузеры без чемпионатанама!'}}</td>
                 <td>{{ team.name }}</td>
                 <td>
                     <ul class="list-unstyled">

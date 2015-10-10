@@ -1,18 +1,14 @@
 common.add: Добавить
 common.edit: Изменить
 common.delete: Удалить
-championship.placeholder: Введите название чемпионата
 player.name.placeholder: Введите имя игрока
 player.role.placeholder: Выберите амплуа игрока
 player.team.placeholder: Выберите команду игрока
 player.number.placeholder: Введите номер игрока
 team.name.placeholder: Введите название команды
-team.championship.placeholder: Выберите лигу
 player.list: Игроки
 team.list: Команды
-championship.list: Чемпионаты
 homepage: Главная
-championship.name: Название лиги
 team.name: Название команды
 player.name: Имя
 player.role: Амплуа
