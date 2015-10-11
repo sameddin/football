@@ -105,13 +105,13 @@ class Player
     }
 
     /**
-     * @ORM\Column(type="string")
-     * @var string
+     * @ORM\ManyToOne(targetEntity="Role", inversedBy="roles")
      */
+
     protected $role;
 
     /**
-     * @return string
+     * @return Role
      */
     public function getRole()
     {
@@ -119,10 +119,10 @@ class Player
     }
 
     /**
-     * @param string $role
+     * @param Role $role
      * @return Player
      */
-    public function setRole($role)
+    public function setRole(Role $role)
     {
         $this->role = $role;
         return $this;
