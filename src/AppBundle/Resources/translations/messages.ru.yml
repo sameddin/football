@@ -3,6 +3,7 @@ common.edit: Изменить
 common.delete: Удалить
 player.name.placeholder: Введите имя игрока
 player.team.placeholder: Выберите команду игрока
+player.role.placeholder: Введите позицию игрока
 player.number.placeholder: Введите номер игрока
 team.name.placeholder: Введите название команды
 player.list: Игроки
@@ -12,5 +13,6 @@ team.name: Название команды
 player.name: Имя
 player.number: Номер
 player.team: Команда
+player.role: Амплуа
 Previous: Предыдущая
 Next: Следующая

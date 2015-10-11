@@ -103,4 +103,28 @@ class Player
         $this->number = $number;
         return $this;
     }
+
+    /**
+     * @ORM\Column(type="string")
+     * @var string
+     */
+    protected $role;
+
+    /**
+     * @return string
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * @param string $role
+     * @return Player
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
+        return $this;
+    }
 }

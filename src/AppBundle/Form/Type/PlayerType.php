@@ -15,6 +15,12 @@ class PlayerType extends AbstractType
                 ]
             ])
 
+            ->add('role', 'text', [
+                'attr' => [
+                    'placeholder' => 'player.role.placeholder'
+                ]
+            ])
+
             ->add('team', 'entity', [
                 'class' => 'AppBundle:Team',
                 'choice_label' => 'name',

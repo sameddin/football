@@ -8,6 +8,7 @@
             <th>{{ 'player.number'|trans }}</th>
             <th>{{ 'player.name'|trans }}</th>
             <th>{{ 'player.team'|trans }}</th>
+            <th>{{ 'player.role'|trans }}</th>
             <td></td>
         </tr>
         </thead>
@@ -16,6 +17,7 @@
                 <td>{{ player.number }}</td>
                 <td>{{ player.name }}</td>
                 <td>{{ player.team.name }}</td>
+                <td>{{ player.role }}</td>
                 <td>
                     <a class="btn btn-success btn-xs"
                        href="{{ path('player.edit', {'id': player.id  }) }}" role="button">{{ 'common.edit'|trans }}</a>&nbsp;<a
