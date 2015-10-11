@@ -1,5 +1,5 @@
 AppBundle\Entity\Player:
-    player{1..1000}:
+    player{1..100}:
         name: <name()>
         team: @team*
         number: <randomDigitNotNull()>
