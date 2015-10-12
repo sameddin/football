@@ -34,6 +34,17 @@ class TeamController extends Controller
     }
 
     /**
+     * @Route("/{id}", name="team.view")
+     * @Template
+     */
+    public function viewAction(Team $team) {
+
+        return [
+            'team' => $team,
+        ];
+    }
+
+    /**
      * @Route("/add", name="team.add")
      * @Template
      */

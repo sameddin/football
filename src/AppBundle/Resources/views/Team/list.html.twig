@@ -12,7 +12,7 @@
         </thead>
         {% for team in teams %}
             <tr>
-                <td>{{ team.name }}</td>
+                <td><a href="{{ path('team.view', {id: team.id}) }}">{{ team.name }}</a></td>
                 <td>
                     <ul class="list-unstyled">
                         {% for player in team.players %}
