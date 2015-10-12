@@ -16,7 +16,7 @@
                 <td>
                     <ul class="list-unstyled">
                         {% for player in team.players %}
-                            <li>{{ player.name }}</li>
+                            <li><a href="{{ path('player.view', {id: player.id}) }}">{{ player.name }}</a></li>
                         {% endfor %}
                     </ul>
                 </td>
