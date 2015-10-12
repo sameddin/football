@@ -30,8 +30,8 @@ class PlayerController extends Controller
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
             $players,
-            $request->query->getInt('page', 1)/*page number*/,
-            10/*limit per page*/
+            $request->query->getInt('page', 1),
+            10
         );
 
         return [
