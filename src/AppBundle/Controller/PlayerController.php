@@ -40,6 +40,17 @@ class PlayerController extends Controller
     }
 
     /**
+     * @Route("/{id}", name="player.view")
+     * @Template
+     */
+    public function viewAction(Player $player) {
+
+        return [
+            'player' => $player,
+        ];
+    }
+
+    /**
      * @Route("/add", name="player.add")
      * @Template
      */
