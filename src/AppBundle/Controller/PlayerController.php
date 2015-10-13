@@ -40,7 +40,7 @@ class PlayerController extends Controller
     }
 
     /**
-     * @Route("/{id}", name="player.view")
+     * @Route("/{id}", name="player.view", requirements={"id": "\d+"})
      * @Template
      */
     public function viewAction(Player $player) {
