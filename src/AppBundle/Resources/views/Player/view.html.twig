@@ -14,7 +14,7 @@
         </thead>
             <tr>
                 <td>{{ player.number }}</td>
-                <td>{{ player.team.name }}</td>
+                <td><a href="{{ path('team.view', {id: player.team.id }) }}">{{ player.team.name }}</a></td>
                 <td>{{ player.role.role }}</td>
             </tr>
     </table>
