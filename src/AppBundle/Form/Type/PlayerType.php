@@ -15,6 +15,12 @@ class PlayerType extends AbstractType
                 ]
             ])
 
+            ->add('nation', 'text', [
+                'attr' => [
+                    'placeholder' => 'player.nation.placeholder'
+                ]
+            ])
+
             ->add('role', 'entity', [
                     'class' => 'AppBundle:Role',
                     'choice_label' => 'role',

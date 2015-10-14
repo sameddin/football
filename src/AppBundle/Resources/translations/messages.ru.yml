@@ -2,6 +2,7 @@ common.add: Добавить
 common.edit: Изменить
 common.delete: Удалить
 player.name.placeholder: Введите имя игрока
+player.nation.placeholder: Введите национальность игрока
 player.team.placeholder: Выберите команду игрока
 player.role.placeholder: Введите позицию игрока
 player.number.placeholder: Введите номер игрока
@@ -11,6 +12,7 @@ team.list: Команды
 homepage: Главная
 team.name: Название команды
 player.name: Имя
+player.nation: Гражданство
 player.number: Номер
 player.team: Команда
 player.role: Амплуа
@@ -20,3 +22,4 @@ Name: Имя
 Role: Амплуа
 Team: Команда
 Number: Номер
+Nation: Национальность

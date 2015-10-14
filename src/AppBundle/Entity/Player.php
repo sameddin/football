@@ -127,4 +127,28 @@ class Player
         $this->role = $role;
         return $this;
     }
+
+    /**
+     * @ORM\Column(type="string")
+     * @var string
+     */
+    protected $nation;
+
+    /**
+     * @return string
+     */
+    public function getNation()
+    {
+        return $this->nation;
+    }
+
+    /**
+     * @param string $nation
+     * @return Player
+     */
+    public function setNation($nation)
+    {
+        $this->nation = $nation;
+        return $this;
+    }
 }

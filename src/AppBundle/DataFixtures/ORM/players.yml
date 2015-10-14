@@ -3,4 +3,5 @@ AppBundle\Entity\Player:
         name: <name()>
         team: @team*
         role: @role*
+        nation: <state()>
         number: <randomDigitNotNull()>

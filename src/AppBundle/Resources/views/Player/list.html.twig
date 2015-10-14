@@ -7,6 +7,7 @@
         <tr>
             <th>{{ 'player.number'|trans }}</th>
             <th>{{ 'player.name'|trans }}</th>
+            <th>{{ 'player.nation'|trans }}</th>
             <th>{{ 'player.team'|trans }}</th>
             <th>{{ 'player.role'|trans }}</th>
             <td></td>
@@ -16,6 +17,7 @@
             <tr {% if loop.index is odd %}class="color"{% endif %}>
                 <td>{{ player.number }}</td>
                 <td><a href="{{ path('player.view', {id: player.id}) }}">{{ player.name }}</a></td>
+                <td>{{ player.nation }}</td>
                 <td><a href="{{ path('team.view', {id: player.team.id }) }}">{{ player.team.name }}</a></td>
                 <td>{{ player.role.role }}</td>
                 <td>
