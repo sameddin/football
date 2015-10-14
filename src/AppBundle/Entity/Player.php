@@ -1,6 +1,7 @@
 <?php
 namespace AppBundle\Entity;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -129,6 +130,31 @@ class Player
     }
 
     /**
+     * @ORM\Column(type="date")
+     *
+     * @var DateTime
+     */
+    protected $birth;
+
+    /**
+     * @return DateTime
+     */
+    public function getBirth()
+    {
+        return $this->birth;
+    }
+
+    /**
+     * @param DateTime $birth
+     * @return Player
+     */
+    public function setBirth(DateTime $birth)
+    {
+        $this->birth = $birth;
+        return $this;
+    }
+
+    /**
      * @ORM\Column(type="string")
      * @var string
      */
@@ -150,5 +176,10 @@ class Player
     {
         $this->nation = $nation;
         return $this;
+    }
+
+    public function getAge(DateTime $currentDate)
+    {
+        return $currentDate->diff($this->birth)->y;
     }
 }

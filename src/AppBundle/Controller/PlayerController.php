@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Player;
 use AppBundle\Form\Type\PlayerType;
+use DateTime;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -35,7 +36,8 @@ class PlayerController extends Controller
         );
 
         return [
-            'pagination' => $pagination
+            'pagination' => $pagination,
+            'today' => new DateTime(),
         ];
     }
 
@@ -47,6 +49,7 @@ class PlayerController extends Controller
 
         return [
             'player' => $player,
+            'today' => new DateTime(),
         ];
     }
 

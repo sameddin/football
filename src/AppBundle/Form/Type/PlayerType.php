@@ -21,6 +21,11 @@ class PlayerType extends AbstractType
                 ]
             ])
 
+            ->add('birth', 'date', [
+                'widget' => 'single_text',
+                'format' => 'yyyy-MM-dd',
+            ])
+
             ->add('role', 'entity', [
                     'class' => 'AppBundle:Role',
                     'choice_label' => 'role',
