@@ -1,6 +1,7 @@
 common.add: Добавить
 common.edit: Изменить
 common.delete: Удалить
+common.submit: Отправить
 player.name.placeholder: Введите имя игрока
 player.nation.placeholder: Введите национальность игрока
 player.team.placeholder: Выберите команду игрока
@@ -26,3 +27,12 @@ Team: Команда
 Number: Номер
 Nation: Национальность
 Birth: Год рождения
+Advertising: Реклама
+About: О нас
+Contacts: Контакты
+Feedback: Обратная связь
+First name: Имя
+Last name: Фамилия
+Email: Электронный адрес
+Subject: Тема
+Message: Сообщение
