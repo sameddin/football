@@ -15,6 +15,12 @@ class TeamType extends AbstractType
                 ]
             ])
 
+            ->add('tournament', 'entity', [
+                    'class' => 'AppBundle:Tournament',
+                    'choice_label' => 'tournament',
+                    'placeholder' => 'team.tournament.placeholder']
+            )
+
             ->add('save', 'submit', ['label' => 'common.add']);
     }
 

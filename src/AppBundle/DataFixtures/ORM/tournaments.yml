@@ -1,0 +1,3 @@
+AppBundle\Entity\Tournament:
+    tournament{1..5}:
+        tournament: <company()>

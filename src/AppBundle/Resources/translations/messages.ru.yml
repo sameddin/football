@@ -8,10 +8,12 @@ player.team.placeholder: Выберите команду игрока
 player.role.placeholder: Выберите позицию игрока
 player.number.placeholder: Введите номер игрока
 team.name.placeholder: Введите название команды
+team.tournament.placeholder: Выберите турнир команды
 player.list: Игроки
 team.list: Команды
 homepage: Главная
 team.name: Название команды
+team.tournament: Турнир
 player.name: Имя
 player.nation: Гражданство
 player.birth: Возраст

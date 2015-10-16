@@ -81,4 +81,27 @@ class Team
     public function __construct() {
         $this->players = new ArrayCollection();
     }
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Tournament", inversedBy="tournaments")
+     */
+    protected $tournament;
+
+    /**
+     * @return Tournament
+     */
+    public function getTournament()
+    {
+        return $this->tournament;
+    }
+
+    /**
+     * @param Tournament $tournament
+     * @return Team
+     */
+    public function setTournament(Tournament $tournament)
+    {
+        $this->tournament = $tournament;
+        return $this;
+    }
 }
