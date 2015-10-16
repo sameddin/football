@@ -2,3 +2,4 @@ AppBundle\Entity\Team:
     team{1..20}:
         name: <company()>
         tournament: @tournament*
+        coach: @coach*

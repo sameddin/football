@@ -9,11 +9,13 @@ player.role.placeholder: Выберите позицию игрока
 player.number.placeholder: Введите номер игрока
 team.name.placeholder: Введите название команды
 team.tournament.placeholder: Выберите турнир команды
+team.coach.placeholder: Выберите тренера команды
 player.list: Игроки
 team.list: Команды
 homepage: Главная
 team.name: Название команды
 team.tournament: Турнир
+team.coach: Тренер
 player.name: Имя
 player.nation: Гражданство
 player.birth: Возраст
@@ -38,3 +40,4 @@ Last name: Фамилия
 Email: Электронный адрес
 Subject: Тема
 Message: Сообщение
+Coach: Тренер

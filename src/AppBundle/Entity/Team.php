@@ -104,4 +104,27 @@ class Team
         $this->tournament = $tournament;
         return $this;
     }
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Coach", inversedBy="coach")
+     */
+    protected $coach;
+
+    /**
+     * @return Coach
+     */
+    public function getCoach()
+    {
+        return $this->coach;
+    }
+
+    /**
+     * @param Coach $coach
+     * @return Team
+     */
+    public function setCoach(Coach $coach)
+    {
+        $this->coach = $coach;
+        return $this;
+    }
 }
