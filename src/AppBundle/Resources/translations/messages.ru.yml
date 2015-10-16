@@ -5,7 +5,7 @@ common.submit: Отправить
 player.name.placeholder: Введите имя игрока
 player.nation.placeholder: Введите национальность игрока
 player.team.placeholder: Выберите команду игрока
-player.role.placeholder: Введите позицию игрока
+player.role.placeholder: Выберите позицию игрока
 player.number.placeholder: Введите номер игрока
 team.name.placeholder: Введите название команды
 player.list: Игроки
