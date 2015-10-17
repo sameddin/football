@@ -182,4 +182,27 @@ class Player
     {
         return $currentDate->diff($this->birth)->y;
     }
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $height;
+
+    /**
+     * @return integer
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * @param integer $height
+     * @return Player
+     */
+    public function setHeight($height)
+    {
+        $this->height = $height;
+        return $this;
+    }
 }

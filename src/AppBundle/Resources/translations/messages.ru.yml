@@ -7,6 +7,7 @@ player.nation.placeholder: Введите национальность игро�
 player.team.placeholder: Выберите команду игрока
 player.role.placeholder: Выберите позицию игрока
 player.number.placeholder: Введите номер игрока
+player.height.placeholder: Введите рост игрока
 team.name.placeholder: Введите название команды
 team.tournament.placeholder: Выберите турнир команды
 team.coach.placeholder: Выберите тренера команды
@@ -23,6 +24,7 @@ player.nation: Гражданство
 player.birth: Возраст
 player.age: %count% год|%count% года|%count% лет
 player.number: Номер
+player.height: Рост
 player.team: Команда
 player.role: Амплуа
 Previous: Предыдущая

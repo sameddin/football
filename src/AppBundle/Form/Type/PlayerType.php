@@ -38,6 +38,12 @@ class PlayerType extends AbstractType
                 'placeholder' => 'player.team.placeholder']
             )
 
+            ->add('height', 'text', [
+                'attr' => [
+                    'placeholder' => 'player.height.placeholder'
+                ]
+            ])
+
             ->add('number', 'text', [
                 'attr' => [
                     'placeholder' => 'player.number.placeholder'
