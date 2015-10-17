@@ -21,6 +21,12 @@ class TeamType extends AbstractType
                     'placeholder' => 'team.tournament.placeholder']
             )
 
+            ->add('country', 'entity', [
+                    'class' => 'AppBundle:Country',
+                    'choice_label' => 'country',
+                    'placeholder' => 'team.country.placeholder']
+            )
+
             ->add('coach', 'entity', [
                     'class' => 'AppBundle:Coach',
                     'choice_label' => 'name',

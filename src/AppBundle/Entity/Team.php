@@ -127,4 +127,27 @@ class Team
         $this->coach = $coach;
         return $this;
     }
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Country", inversedBy="countries")
+     */
+    protected $country;
+
+    /**
+     * @return Country
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * @param Country $country
+     * @return Team
+     */
+    public function setCountry(Country $country)
+    {
+        $this->country = $country;
+        return $this;
+    }
 }

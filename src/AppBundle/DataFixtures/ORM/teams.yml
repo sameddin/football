@@ -3,3 +3,4 @@ AppBundle\Entity\Team:
         name: <company()>
         tournament: @tournament*
         coach: @coach*
+        country: @country*
