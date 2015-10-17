@@ -205,4 +205,27 @@ class Player
         $this->height = $height;
         return $this;
     }
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $weight;
+
+    /**
+     * @return integer
+     */
+    public function getWeight()
+    {
+        return $this->weight;
+    }
+
+    /**
+     * @param integer $weight
+     * @return Player
+     */
+    public function setWeight($weight)
+    {
+        $this->weight = $weight;
+        return $this;
+    }
 }

@@ -8,6 +8,7 @@ player.team.placeholder: Выберите команду игрока
 player.role.placeholder: Выберите позицию игрока
 player.number.placeholder: Введите номер игрока
 player.height.placeholder: Введите рост игрока
+player.weight.placeholder: Введите вес игрока
 team.name.placeholder: Введите название команды
 team.tournament.placeholder: Выберите турнир команды
 team.coach.placeholder: Выберите тренера команды
@@ -25,6 +26,7 @@ player.birth: Возраст
 player.age: %count% год|%count% года|%count% лет
 player.number: Номер
 player.height: Рост
+player.weight: Вес
 player.team: Команда
 player.role: Амплуа
 Previous: Предыдущая
@@ -34,6 +36,7 @@ Role: Амплуа
 Team: Команда
 Number: Номер
 Height: Рост
+Weight: Вес
 Nation: Национальность
 Birth: Год рождения
 Advertising: Реклама

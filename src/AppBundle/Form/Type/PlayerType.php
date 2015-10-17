@@ -44,6 +44,12 @@ class PlayerType extends AbstractType
                 ]
             ])
 
+            ->add('weight', 'text', [
+                'attr' => [
+                    'placeholder' => 'player.weight.placeholder'
+                ]
+            ])
+
             ->add('number', 'text', [
                 'attr' => [
                     'placeholder' => 'player.number.placeholder'

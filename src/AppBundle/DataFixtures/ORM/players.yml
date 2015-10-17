@@ -7,3 +7,4 @@ AppBundle\Entity\Player:
         birth: <dateTimeBetween($startDate = '-40 years', $endDate = '-18 years')>
         number: <randomDigitNotNull()>
         height: <randomDigitNotNull()>
+        weight: <randomDigitNotNull()>

@@ -9,6 +9,7 @@
         <tr>
             <th>{{ 'player.birth'|trans }}</th>
             <th>{{ 'player.height'|trans }}</th>
+            <th>{{ 'player.weight'|trans }}</th>
             <th>{{ 'player.nation'|trans }}</th>
             <th>{{ 'player.number'|trans }}</th>
             <th>{{ 'player.team'|trans }}</th>
@@ -18,6 +19,7 @@
             <tr>
                 <td>{{ player.birth|date("d.m.Y") }} | {{ 'player.age'|transchoice(player.age(today)) }}</td>
                 <td>{{ player.height }}</td>
+                <td>{{ player.weight }}</td>
                 <td>{{ player.nation }}</td>
                 <td>{{ player.number }}</td>
                 <td><a href="{{ path('team.view', {id: player.team.id }) }}">{{ player.team.name }}</a></td>
