@@ -9,14 +9,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class OddController extends Controller
 {
     /**
-     * @Route("/about", name="about")
-     */
-    public function aboutAction()
-    {
-        return $this->render('@App/Odd/about.html.twig');
-    }
-
-    /**
      * @Route("/contacts", name="contacts")
      */
     public function contactsAction()
