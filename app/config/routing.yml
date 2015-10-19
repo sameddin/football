@@ -7,3 +7,9 @@ about:
     defaults:
         _controller: FrameworkBundle:Template:template
         template:    about.html.twig
+
+contacts:
+    path: /contacts
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    contacts.html.twig

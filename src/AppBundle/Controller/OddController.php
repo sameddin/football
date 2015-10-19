@@ -9,14 +9,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class OddController extends Controller
 {
     /**
-     * @Route("/contacts", name="contacts")
-     */
-    public function contactsAction()
-    {
-        return $this->render('@App/Odd/contacts.html.twig');
-    }
-
-    /**
      * @Route("/feedback", name="feedback")
      */
     public function feedbackAction()
