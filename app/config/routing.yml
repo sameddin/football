@@ -13,3 +13,9 @@ contacts:
     defaults:
         _controller: FrameworkBundle:Template:template
         template:    contacts.html.twig
+
+advertising:
+    path: /adv
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    adv.html.twig

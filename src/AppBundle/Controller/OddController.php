@@ -36,12 +36,4 @@ class OddController extends Controller
             'form' => $form->createView(),
         ]);
     }
-
-    /**
-     * @Route("/adv", name="advertising")
-     */
-    public function advAction()
-    {
-        return $this->render('@App/Odd/adv.html.twig');
-    }
 }
