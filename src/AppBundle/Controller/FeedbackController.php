@@ -28,6 +28,8 @@ class FeedbackController extends Controller
                 ->setBody($data['message']);
             $this->get('mailer')->send($message);
 
+            $this->addFlash('success', 'feedback.success');
+
             return $this->redirectToRoute('feedback');
         }
 
