@@ -215,6 +215,12 @@ class Player
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Range(
+     *      min = 55,
+     *      max = 100,
+     *      minMessage = "weight.min",
+     *      maxMessage = "weight.max"
+     * )
      */
     protected $weight;
 
