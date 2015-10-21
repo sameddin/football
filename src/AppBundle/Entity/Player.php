@@ -3,6 +3,7 @@ namespace AppBundle\Entity;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -185,6 +186,12 @@ class Player
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Range(
+     *      min = 150,
+     *      max = 210,
+     *      minMessage = "height.min",
+     *      maxMessage = "height.max"
+     * )
      */
     protected $height;
 
