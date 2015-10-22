@@ -13,6 +13,11 @@
             <th>{{ 'player.nation'|trans }}</th>
             <th>{{ 'player.team'|trans }}</th>
             <th>{{ 'player.role'|trans }}</th>
+            <th>{{ 'player.match'|trans }}</th>
+            <th>{{ 'player.goal'|trans }}</th>
+            <th>{{ 'player.pass'|trans }}</th>
+            <th>{{ 'player.yellowcard'|trans }}</th>
+            <th>{{ 'player.redcard'|trans }}</th>
             <td></td>
         </tr>
         </thead>
@@ -26,6 +31,11 @@
                 <td>{{ player.nation }}</td>
                 <td><a href="{{ path('team.view', {id: player.team.id }) }}">{{ player.team.name }}</a></td>
                 <td>{{ player.role.role }}</td>
+                <td>{{ player.match }}</td>
+                <td>{{ player.goal }}</td>
+                <td>{{ player.pass }}</td>
+                <td>{{ player.yellowcard }}</td>
+                <td>{{ player.redcard }}</td>
                 <td>
                     <a class="btn btn-success btn-xs"
                        href="{{ path('player.edit', {'id': player.id  }) }}" role="button">{{ 'common.edit'|trans }}</a>&nbsp;<a

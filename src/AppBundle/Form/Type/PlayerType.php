@@ -56,6 +56,35 @@ class PlayerType extends AbstractType
                 ]
             ])
 
+            ->add('match', 'text', [
+                'attr' => [
+                    'placeholder' => 'player.match.placeholder'
+                ]
+            ])
+
+            ->add('goal', 'text', [
+                'attr' => [
+                    'placeholder' => 'player.goal.placeholder'
+                ]
+            ])
+
+            ->add('pass', 'text', [
+                'attr' => [
+                    'placeholder' => 'player.pass.placeholder'
+                ]
+            ])
+
+            ->add('yellowcard', 'text', [
+                'attr' => [
+                    'placeholder' => 'player.yellowcard.placeholder'
+                ]
+            ])
+
+            ->add('redcard', 'text', [
+                'attr' => [
+                    'placeholder' => 'player.redcard.placeholder'
+                ]
+            ])
             ->add('save', 'submit', ['label' => 'common.add']);
     }
 

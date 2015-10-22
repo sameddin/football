@@ -248,4 +248,119 @@ class Player
         $this->weight = $weight;
         return $this;
     }
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $match;
+
+    /**
+     * @return integer
+     */
+    public function getMatch()
+    {
+        return $this->match;
+    }
+
+    /**
+     * @param integer $match
+     * @return Player
+     */
+    public function setMatch($match)
+    {
+        $this->match = $match;
+        return $this;
+    }
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $goal;
+
+    /**
+     * @return integer
+     */
+    public function getGoal()
+    {
+        return $this->goal;
+    }
+
+    /**
+     * @param integer $goal
+     * @return Player
+     */
+    public function setGoal($goal)
+    {
+        $this->goal = $goal;
+        return $this;
+    }
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $pass;
+
+    /**
+     * @return integer
+     */
+    public function getPass()
+    {
+        return $this->pass;
+    }
+
+    /**
+     * @param integer $pass
+     * @return Player
+     */
+    public function setPass($pass)
+    {
+        $this->pass = $pass;
+        return $this;
+    }
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $yellowcard;
+
+    /**
+     * @return integer
+     */
+    public function getYellowcard()
+    {
+        return $this->yellowcard;
+    }
+
+    /**
+     * @param integer $yellowcard
+     * @return Player
+     */
+    public function setYellowcard($yellowcard)
+    {
+        $this->yellowcard = $yellowcard;
+        return $this;
+    }
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $redcard;
+
+    /**
+     * @return integer
+     */
+    public function getRedcard()
+    {
+        return $this->redcard;
+    }
+
+    /**
+     * @param integer $redcard
+     * @return Player
+     */
+    public function setRedcard($redcard)
+    {
+        $this->redcard = $redcard;
+        return $this;
+    }
 }

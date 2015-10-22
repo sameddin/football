@@ -9,6 +9,11 @@ player.role.placeholder: Выберите позицию игрока
 player.number.placeholder: Введите номер игрока
 player.height.placeholder: Введите рост игрока
 player.weight.placeholder: Введите вес игрока
+player.match.placeholder: Введите количество сыгранных матчей
+player.goal.placeholder: Введите количество забитых голов
+player.pass.placeholder: Введите количество ассистов
+player.yellowcard.placeholder: Введите количество желтых карточек игрока
+player.redcard.placeholder: Введите количество красных карточек игрока
 team.name.placeholder: Введите название команды
 team.tournament.placeholder: Выберите турнир команды
 team.coach.placeholder: Выберите тренера команды
@@ -29,6 +34,11 @@ player.height: Рост
 player.weight: Вес
 player.team: Команда
 player.role: Амплуа
+player.match: Матчи
+player.goal: Голы
+player.pass: Ассисты
+player.yellowcard: Жёлтые карты
+player.redcard: Красные карты
 Previous: Предыдущая
 Next: Следующая
 Name: Имя
@@ -50,3 +60,8 @@ Tournament: Турнир
 Country: Страна
 feedback.success: Ваше сообщение успешно отправлено
 Email: Email
+Match: Матчи
+Goal: Голы
+Pass: Ассисты
+Yellowcard: Жёлтые карты
+Redcard: Красные карты
