@@ -85,6 +85,13 @@ class Player
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Range(
+     *      min = 1,
+     *      max = 99,
+     *      minMessage = "number.min",
+     *      maxMessage = "number.max"
+     * )
+     *
      */
     protected $number;
 

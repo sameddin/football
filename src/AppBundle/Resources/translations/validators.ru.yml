@@ -2,3 +2,5 @@ height.min : Рост должен быть не ниже {{ limit }}
 height.max : Рост должен быть не выше {{ limit }}
 weight.min : Вес должен быть не ниже {{ limit }}
 weight.max : Вес должен быть не выше {{ limit }}
+number.min : Номер игрока должен быть не ниже {{ limit }}
+number.max : Номер игрока должен быть не выше {{ limit }}
