@@ -363,4 +363,27 @@ class Player
         $this->redcard = $redcard;
         return $this;
     }
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    protected $season;
+
+    /**
+     * @return integer
+     */
+    public function getSeason()
+    {
+        return $this->season;
+    }
+
+    /**
+     * @param integer $season
+     * @return Player
+     */
+    public function setSeason($season)
+    {
+        $this->season = $season;
+        return $this;
+    }
 }

@@ -85,6 +85,13 @@ class PlayerType extends AbstractType
                     'placeholder' => 'player.redcard.placeholder'
                 ]
             ])
+
+            ->add('season', 'text', [
+                'attr' => [
+                    'placeholder' => 'player.season.placeholder'
+                ]
+            ])
+
             ->add('save', 'submit', ['label' => 'common.add']);
     }
 

@@ -13,3 +13,4 @@ AppBundle\Entity\Player:
         pass: <randomDigit()>
         yellowcard: <randomDigit()>
         redcard: <randomDigit()>
+        season: <randomDigit()>
