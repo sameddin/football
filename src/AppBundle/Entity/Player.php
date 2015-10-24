@@ -171,7 +171,14 @@ class Player
 
     /**
      * @ORM\Column(type="string")
-     * @var string
+     * @Assert\NotBlank()
+     * @Assert\NotNull()
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 30,
+     *      minMessage = "nation.min",
+     *      maxMessage = "nation.max"
+     * )
      */
     protected $nation;
 
