@@ -37,7 +37,14 @@ class Player
 
     /**
      * @ORM\Column(type="string")
-     * @var string
+     * @Assert\NotBlank()
+     * @Assert\NotNull()
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 20,
+     *      minMessage = "player.name.min",
+     *      maxMessage = "player.name.max"
+     * )
      */
     protected $name;
 
