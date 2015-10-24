@@ -3,6 +3,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity
  */
@@ -17,6 +18,14 @@ class Team
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank()
+     * @Assert\NotNull()
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 50,
+     *      minMessage = "team.name.min",
+     *      maxMessage = "team.name.max"
+     * )
      */
     protected $name;
 
