@@ -47,6 +47,17 @@ class TeamController extends Controller
     }
 
     /**
+     * @Route("/{id}/stat", name="team.stat", requirements={"id": "\d+"})
+     * @Template
+     */
+    public function statAction(Team $team) {
+
+        return [
+            'team' => $team,
+        ];
+    }
+
+    /**
      * @Route("/add", name="team.add")
      * @Template
      */

@@ -26,6 +26,7 @@ team.name: Название команды
 team.tournament: Турнир
 team.coach: Тренер
 team.country: Страна
+team.stat: Статистика
 player.name: Имя
 player.nation: Гражданство
 player.birth: Возраст
