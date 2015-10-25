@@ -4,7 +4,6 @@ namespace AppBundle\Entity;
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-
 /**
  * @ORM\Entity
  */
@@ -69,7 +68,6 @@ class Player
     /**
      * @ORM\ManyToOne(targetEntity="Team", inversedBy="players")
      */
-
     protected $team;
 
     /**
@@ -98,7 +96,6 @@ class Player
      *      minMessage = "number.min",
      *      maxMessage = "number.max"
      * )
-     *
      */
     protected $number;
 
@@ -123,7 +120,6 @@ class Player
     /**
      * @ORM\ManyToOne(targetEntity="Role", inversedBy="roles")
      */
-
     protected $role;
 
     /**
@@ -146,7 +142,6 @@ class Player
 
     /**
      * @ORM\Column(type="date")
-     *
      * @var DateTime
      */
     protected $birth;

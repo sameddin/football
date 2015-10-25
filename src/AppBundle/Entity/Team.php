@@ -68,7 +68,6 @@ class Team
     /**
      * @ORM\OneToMany(targetEntity="Player", mappedBy="team")
      */
-
     private $players;
 
     /**
