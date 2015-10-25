@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h3>{{ player.name }}</h3>
+
+    <table class="table table-condensed">
+        <thead>
+        <tr>
+            <th>{{ 'player.season'|trans }}</th>
+            <th>{{ 'player.team'|trans }}</th>
+            <th>{{ 'player.match'|trans }}</th>
+            <th>{{ 'player.goal'|trans }}</th>
+            <th>{{ 'player.pass'|trans }}</th>
+            <th>{{ 'player.yellowcard'|trans }}</th>
+            <th>{{ 'player.redcard'|trans }}</th>
+        </tr>
+        </thead>
+        <tr>
+            <td>{{ player.season }}</td>
+            <td><a href="{{ path('team.view', {id: player.team.id }) }}">{{ player.team.name }}</a></td>
+            <td>{{ player.match }}</td>
+            <td>{{ player.goal }}</td>
+            <td>{{ player.pass }}</td>
+            <td>{{ player.yellowcard }}</td>
+            <td>{{ player.redcard }}</td>
+        </tr>
+    </table>
+
+{% endblock %}

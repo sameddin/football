@@ -54,6 +54,17 @@ class PlayerController extends Controller
     }
 
     /**
+     * @Route("/{id}/career", name="player.career", requirements={"id": "\d+"})
+     * @Template
+     */
+    public function careerAction(Player $player) {
+
+        return [
+            'player' => $player,
+        ];
+    }
+
+    /**
      * @Route("/add", name="player.add")
      * @Template
      */
