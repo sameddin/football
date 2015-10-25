@@ -5,6 +5,7 @@
     <h3>{{ team.name }}</h3>
 
     <ul class="nav nav-tabs">
+        <li role="presentation"><a href="{{ path('team.view', {id: team.id }) }}">{{ 'newsline'|trans }}</a></li>
         <li role="presentation"><a href="{{ path('team.team', {id: team.id }) }}">{{ 'team.team'|trans }}</a></li>
         <li role="presentation"><a href="{{ path('team.stat', {id: team.id }) }}">{{ 'team.stat'|trans }}</a></li>
     </ul>
