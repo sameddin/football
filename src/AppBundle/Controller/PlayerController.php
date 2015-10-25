@@ -65,6 +65,17 @@ class PlayerController extends Controller
     }
 
     /**
+     * @Route("/{id}/stat", name="player.stat", requirements={"id": "\d+"})
+     * @Template
+     */
+    public function statAction(Player $player) {
+
+        return [
+            'player' => $player,
+        ];
+    }
+
+    /**
      * @Route("/add", name="player.add")
      * @Template
      */

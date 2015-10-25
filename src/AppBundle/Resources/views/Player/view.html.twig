@@ -3,7 +3,8 @@
 {% block body %}
 
     <h3>{{ player.name }}</h3>
-    <h5><a href="{{ path('player.career', {id: player.id}) }}">{{ 'player.career'|trans }}</a></h5>
+    <h5><a href="{{ path('player.career', {id: player.id}) }}">{{ 'player.career'|trans }}</a> | <a href="{{ path('player.stat', {id: player.id}) }}">{{ 'player.stat'|trans }}</a></h5>
+
 
     <table class="table table-condensed">
         <thead>
