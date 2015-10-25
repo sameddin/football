@@ -90,6 +90,7 @@ class Player
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
      * @Assert\Range(
      *      min = 1,
      *      max = 99,
@@ -202,6 +203,7 @@ class Player
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
      * @Assert\Range(
      *      min = 150,
      *      max = 210,
@@ -231,6 +233,7 @@ class Player
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
      * @Assert\Range(
      *      min = 55,
      *      max = 100,
@@ -260,6 +263,7 @@ class Player
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
      */
     protected $match;
 
@@ -283,6 +287,7 @@ class Player
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
      */
     protected $goal;
 
@@ -306,6 +311,7 @@ class Player
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
      */
     protected $pass;
 
@@ -329,6 +335,7 @@ class Player
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
      */
     protected $yellowcard;
 
@@ -352,6 +359,7 @@ class Player
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
      */
     protected $redcard;
 
@@ -375,6 +383,7 @@ class Player
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
      */
     protected $season;
 
