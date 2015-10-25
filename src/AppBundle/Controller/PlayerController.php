@@ -61,6 +61,7 @@ class PlayerController extends Controller
 
         return [
             'player' => $player,
+            'today' => new DateTime(),
         ];
     }
 
@@ -72,6 +73,7 @@ class PlayerController extends Controller
 
         return [
             'player' => $player,
+            'today' => new DateTime(),
         ];
     }
 
