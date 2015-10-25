@@ -42,7 +42,6 @@ class TeamController extends Controller
 
         return [
             'team' => $team,
-            'today' => new DateTime(),
         ];
     }
 
@@ -65,6 +64,7 @@ class TeamController extends Controller
 
         return [
             'team' => $team,
+            'today' => new DateTime(),
         ];
     }
 

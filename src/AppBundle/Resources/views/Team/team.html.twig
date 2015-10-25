@@ -4,4 +4,27 @@
 
     <h3>{{ team.name }}</h3>
 
+    <table class="table table-condensed">
+        <thead>
+        <tr>
+            <th>{{ 'player.number'|trans }}</th>
+            <th>{{ 'player.name'|trans }}</th>
+            <th>{{ 'player.birth'|trans }}</th>
+            <th>{{ 'player.height'|trans }}</th>
+            <th>{{ 'player.weight'|trans }}</th>
+            <th>{{ 'player.role'|trans }}</th>
+        </tr>
+        </thead>
+        {% for player in team.players %}
+            <tr>
+                <td>{{ player.number }}</td>
+                <td><a href="{{ path('player.view', {id: player.id}) }}">{{ player.name }}</a></td>
+                <td>{{ player.birth|date("d.m.Y") }} | {{ 'player.age'|transchoice(player.age(today)) }}</td>
+                <td>{{ player.height }}</td>
+                <td>{{ player.weight }}</td>
+                <td>{{ player.role.role }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
 {% endblock %}
