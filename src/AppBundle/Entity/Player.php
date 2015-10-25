@@ -40,7 +40,7 @@ class Player
      * @Assert\NotNull()
      * @Assert\Length(
      *      min = 2,
-     *      max = 20,
+     *      max = 30,
      *      minMessage = "player.name.min",
      *      maxMessage = "player.name.max"
      * )
