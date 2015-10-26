@@ -7,7 +7,10 @@
     <h5><b>{{ 'team.coach'|trans }}</b> : {{ team.coach.name }}</h5>
 
     <ul class="nav nav-tabs">
+        <li role="presentation"><a href="{{ path('team.view', {id: team.id }) }}">{{ 'newsline'|trans }}</a></li>
         <li role="presentation" class="active"><a href="{{ path('team.calendar', {id: team.id }) }}">{{ 'calendar'|trans }}</a></li>
+        <li role="presentation"><a href="{{ path('team.team', {id: team.id }) }}">{{ 'team.team'|trans }}</a></li>
+        <li role="presentation"><a href="{{ path('team.stat', {id: team.id }) }}">{{ 'team.stat'|trans }}</a></li>
     </ul>
 
 {% endblock %}
