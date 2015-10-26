@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h3>{{ team.name }}</h3>
+    <h5><b>{{ 'team.country'|trans }}</b> : {{ team.country.country }}</h5>
+    <h5><b>{{ 'team.coach'|trans }}</b> : {{ team.coach.name }}</h5>
+
+{% endblock %}

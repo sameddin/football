@@ -69,6 +69,17 @@ class TeamController extends Controller
     }
 
     /**
+     * @Route("/{id}/calendar", name="team.calendar", requirements={"id": "\d+"})
+     * @Template
+     */
+    public function calendarAction(Team $team) {
+
+        return [
+            'team' => $team,
+        ];
+    }
+
+    /**
      * @Route("/add", name="team.add")
      * @Template
      */
