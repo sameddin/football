@@ -14,4 +14,23 @@
         <li role="presentation" class="active"><a href="{{ path('player.stat', {id: player.id}) }}">{{ 'player.stat'|trans }}</a></li>
     </ul>
 
+    <table class="table table-condensed">
+        <thead>
+        <tr>
+            <th>{{ 'player.match'|trans }}</th>
+            <th>{{ 'player.goal'|trans }}</th>
+            <th>{{ 'player.pass'|trans }}</th>
+            <th>{{ 'player.yellowcard'|trans }}</th>
+            <th>{{ 'player.redcard'|trans }}</th>
+        </tr>
+        </thead>
+        <tr>
+            <td>{{ player.match }}</td>
+            <td>{{ player.goal }}</td>
+            <td>{{ player.pass }}</td>
+            <td>{{ player.yellowcard }}</td>
+            <td>{{ player.redcard }}</td>
+        </tr>
+    </table>
+
 {% endblock %}
