@@ -46,6 +46,7 @@ CREATE TABLE team
     tournament_id bigint,
     coach_id      bigint,
     country_id    bigint,
+    date_id       bigint,
 
     PRIMARY KEY (id)
 );
@@ -53,6 +54,13 @@ CREATE TABLE tournament
 (
     id         serial  NOT NULL,
     tournament varchar NOT NULL,
+
+    PRIMARY KEY (id)
+);
+CREATE TABLE match
+(
+    id   serial NOT NULL,
+    date date   NOT NULL,
 
     PRIMARY KEY (id)
 );

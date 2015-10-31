@@ -160,4 +160,27 @@ class Team
         $this->country = $country;
         return $this;
     }
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Match", inversedBy="dates")
+     */
+    protected $date;
+
+    /**
+     * @return Match
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param Match $date
+     * @return Team
+     */
+    public function setDate(Match $date)
+    {
+        $this->date = $date;
+        return $this;
+    }
 }
