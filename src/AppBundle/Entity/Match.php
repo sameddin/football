@@ -36,7 +36,7 @@ class Match
     }
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      * @var DateTime
      */
     protected $date;

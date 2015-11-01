@@ -59,8 +59,8 @@ CREATE TABLE tournament
 );
 CREATE TABLE match
 (
-    id   serial NOT NULL,
-    date date   NOT NULL,
+    id   serial    NOT NULL,
+    date timestamp NOT NULL,
 
     PRIMARY KEY (id)
 );
