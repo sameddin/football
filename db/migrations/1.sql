@@ -1,20 +1,20 @@
 CREATE TABLE coach
 (
-    id   serial  NOT NULL,
+    id   bigserial  NOT NULL,
     name varchar NOT NULL,
 
     PRIMARY KEY (id)
 );
 CREATE TABLE country
 (
-    id      serial  NOT NULL,
+    id      bigserial  NOT NULL,
     country varchar NOT NULL,
 
     PRIMARY KEY (id)
 );
 CREATE TABLE player
 (
-    id         serial  NOT NULL,
+    id         bigserial  NOT NULL,
     name       varchar NOT NULL,
     team_id    bigint,
     number     bigint,
@@ -34,14 +34,14 @@ CREATE TABLE player
 );
 CREATE TABLE role
 (
-    id   serial  NOT NULL,
+    id   bigserial  NOT NULL,
     role varchar NOT NULL,
 
     PRIMARY KEY (id)
 );
 CREATE TABLE team
 (
-    id            serial  NOT NULL,
+    id            bigserial  NOT NULL,
     name          varchar NOT NULL,
     tournament_id bigint,
     coach_id      bigint,
@@ -52,14 +52,14 @@ CREATE TABLE team
 );
 CREATE TABLE tournament
 (
-    id         serial  NOT NULL,
+    id         bigserial  NOT NULL,
     tournament varchar NOT NULL,
 
     PRIMARY KEY (id)
 );
 CREATE TABLE match
 (
-    id   serial    NOT NULL,
+    id   bigserial    NOT NULL,
     date timestamp NOT NULL,
 
     PRIMARY KEY (id)
