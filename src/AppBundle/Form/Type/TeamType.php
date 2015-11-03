@@ -32,6 +32,10 @@ class TeamType extends AbstractType
                     'choice_label' => 'name',
                     'placeholder' => 'team.coach.placeholder']
             )
+            ->add('match', 'entity', [
+                'class' => 'AppBundle\Entity\Match',
+                'property' => 'id',
+            ])
 
             ->add('save', 'submit', ['label' => 'common.add']);
     }
