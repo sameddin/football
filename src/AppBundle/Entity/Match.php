@@ -16,6 +16,20 @@ class Match
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+    /**
+     * @ORM\Column(type="datetime")
+     * @var DateTime
+     */
+    protected $date;
+    /**
+     * @ORM\OneToMany(targetEntity="Team", mappedBy="match")
+     */
+    private $dates;
+
+    public function __construct()
+    {
+        $this->dates = new ArrayCollection();
+    }
 
     /**
      * @return mixed
@@ -36,12 +50,6 @@ class Match
     }
 
     /**
-     * @ORM\Column(type="datetime")
-     * @var DateTime
-     */
-    protected $date;
-
-    /**
      * @return DateTime
      */
     public function getDate()
@@ -60,11 +68,6 @@ class Match
     }
 
     /**
-     * @ORM\OneToMany(targetEntity="Team", mappedBy="date")
-     */
-    private $dates;
-
-    /**
      * @return mixed
      */
     public function getDates()
@@ -78,10 +81,5 @@ class Match
     public function setDates($dates)
     {
         $this->dates = $dates;
-    }
-
-    public function __construct()
-    {
-        $this->dates = new ArrayCollection();
     }
 }

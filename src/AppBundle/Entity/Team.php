@@ -31,6 +31,32 @@ class Team
     protected $name;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Match", inversedBy="dates")
+     */
+    protected $date;
+    /**
+     * @ORM\ManyToOne(targetEntity="Tournament", inversedBy="tournaments")
+     */
+    protected $tournament;
+    /**
+     * @ORM\ManyToOne(targetEntity="Coach", inversedBy="coach")
+     */
+    protected $coach;
+    /**
+     * @ORM\ManyToOne(targetEntity="Country", inversedBy="countries")
+     */
+    protected $country;
+    /**
+     * @ORM\OneToMany(targetEntity="Player", mappedBy="team")
+     */
+    private $players;
+
+    public function __construct()
+    {
+        $this->players = new ArrayCollection();
+    }
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -67,11 +93,6 @@ class Team
     }
 
     /**
-     * @ORM\OneToMany(targetEntity="Player", mappedBy="team")
-     */
-    private $players;
-
-    /**
      * @return mixed
      */
     public function getPlayers()
@@ -86,16 +107,6 @@ class Team
     {
         $this->players = $players;
     }
-
-    public function __construct()
-    {
-        $this->players = new ArrayCollection();
-    }
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Tournament", inversedBy="tournaments")
-     */
-    protected $tournament;
 
     /**
      * @return Tournament
@@ -116,11 +127,6 @@ class Team
     }
 
     /**
-     * @ORM\ManyToOne(targetEntity="Coach", inversedBy="coach")
-     */
-    protected $coach;
-
-    /**
      * @return Coach
      */
     public function getCoach()
@@ -139,11 +145,6 @@ class Team
     }
 
     /**
-     * @ORM\ManyToOne(targetEntity="Country", inversedBy="countries")
-     */
-    protected $country;
-
-    /**
      * @return Country
      */
     public function getCountry()
@@ -160,11 +161,6 @@ class Team
         $this->country = $country;
         return $this;
     }
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Match", inversedBy="dates")
-     */
-    protected $date;
 
     /**
      * @return Match
