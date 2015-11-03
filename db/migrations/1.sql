@@ -32,14 +32,14 @@ CREATE TABLE team
     coach_id      bigint,
     tournament_id bigint,
     country_id    bigint,
-    date_id       bigint,
+    match_id      bigint,
     name          varchar   NOT NULL,
 
     PRIMARY KEY (id),
     FOREIGN KEY (coach_id) REFERENCES coach,
     FOREIGN KEY (tournament_id) REFERENCES tournament,
     FOREIGN KEY (country_id) REFERENCES country,
-    FOREIGN KEY (date_id) REFERENCES match
+    FOREIGN KEY (match_id) REFERENCES match
 );
 CREATE TABLE role
 (

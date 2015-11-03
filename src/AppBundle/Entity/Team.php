@@ -33,7 +33,7 @@ class Team
     /**
      * @ORM\ManyToOne(targetEntity="Match", inversedBy="dates")
      */
-    protected $date;
+    protected $match;
     /**
      * @ORM\ManyToOne(targetEntity="Tournament", inversedBy="tournaments")
      */
@@ -165,18 +165,18 @@ class Team
     /**
      * @return Match
      */
-    public function getDate()
+    public function getMatch()
     {
-        return $this->date;
+        return $this->match;
     }
 
     /**
-     * @param Match $date
+     * @param Match $match
      * @return Team
      */
-    public function setDate(Match $date)
+    public function setMatch(Match $match)
     {
-        $this->date = $date;
+        $this->match = $match;
         return $this;
     }
 }

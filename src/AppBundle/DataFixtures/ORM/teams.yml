@@ -4,4 +4,4 @@ AppBundle\Entity\Team:
         tournament: @tournament*
         coach: @coach*
         country: @country*
-        date: @match*
+        match: @match*
