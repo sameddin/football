@@ -17,6 +17,7 @@
     <table class="table table-condensed">
         <thead>
         <tr>
+            <th>{{ 'team.tournament'|trans }}</th>
             <th>{{ 'player.match'|trans }}</th>
             <th>{{ 'player.goal'|trans }}</th>
             <th>{{ 'player.pass'|trans }}</th>
@@ -25,6 +26,7 @@
         </tr>
         </thead>
         <tr>
+            <td>{{ player.team.tournament.tournament }}</td>
             <td>{{ player.match }}</td>
             <td>{{ player.goal }}</td>
             <td>{{ player.pass }}</td>
