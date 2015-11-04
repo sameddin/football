@@ -19,6 +19,14 @@ class Coach
      * @ORM\Column(type="string")
      */
     protected $name;
+    /**
+     * @ORM\OneToMany(targetEntity="Team", mappedBy="coach")
+     */
+    private $coach;
+
+    public function __construct() {
+        $this->coach = new ArrayCollection();
+    }
 
     /**
      * @return mixed
@@ -57,11 +65,6 @@ class Coach
     }
 
     /**
-     * @ORM\OneToMany(targetEntity="Team", mappedBy="coach")
-     */
-    private $coach;
-
-    /**
      * @return mixed
      */
     public function getCoach()
@@ -75,9 +78,5 @@ class Coach
     public function setCoach($coach)
     {
         $this->coach = $coach;
-    }
-
-    public function __construct() {
-        $this->coach = new ArrayCollection();
     }
 }

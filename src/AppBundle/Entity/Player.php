@@ -18,6 +18,113 @@ class Player
     protected $id;
 
     /**
+     * @ORM\Column(type="string")
+     * @Assert\NotBlank()
+     * @Assert\NotNull()
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 30,
+     *      minMessage = "player.name.min",
+     *      maxMessage = "player.name.max"
+     * )
+     */
+    protected $name;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Team", inversedBy="players")
+     */
+    protected $team;
+
+    /**
+     * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
+     * @Assert\Range(
+     *      min = 1,
+     *      max = 99,
+     *      minMessage = "number.min",
+     *      maxMessage = "number.max"
+     * )
+     */
+    protected $number;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Role", inversedBy="roles")
+     */
+    protected $role;
+
+    /**
+     * @ORM\Column(type="date")
+     * @var DateTime
+     */
+    protected $birth;
+
+    /**
+     * @ORM\Column(type="string")
+     * @Assert\NotBlank()
+     * @Assert\NotNull()
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 30,
+     *      minMessage = "nation.min",
+     *      maxMessage = "nation.max"
+     * )
+     */
+    protected $nation;
+
+    /**
+     * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
+     * @Assert\Range(
+     *      min = 150,
+     *      max = 210,
+     *      minMessage = "height.min",
+     *      maxMessage = "height.max"
+     * )
+     */
+    protected $height;
+    /**
+     * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
+     * @Assert\Range(
+     *      min = 55,
+     *      max = 100,
+     *      minMessage = "weight.min",
+     *      maxMessage = "weight.max"
+     * )
+     */
+    protected $weight;
+    /**
+     * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
+     */
+    protected $match;
+    /**
+     * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
+     */
+    protected $goal;
+    /**
+     * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
+     */
+    protected $pass;
+    /**
+     * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
+     */
+    protected $yellowcard;
+    /**
+     * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
+     */
+    protected $redcard;
+    /**
+     * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
+     */
+    protected $season;
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -34,19 +141,6 @@ class Player
         $this->id = $id;
         return $this;
     }
-
-    /**
-     * @ORM\Column(type="string")
-     * @Assert\NotBlank()
-     * @Assert\NotNull()
-     * @Assert\Length(
-     *      min = 2,
-     *      max = 30,
-     *      minMessage = "player.name.min",
-     *      maxMessage = "player.name.max"
-     * )
-     */
-    protected $name;
 
     /**
      * @return string
@@ -67,11 +161,6 @@ class Player
     }
 
     /**
-     * @ORM\ManyToOne(targetEntity="Team", inversedBy="players")
-     */
-    protected $team;
-
-    /**
      * @return Team
      */
     public function getTeam()
@@ -88,18 +177,6 @@ class Player
         $this->team = $team;
         return $this;
     }
-
-    /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank()
-     * @Assert\Range(
-     *      min = 1,
-     *      max = 99,
-     *      minMessage = "number.min",
-     *      maxMessage = "number.max"
-     * )
-     */
-    protected $number;
 
     /**
      * @return integer
@@ -120,11 +197,6 @@ class Player
     }
 
     /**
-     * @ORM\ManyToOne(targetEntity="Role", inversedBy="roles")
-     */
-    protected $role;
-
-    /**
      * @return Role
      */
     public function getRole()
@@ -143,12 +215,6 @@ class Player
     }
 
     /**
-     * @ORM\Column(type="date")
-     * @var DateTime
-     */
-    protected $birth;
-
-    /**
      * @return DateTime
      */
     public function getBirth()
@@ -165,19 +231,6 @@ class Player
         $this->birth = $birth;
         return $this;
     }
-
-    /**
-     * @ORM\Column(type="string")
-     * @Assert\NotBlank()
-     * @Assert\NotNull()
-     * @Assert\Length(
-     *      min = 2,
-     *      max = 30,
-     *      minMessage = "nation.min",
-     *      maxMessage = "nation.max"
-     * )
-     */
-    protected $nation;
 
     /**
      * @return string
@@ -203,18 +256,6 @@ class Player
     }
 
     /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank()
-     * @Assert\Range(
-     *      min = 150,
-     *      max = 210,
-     *      minMessage = "height.min",
-     *      maxMessage = "height.max"
-     * )
-     */
-    protected $height;
-
-    /**
      * @return integer
      */
     public function getHeight()
@@ -231,18 +272,6 @@ class Player
         $this->height = $height;
         return $this;
     }
-
-    /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank()
-     * @Assert\Range(
-     *      min = 55,
-     *      max = 100,
-     *      minMessage = "weight.min",
-     *      maxMessage = "weight.max"
-     * )
-     */
-    protected $weight;
 
     /**
      * @return integer
@@ -263,12 +292,6 @@ class Player
     }
 
     /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank()
-     */
-    protected $match;
-
-    /**
      * @return integer
      */
     public function getMatch()
@@ -285,12 +308,6 @@ class Player
         $this->match = $match;
         return $this;
     }
-
-    /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank()
-     */
-    protected $goal;
 
     /**
      * @return integer
@@ -311,12 +328,6 @@ class Player
     }
 
     /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank()
-     */
-    protected $pass;
-
-    /**
      * @return integer
      */
     public function getPass()
@@ -333,12 +344,6 @@ class Player
         $this->pass = $pass;
         return $this;
     }
-
-    /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank()
-     */
-    protected $yellowcard;
 
     /**
      * @return integer
@@ -359,12 +364,6 @@ class Player
     }
 
     /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank()
-     */
-    protected $redcard;
-
-    /**
      * @return integer
      */
     public function getRedcard()
@@ -381,12 +380,6 @@ class Player
         $this->redcard = $redcard;
         return $this;
     }
-
-    /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank()
-     */
-    protected $season;
 
     /**
      * @return integer

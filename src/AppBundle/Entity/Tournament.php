@@ -19,6 +19,14 @@ class Tournament
      * @ORM\Column(type="string")
      */
     protected $tournament;
+    /**
+     * @ORM\OneToMany(targetEntity="Team", mappedBy="tournament")
+     */
+    private $tournaments;
+
+    public function __construct() {
+        $this->tournaments = new ArrayCollection();
+    }
 
     /**
      * @return mixed
@@ -57,11 +65,6 @@ class Tournament
     }
 
     /**
-     * @ORM\OneToMany(targetEntity="Team", mappedBy="tournament")
-     */
-    private $tournaments;
-
-    /**
      * @return mixed
      */
     public function getTournaments()
@@ -75,9 +78,5 @@ class Tournament
     public function setTournaments($tournaments)
     {
         $this->tournaments = $tournaments;
-    }
-
-    public function __construct() {
-        $this->tournaments = new ArrayCollection();
     }
 }

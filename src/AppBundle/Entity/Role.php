@@ -19,6 +19,15 @@ class Role
      * @ORM\Column(type="string")
      */
     protected $role;
+    /**
+     * @ORM\OneToMany(targetEntity="Player", mappedBy="role")
+     */
+
+    private $roles;
+
+    public function __construct() {
+        $this->roles = new ArrayCollection();
+    }
 
     /**
      * @return mixed
@@ -57,12 +66,6 @@ class Role
     }
 
     /**
-     * @ORM\OneToMany(targetEntity="Player", mappedBy="role")
-     */
-
-    private $roles;
-
-    /**
      * @return mixed
      */
     public function getRoles()
@@ -76,9 +79,5 @@ class Role
     public function setRoles($roles)
     {
         $this->roles = $roles;
-    }
-
-    public function __construct() {
-        $this->roles = new ArrayCollection();
     }
 }
