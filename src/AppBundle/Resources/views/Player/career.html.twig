@@ -19,6 +19,7 @@
         <tr>
             <th>{{ 'player.season'|trans }}</th>
             <th>{{ 'player.team'|trans }}</th>
+            <th>{{ 'team.tournament'|trans }}</th>
             <th>{{ 'player.match'|trans }}</th>
             <th>{{ 'player.goal'|trans }}</th>
             <th>{{ 'player.pass'|trans }}</th>
@@ -29,6 +30,7 @@
         <tr>
             <td>{{ player.season }}</td>
             <td><a href="{{ path('team.news', {id: player.team.id }) }}">{{ player.team.name }}</a></td>
+            <td>{{ player.team.tournament.tournament }}</td>
             <td>{{ player.match }}</td>
             <td>{{ player.goal }}</td>
             <td>{{ player.pass }}</td>
