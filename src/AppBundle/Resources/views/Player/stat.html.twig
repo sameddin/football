@@ -17,6 +17,7 @@
     <table class="table table-condensed">
         <thead>
         <tr>
+            <th>{{ 'date'|trans }}</th>
             <th>{{ 'team.tournament'|trans }}</th>
             <th>{{ 'player.match'|trans }}</th>
             <th>{{ 'player.goal'|trans }}</th>
@@ -26,6 +27,7 @@
         </tr>
         </thead>
         <tr>
+            <td>{{ player.team.match.date|date("d.m.Y | H:i") }}</td>
             <td>{{ player.team.tournament.tournament }}</td>
             <td>{{ player.match }}</td>
             <td>{{ player.goal }}</td>
