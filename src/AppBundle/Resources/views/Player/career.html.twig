@@ -23,6 +23,7 @@
             <th>{{ 'player.match'|trans }}</th>
             <th>{{ 'player.goal'|trans }}</th>
             <th>{{ 'player.pass'|trans }}</th>
+            <th>{{ 'goal.plus.pass'|trans }}</th>
             <th>{{ 'player.yellowcard'|trans }}</th>
             <th>{{ 'player.redcard'|trans }}</th>
         </tr>
@@ -34,6 +35,7 @@
             <td>{{ player.match }}</td>
             <td>{{ player.goal }}</td>
             <td>{{ player.pass }}</td>
+            <td>{{ player.goal + player.pass }}</td>
             <td>{{ player.yellowcard }}</td>
             <td>{{ player.redcard }}</td>
         </tr>
