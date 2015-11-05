@@ -118,11 +118,6 @@ class Player
      * @Assert\NotBlank()
      */
     protected $redcard;
-    /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank()
-     */
-    protected $season;
 
     /**
      * @return mixed
@@ -378,24 +373,6 @@ class Player
     public function setRedcard($redcard)
     {
         $this->redcard = $redcard;
-        return $this;
-    }
-
-    /**
-     * @return integer
-     */
-    public function getSeason()
-    {
-        return $this->season;
-    }
-
-    /**
-     * @param integer $season
-     * @return Player
-     */
-    public function setSeason($season)
-    {
-        $this->season = $season;
         return $this;
     }
 }

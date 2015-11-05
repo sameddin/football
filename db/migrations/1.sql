@@ -64,7 +64,6 @@ CREATE TABLE player
     pass       bigint,
     yellowcard bigint,
     redcard    bigint,
-    season     bigint,
 
     PRIMARY KEY (id),
     FOREIGN KEY (team_id) REFERENCES team,

@@ -32,12 +32,6 @@ class PlayerType extends AbstractType
                     'placeholder' => 'player.role.placeholder']
            )
 
-            ->add('season', 'text', [
-                'attr' => [
-                    'placeholder' => 'player.season.placeholder'
-                ]
-            ])
-
             ->add('team', 'entity', [
                 'class' => 'AppBundle:Team',
                 'choice_label' => 'name',
