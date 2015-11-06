@@ -21,14 +21,10 @@ class Match
      * @var DateTime
      */
     protected $date;
-    /**
-     * @ORM\OneToMany(targetEntity="Team", mappedBy="match")
-     */
-    private $dates;
 
     public function __construct()
     {
-        $this->dates = new ArrayCollection();
+        $this->match = new ArrayCollection();
     }
 
     /**
@@ -65,21 +61,5 @@ class Match
     {
         $this->date = $date;
         return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDates()
-    {
-        return $this->dates;
-    }
-
-    /**
-     * @param $dates
-     */
-    public function setDates($dates)
-    {
-        $this->dates = $dates;
     }
 }

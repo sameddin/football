@@ -31,7 +31,7 @@ class Team
     protected $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Match", inversedBy="dates")
+     * @ORM\ManyToOne(targetEntity="Match")
      */
     protected $match;
     /**
