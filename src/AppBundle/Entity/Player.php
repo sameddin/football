@@ -48,7 +48,7 @@ class Player
     protected $number;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Role", inversedBy="roles")
+     * @ORM\ManyToOne(targetEntity="Role")
      */
     protected $role;
 
