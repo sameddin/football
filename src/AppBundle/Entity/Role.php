@@ -3,6 +3,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * @ORM\Entity
  */
@@ -18,14 +19,15 @@ class Role
     /**
      * @ORM\Column(type="string")
      */
-    protected $role;
+    protected $name;
     /**
      * @ORM\OneToMany(targetEntity="Player", mappedBy="role")
      */
 
     private $roles;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->roles = new ArrayCollection();
     }
 
@@ -50,18 +52,18 @@ class Role
     /**
      * @return mixed
      */
-    public function getRole()
+    public function getName()
     {
-        return $this->role;
+        return $this->name;
     }
 
     /**
-     * @param mixed $role
+     * @param mixed $name
      * @return Role
      */
-    public function setRole($role)
+    public function setName($name)
     {
-        $this->role = $role;
+        $this->name = $name;
         return $this;
     }
 

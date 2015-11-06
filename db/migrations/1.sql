@@ -44,7 +44,7 @@ CREATE TABLE team
 CREATE TABLE role
 (
     id   bigserial NOT NULL,
-    role varchar   NOT NULL,
+    name varchar   NOT NULL,
 
     PRIMARY KEY (id)
 );
