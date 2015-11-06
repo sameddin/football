@@ -12,8 +12,8 @@ player.weight.placeholder: Введите вес игрока
 player.match.placeholder: Введите количество сыгранных матчей
 player.goal.placeholder: Введите количество забитых голов
 player.pass.placeholder: Введите количество ассистов
-player.yellowcard.placeholder: Введите количество желтых карточек игрока
-player.redcard.placeholder: Введите количество красных карточек игрока
+player.yellowCard.placeholder: Введите количество желтых карточек игрока
+player.redCard.placeholder: Введите количество красных карточек игрока
 team.name.placeholder: Введите название команды
 team.tournament.placeholder: Выберите турнир команды
 team.coach.placeholder: Выберите тренера команды
@@ -67,8 +67,8 @@ Email: Email
 Match: Матчи
 Goal: Голы
 Pass: Ассисты
-Yellowcard: Жёлтые карты
-Redcard: Красные карты
+Yellow card: Жёлтые карты
+Red card: Красные карты
 newsline: Лента новостей
 calendar: Календарь
 date: Дата
