@@ -118,6 +118,10 @@ class Player
      * @Assert\NotBlank()
      */
     protected $redcard;
+    /**
+     * @ORM\ManyToOne(targetEntity="Season", inversedBy="season")
+     */
+    protected $season;
 
     /**
      * @return mixed
@@ -373,6 +377,24 @@ class Player
     public function setRedcard($redcard)
     {
         $this->redcard = $redcard;
+        return $this;
+    }
+
+    /**
+     * @return Season
+     */
+    public function getSeason()
+    {
+        return $this->season;
+    }
+
+    /**
+     * @param Season $season
+     * @return Player
+     */
+    public function setSeason(Season $season)
+    {
+        $this->season = $season;
         return $this;
     }
 }

@@ -1,0 +1,4 @@
+AppBundle\Entity\Season:
+    season{1..10}:
+        startyear: <randomDigit()>
+        endyear: <randomDigit()>

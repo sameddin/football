@@ -48,11 +48,20 @@ CREATE TABLE role
 
     PRIMARY KEY (id)
 );
+CREATE TABLE season
+(
+    id        bigserial NOT NULL,
+    startyear bigint    NOT NULL,
+    endyear   bigint    NOT NULL,
+
+    PRIMARY KEY (id)
+);
 CREATE TABLE player
 (
     id         bigserial NOT NULL,
     team_id    bigint,
     role_id    bigint,
+    season_id  bigint,
     name       varchar   NOT NULL,
     number     bigint,
     nation     varchar   NOT NULL,
@@ -67,5 +76,6 @@ CREATE TABLE player
 
     PRIMARY KEY (id),
     FOREIGN KEY (team_id) REFERENCES team,
-    FOREIGN KEY (role_id) REFERENCES role
+    FOREIGN KEY (role_id) REFERENCES role,
+    FOREIGN KEY (season_id) REFERENCES season
 );
