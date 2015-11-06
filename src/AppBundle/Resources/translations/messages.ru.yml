@@ -14,7 +14,6 @@ player.goal.placeholder: Введите количество забитых го
 player.pass.placeholder: Введите количество ассистов
 player.yellowcard.placeholder: Введите количество желтых карточек игрока
 player.redcard.placeholder: Введите количество красных карточек игрока
-player.season.placeholder: Введите сезон игрока
 team.name.placeholder: Введите название команды
 team.tournament.placeholder: Выберите турнир команды
 team.coach.placeholder: Выберите тренера команды
@@ -42,7 +41,6 @@ player.goal: Голы
 player.pass: Ассисты
 player.yellowcard: Жёлтые карты
 player.redcard: Красные карты
-player.season: Сезон
 player.career: Карьера
 player.stat: Статистика
 Previous: Предыдущая
@@ -71,7 +69,6 @@ Goal: Голы
 Pass: Ассисты
 Yellowcard: Жёлтые карты
 Redcard: Красные карты
-Season: Сезон
 newsline: Лента новостей
 calendar: Календарь
 date: Дата
