@@ -17,6 +17,7 @@
     <table class="table table-condensed">
         <thead>
         <tr>
+            <th>{{ 'season'|trans }}</th>
             <th>{{ 'player.team'|trans }}</th>
             <th>{{ 'team.tournament'|trans }}</th>
             <th>{{ 'player.match'|trans }}</th>
@@ -28,6 +29,7 @@
         </tr>
         </thead>
         <tr>
+            <td>{{ player.season.startYear }}/{{ player.season.endYear }}</td>
             <td><a href="{{ path('team.news', {id: player.team.id }) }}">{{ player.team.name }}</a></td>
             <td>{{ player.team.tournament.tournament }}</td>
             <td>{{ player.match }}</td>
