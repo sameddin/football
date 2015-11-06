@@ -119,7 +119,7 @@ class Player
      */
     protected $redcard;
     /**
-     * @ORM\ManyToOne(targetEntity="Season", inversedBy="season")
+     * @ORM\ManyToOne(targetEntity="Season")
      */
     protected $season;
 

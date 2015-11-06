@@ -26,11 +26,6 @@ class Season
      */
     protected $endYear;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Player", mappedBy="season")
-     */
-    protected $season;
-
     public function __construct()
     {
         $this->season = new ArrayCollection();
@@ -88,21 +83,5 @@ class Season
     {
         $this->endYear = $endYear;
         return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSeason()
-    {
-        return $this->season;
-    }
-
-    /**
-     * @param $season
-     */
-    public function setSeason($season)
-    {
-        $this->season = $season;
     }
 }
