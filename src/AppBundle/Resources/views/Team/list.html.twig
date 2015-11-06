@@ -15,8 +15,8 @@
         </thead>
         {% for team in teams %}
             <tr>
-                <td>{{ team.country.country }}</td>
-                <td>{{ team.tournament.tournament }}</td>
+                <td>{{ team.country.name }}</td>
+                <td>{{ team.tournament.name }}</td>
                 <td><a href="{{ path('team.news', {id: team.id}) }}">{{ team.name }}</a></td>
                 <td>{{ team.coach.name }}</td>
                 <td>

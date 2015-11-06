@@ -3,6 +3,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * @ORM\Entity
  */
@@ -18,13 +19,14 @@ class Tournament
     /**
      * @ORM\Column(type="string")
      */
-    protected $tournament;
+    protected $name;
     /**
      * @ORM\OneToMany(targetEntity="Team", mappedBy="tournament")
      */
     private $tournaments;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->tournaments = new ArrayCollection();
     }
 
@@ -49,18 +51,18 @@ class Tournament
     /**
      * @return mixed
      */
-    public function getTournament()
+    public function getName()
     {
-        return $this->tournament;
+        return $this->name;
     }
 
     /**
-     * @param mixed $tournament
+     * @param mixed $name
      * @return Tournament
      */
-    public function setTournament($tournament)
+    public function setName($name)
     {
-        $this->tournament = $tournament;
+        $this->name = $name;
         return $this;
     }
 

@@ -3,6 +3,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * @ORM\Entity
  */
@@ -18,13 +19,14 @@ class Country
     /**
      * @ORM\Column(type="string")
      */
-    protected $country;
+    protected $name;
     /**
      * @ORM\OneToMany(targetEntity="Team", mappedBy="country")
      */
     private $countries;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->countries = new ArrayCollection();
     }
 
@@ -49,18 +51,18 @@ class Country
     /**
      * @return mixed
      */
-    public function getCountry()
+    public function getName()
     {
-        return $this->country;
+        return $this->name;
     }
 
     /**
-     * @param mixed $country
+     * @param mixed $name
      * @return Country
      */
-    public function setCountry($country)
+    public function setName($name)
     {
-        $this->country = $country;
+        $this->name = $name;
         return $this;
     }
 

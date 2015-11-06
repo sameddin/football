@@ -7,15 +7,15 @@ CREATE TABLE coach
 );
 CREATE TABLE country
 (
-    id      bigserial NOT NULL,
-    country varchar   NOT NULL,
+    id   bigserial NOT NULL,
+    name varchar   NOT NULL,
 
     PRIMARY KEY (id)
 );
 CREATE TABLE tournament
 (
-    id         bigserial NOT NULL,
-    tournament varchar   NOT NULL,
+    id   bigserial NOT NULL,
+    name varchar   NOT NULL,
 
     PRIMARY KEY (id)
 );
@@ -50,7 +50,7 @@ CREATE TABLE role
 );
 CREATE TABLE season
 (
-    id        bigserial NOT NULL,
+    id         bigserial NOT NULL,
     start_year bigint    NOT NULL,
     end_year   bigint    NOT NULL,
 

@@ -31,7 +31,7 @@
         <tr>
             <td>{{ player.season.startYear }}/{{ player.season.endYear }}</td>
             <td><a href="{{ path('team.news', {id: player.team.id }) }}">{{ player.team.name }}</a></td>
-            <td>{{ player.team.tournament.tournament }}</td>
+            <td>{{ player.team.tournament.name }}</td>
             <td>{{ player.match }}</td>
             <td>{{ player.goal }}</td>
             <td>{{ player.pass }}</td>
