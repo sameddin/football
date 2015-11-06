@@ -3,6 +3,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+
 /**
  * @ORM\Entity
  */
@@ -19,12 +20,9 @@ class Coach
      * @ORM\Column(type="string")
      */
     protected $name;
-    /**
-     * @ORM\OneToMany(targetEntity="Team", mappedBy="coach")
-     */
-    private $coach;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->coach = new ArrayCollection();
     }
 
@@ -62,21 +60,5 @@ class Coach
     {
         $this->name = $name;
         return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCoach()
-    {
-        return $this->coach;
-    }
-
-    /**
-     * @param $coach
-     */
-    public function setCoach($coach)
-    {
-        $this->coach = $coach;
     }
 }

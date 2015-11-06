@@ -39,7 +39,7 @@ class Team
      */
     protected $tournament;
     /**
-     * @ORM\ManyToOne(targetEntity="Coach", inversedBy="coach")
+     * @ORM\ManyToOne(targetEntity="Coach")
      */
     protected $coach;
     /**
