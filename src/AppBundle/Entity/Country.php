@@ -20,14 +20,10 @@ class Country
      * @ORM\Column(type="string")
      */
     protected $name;
-    /**
-     * @ORM\OneToMany(targetEntity="Team", mappedBy="country")
-     */
-    private $countries;
 
     public function __construct()
     {
-        $this->countries = new ArrayCollection();
+        $this->country = new ArrayCollection();
     }
 
     /**
@@ -64,21 +60,5 @@ class Country
     {
         $this->name = $name;
         return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCountries()
-    {
-        return $this->countries;
-    }
-
-    /**
-     * @param $countries
-     */
-    public function setCountries($countries)
-    {
-        $this->countries = $countries;
     }
 }

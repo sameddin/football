@@ -35,7 +35,7 @@ class Team
      */
     protected $match;
     /**
-     * @ORM\ManyToOne(targetEntity="Tournament", inversedBy="tournaments")
+     * @ORM\ManyToOne(targetEntity="Tournament")
      */
     protected $tournament;
     /**
@@ -43,7 +43,7 @@ class Team
      */
     protected $coach;
     /**
-     * @ORM\ManyToOne(targetEntity="Country", inversedBy="countries")
+     * @ORM\ManyToOne(targetEntity="Country")
      */
     protected $country;
     /**

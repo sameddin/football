@@ -20,14 +20,10 @@ class Tournament
      * @ORM\Column(type="string")
      */
     protected $name;
-    /**
-     * @ORM\OneToMany(targetEntity="Team", mappedBy="tournament")
-     */
-    private $tournaments;
 
     public function __construct()
     {
-        $this->tournaments = new ArrayCollection();
+        $this->tournament = new ArrayCollection();
     }
 
     /**
@@ -64,21 +60,5 @@ class Tournament
     {
         $this->name = $name;
         return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTournaments()
-    {
-        return $this->tournaments;
-    }
-
-    /**
-     * @param $tournaments
-     */
-    public function setTournaments($tournaments)
-    {
-        $this->tournaments = $tournaments;
     }
 }
