@@ -19,12 +19,12 @@ class Season
     /**
      * @ORM\Column(type="bigint")
      */
-    protected $startyear;
+    protected $startYear;
 
     /**
      * @ORM\Column(type="bigint")
      */
-    protected $endyear;
+    protected $endYear;
 
     /**
      * @ORM\OneToMany(targetEntity="Player", mappedBy="season")
@@ -57,36 +57,36 @@ class Season
     /**
      * @return mixed
      */
-    public function getstartYear()
+    public function getStartYear()
     {
-        return $this->startyear;
+        return $this->startYear;
     }
 
     /**
-     * @param mixed $startyear
+     * @param mixed $startYear
      * @return Season
      */
-    public function setstartYear($startyear)
+    public function setStartYear($startYear)
     {
-        $this->startyear = $startyear;
+        $this->startYear = $startYear;
         return $this;
     }
 
     /**
      * @return mixed
      */
-    public function getendYear()
+    public function getEndYear()
     {
-        return $this->endyear;
+        return $this->endYear;
     }
 
     /**
-     * @param mixed $endyear
+     * @param mixed $endYear
      * @return Season
      */
-    public function setendYear($endyear)
+    public function setEndYear($endYear)
     {
-        $this->endyear = $endyear;
+        $this->endYear = $endYear;
         return $this;
     }
 

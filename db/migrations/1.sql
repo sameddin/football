@@ -51,8 +51,8 @@ CREATE TABLE role
 CREATE TABLE season
 (
     id        bigserial NOT NULL,
-    startyear bigint    NOT NULL,
-    endyear   bigint    NOT NULL,
+    start_year bigint    NOT NULL,
+    end_year   bigint    NOT NULL,
 
     PRIMARY KEY (id)
 );
