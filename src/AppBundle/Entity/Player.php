@@ -112,12 +112,12 @@ class Player
      * @ORM\Column(type="integer")
      * @Assert\NotBlank()
      */
-    protected $yellowcard;
+    protected $yellowCard;
     /**
      * @ORM\Column(type="integer")
      * @Assert\NotBlank()
      */
-    protected $redcard;
+    protected $redCard;
     /**
      * @ORM\ManyToOne(targetEntity="Season")
      */
@@ -347,36 +347,36 @@ class Player
     /**
      * @return integer
      */
-    public function getYellowcard()
+    public function getYellowCard()
     {
-        return $this->yellowcard;
+        return $this->yellowCard;
     }
 
     /**
-     * @param integer $yellowcard
+     * @param integer $yellowCard
      * @return Player
      */
-    public function setYellowcard($yellowcard)
+    public function setYellowCard($yellowCard)
     {
-        $this->yellowcard = $yellowcard;
+        $this->yellowCard = $yellowCard;
         return $this;
     }
 
     /**
      * @return integer
      */
-    public function getRedcard()
+    public function getRedCard()
     {
-        return $this->redcard;
+        return $this->redCard;
     }
 
     /**
-     * @param integer $redcard
+     * @param integer $redCard
      * @return Player
      */
-    public function setRedcard($redcard)
+    public function setRedCard($redCard)
     {
-        $this->redcard = $redcard;
+        $this->redCard = $redCard;
         return $this;
     }
 
