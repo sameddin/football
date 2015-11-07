@@ -2,6 +2,7 @@
 namespace AppBundle\Entity;
 
 use DateTime;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -103,6 +104,14 @@ class Player
      * @Assert\NotBlank()
      */
     protected $goal;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Goal", mappedBy="player")
+     *
+     * @var ArrayCollection
+     */
+    private $goals;
+
     /**
      * @ORM\Column(type="integer")
      * @Assert\NotBlank()
@@ -122,6 +131,11 @@ class Player
      * @ORM\ManyToOne(targetEntity="Season")
      */
     protected $season;
+
+    public function __construct()
+    {
+        $this->goals = new ArrayCollection();
+    }
 
     /**
      * @return mixed
@@ -396,5 +410,21 @@ class Player
     {
         $this->season = $season;
         return $this;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getGoals()
+    {
+        return $this->goals;
+    }
+
+    /**
+     * @param ArrayCollection $goals
+     */
+    public function setGoals($goals)
+    {
+        $this->goals = $goals;
     }
 }

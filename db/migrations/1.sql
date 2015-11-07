@@ -79,3 +79,11 @@ CREATE TABLE player
     FOREIGN KEY (role_id) REFERENCES role,
     FOREIGN KEY (season_id) REFERENCES season
 );
+CREATE TABLE goal
+(
+    id        bigserial NOT NULL,
+    player_id bigint    NOT NULL,
+
+    PRIMARY KEY (id),
+    FOREIGN KEY (player_id) REFERENCES player
+);
