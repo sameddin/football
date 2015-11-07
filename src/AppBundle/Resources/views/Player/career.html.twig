@@ -33,9 +33,9 @@
             <td><a href="{{ path('team.news', {id: player.team.id }) }}">{{ player.team.name }}</a></td>
             <td>{{ player.team.tournament.name }}</td>
             <td>{{ player.match }}</td>
-            <td>{{ player.goal }}</td>
+            <td>{{ player.goals|length }}</td>
             <td>{{ player.pass }}</td>
-            <td>{{ player.goal + player.pass }}</td>
+            <td>{{ player.goals|length + player.pass }}</td>
             <td>{{ player.yellowCard }}</td>
             <td>{{ player.redCard }}</td>
         </tr>
