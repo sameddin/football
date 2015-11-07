@@ -20,7 +20,7 @@
                 <td><a href="{{ path('team.news', {id: team.id}) }}">{{ team.name }}</a></td>
                 <td>{{ team.coach.name }}</td>
                 <td>
-                    <ul class="list-unstyled">
+                    <ul class="nav nav-list">
                         {% for player in team.players %}
                             <li><a href="{{ path('player.view', {id: player.id}) }}">{{ player.name }}</a></li>
                         {% endfor %}
