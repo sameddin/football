@@ -69,7 +69,6 @@ CREATE TABLE player
     height      bigint,
     weight      bigint,
     match       bigint,
-    goal        bigint,
     pass        bigint,
     yellow_card bigint,
     red_card    bigint,

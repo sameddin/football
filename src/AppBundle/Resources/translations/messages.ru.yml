@@ -10,7 +10,6 @@ player.number.placeholder: Введите номер игрока
 player.height.placeholder: Введите рост игрока
 player.weight.placeholder: Введите вес игрока
 player.match.placeholder: Введите количество сыгранных матчей
-player.goal.placeholder: Введите количество забитых голов
 player.pass.placeholder: Введите количество ассистов
 player.yellowCard.placeholder: Введите количество желтых карточек игрока
 player.redCard.placeholder: Введите количество красных карточек игрока

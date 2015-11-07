@@ -62,12 +62,6 @@ class PlayerType extends AbstractType
                 ]
             ])
 
-            ->add('goal', 'text', [
-                'attr' => [
-                    'placeholder' => 'player.goal.placeholder'
-                ]
-            ])
-
             ->add('pass', 'text', [
                 'attr' => [
                     'placeholder' => 'player.pass.placeholder'

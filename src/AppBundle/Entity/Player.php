@@ -99,11 +99,6 @@ class Player
      * @Assert\NotBlank()
      */
     protected $match;
-    /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank()
-     */
-    protected $goal;
 
     /**
      * @ORM\OneToMany(targetEntity="Goal", mappedBy="player")
@@ -319,24 +314,6 @@ class Player
     public function setMatch($match)
     {
         $this->match = $match;
-        return $this;
-    }
-
-    /**
-     * @return integer
-     */
-    public function getGoal()
-    {
-        return $this->goal;
-    }
-
-    /**
-     * @param integer $goal
-     * @return Player
-     */
-    public function setGoal($goal)
-    {
-        $this->goal = $goal;
         return $this;
     }
 
