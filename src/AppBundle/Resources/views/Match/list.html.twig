@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>{{ 'date'|trans }}</th>
+            </tr>
+        </thead>
+        {% for match in matches %}
+            <tr>
+                <td>{{ match.date|date("d.m.Y | H:i") }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
