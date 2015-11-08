@@ -69,7 +69,6 @@ CREATE TABLE player
     height      bigint,
     weight      bigint,
     match       bigint,
-    yellow_card bigint,
     red_card    bigint,
 
     PRIMARY KEY (id),

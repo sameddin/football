@@ -62,12 +62,6 @@ class PlayerType extends AbstractType
                 ]
             ])
 
-            ->add('yellowCard', 'text', [
-                'attr' => [
-                    'placeholder' => 'player.yellowCard.placeholder'
-                ]
-            ])
-
             ->add('redCard', 'text', [
                 'attr' => [
                     'placeholder' => 'player.redCard.placeholder'

@@ -10,5 +10,4 @@ AppBundle\Entity\Player:
         height: <numberBetween($min = 150, $max = 210)>
         weight: <numberBetween($min = 55, $max = 100)>
         match: <randomDigit()>
-        yellowcard: <randomDigit()>
         redcard: <randomDigit()>
