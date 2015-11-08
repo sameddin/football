@@ -62,12 +62,6 @@ class PlayerType extends AbstractType
                 ]
             ])
 
-            ->add('pass', 'text', [
-                'attr' => [
-                    'placeholder' => 'player.pass.placeholder'
-                ]
-            ])
-
             ->add('yellowCard', 'text', [
                 'attr' => [
                     'placeholder' => 'player.yellowCard.placeholder'

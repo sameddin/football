@@ -108,12 +108,6 @@ class Player
     private $goals;
 
     /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank()
-     */
-    protected $pass;
-
-    /**
      * @ORM\OneToMany(targetEntity="Pass", mappedBy="player")
      *
      * @var ArrayCollection
