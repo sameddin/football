@@ -112,6 +112,13 @@ class Player
      * @Assert\NotBlank()
      */
     protected $pass;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Pass", mappedBy="player")
+     *
+     * @var ArrayCollection
+     */
+    private $passes;
     /**
      * @ORM\Column(type="integer")
      * @Assert\NotBlank()
@@ -130,6 +137,7 @@ class Player
     public function __construct()
     {
         $this->goals = new ArrayCollection();
+        $this->passes = new ArrayCollection();
     }
 
     /**
@@ -403,5 +411,21 @@ class Player
     public function setGoals($goals)
     {
         $this->goals = $goals;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getPasses()
+    {
+        return $this->passes;
+    }
+
+    /**
+     * @param ArrayCollection $passes
+     */
+    public function setPasses($passes)
+    {
+        $this->passes = $passes;
     }
 }
