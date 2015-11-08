@@ -37,7 +37,7 @@
                 <td>{{ player.goals|length }}</td>
                 <td>{{ player.passes|length }}</td>
                 <td>{{ player.yellowCards|length }}</td>
-                <td>{{ player.redCard }}</td>
+                <td>{{ player.redCards|length }}</td>
                 <td>
                     <a class="btn btn-success btn-xs"
                        href="{{ path('player.edit', {'id': player.id  }) }}" role="button">{{ 'common.edit'|trans }}</a>&nbsp;<a

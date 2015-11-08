@@ -100,3 +100,11 @@ CREATE TABLE yellow_card
     PRIMARY KEY (id),
     FOREIGN KEY (player_id) REFERENCES player
 );
+CREATE TABLE red_card
+(
+    id        bigserial NOT NULL,
+    player_id bigint    NOT NULL,
+
+    PRIMARY KEY (id),
+    FOREIGN KEY (player_id) REFERENCES player
+);

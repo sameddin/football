@@ -125,6 +125,13 @@ class Player
      * @Assert\NotBlank()
      */
     protected $redCard;
+
+    /**
+     * @ORM\OneToMany(targetEntity="RedCard", mappedBy="player")
+     *
+     * @var ArrayCollection
+     */
+    private $redCards;
     /**
      * @ORM\ManyToOne(targetEntity="Season")
      */
@@ -135,6 +142,7 @@ class Player
         $this->goals = new ArrayCollection();
         $this->passes = new ArrayCollection();
         $this->yellowCards = new ArrayCollection();
+        $this->redCards = new ArrayCollection();
     }
 
     /**
@@ -404,5 +412,21 @@ class Player
     public function setYellowCards($yellowCards)
     {
         $this->yellowCards = $yellowCards;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getRedCards()
+    {
+        return $this->redCards;
+    }
+
+    /**
+     * @param ArrayCollection $redCards
+     */
+    public function setRedCards($redCards)
+    {
+        $this->redCards = $redCards;
     }
 }
