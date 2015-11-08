@@ -32,11 +32,11 @@ player.height: Рост
 player.weight: Вес
 player.team: Команда
 player.role: Амплуа
-player.match: Матчи
-player.goal: Голы
-player.pass: Ассисты
-player.yellowcard: Жёлтые карты
-player.redcard: Красные карты
+matches: Матчи
+goals: Голы
+passes: Ассисты
+yellowcards: Жёлтые карты
+redcards: Красные карты
 player.career: Карьера
 player.stat: Статистика
 Previous: Предыдущая
