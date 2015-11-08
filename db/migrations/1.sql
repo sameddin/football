@@ -93,3 +93,11 @@ CREATE TABLE pass
     PRIMARY KEY (id),
     FOREIGN KEY (player_id) REFERENCES player
 );
+CREATE TABLE yellow_card
+(
+    id        bigserial NOT NULL,
+    player_id bigint    NOT NULL,
+
+    PRIMARY KEY (id),
+    FOREIGN KEY (player_id) REFERENCES player
+);

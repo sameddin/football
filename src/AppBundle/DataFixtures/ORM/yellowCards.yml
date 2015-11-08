@@ -1,0 +1,3 @@
+AppBundle\Entity\YellowCard:
+    yellowCard{1..100}:
+        player: @player*

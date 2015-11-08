@@ -118,6 +118,13 @@ class Player
      * @Assert\NotBlank()
      */
     protected $yellowCard;
+
+    /**
+     * @ORM\OneToMany(targetEntity="YellowCard", mappedBy="player")
+     *
+     * @var ArrayCollection
+     */
+    private $yellowCards;
     /**
      * @ORM\Column(type="integer")
      * @Assert\NotBlank()
@@ -132,6 +139,7 @@ class Player
     {
         $this->goals = new ArrayCollection();
         $this->passes = new ArrayCollection();
+        $this->yellowCards = new ArrayCollection();
     }
 
     /**
@@ -421,5 +429,21 @@ class Player
     public function setPasses($passes)
     {
         $this->passes = $passes;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getYellowCards()
+    {
+        return $this->yellowCards;
+    }
+
+    /**
+     * @param ArrayCollection $yellowCards
+     */
+    public function setYellowCards($yellowCards)
+    {
+        $this->yellowCards = $yellowCards;
     }
 }
