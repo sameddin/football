@@ -69,7 +69,6 @@ CREATE TABLE player
     height      bigint,
     weight      bigint,
     match       bigint,
-    red_card    bigint,
 
     PRIMARY KEY (id),
     FOREIGN KEY (team_id) REFERENCES team,

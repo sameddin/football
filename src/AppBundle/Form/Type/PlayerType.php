@@ -62,12 +62,6 @@ class PlayerType extends AbstractType
                 ]
             ])
 
-            ->add('redCard', 'text', [
-                'attr' => [
-                    'placeholder' => 'player.redCard.placeholder'
-                ]
-            ])
-
             ->add('save', 'submit', ['label' => 'common.add']);
     }
 

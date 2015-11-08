@@ -120,11 +120,6 @@ class Player
      * @var ArrayCollection
      */
     private $yellowCards;
-    /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank()
-     */
-    protected $redCard;
 
     /**
      * @ORM\OneToMany(targetEntity="RedCard", mappedBy="player")
@@ -327,24 +322,6 @@ class Player
     public function setMatch($match)
     {
         $this->match = $match;
-        return $this;
-    }
-
-    /**
-     * @return integer
-     */
-    public function getRedCard()
-    {
-        return $this->redCard;
-    }
-
-    /**
-     * @param integer $redCard
-     * @return Player
-     */
-    public function setRedCard($redCard)
-    {
-        $this->redCard = $redCard;
         return $this;
     }
 
