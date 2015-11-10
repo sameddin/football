@@ -68,7 +68,6 @@ CREATE TABLE player
     birth     date      NOT NULL,
     height    bigint,
     weight    bigint,
-    match     bigint,
 
     PRIMARY KEY (id),
     FOREIGN KEY (team_id) REFERENCES team,

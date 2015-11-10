@@ -94,11 +94,6 @@ class Player
      * )
      */
     protected $weight;
-    /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank()
-     */
-    protected $match;
 
     /**
      * @ORM\OneToMany(targetEntity="Goal", mappedBy="player")
@@ -304,24 +299,6 @@ class Player
     public function setWeight($weight)
     {
         $this->weight = $weight;
-        return $this;
-    }
-
-    /**
-     * @return integer
-     */
-    public function getMatch()
-    {
-        return $this->match;
-    }
-
-    /**
-     * @param integer $match
-     * @return Player
-     */
-    public function setMatch($match)
-    {
-        $this->match = $match;
         return $this;
     }
 

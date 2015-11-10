@@ -56,12 +56,6 @@ class PlayerType extends AbstractType
                 ]
             ])
 
-            ->add('match', 'text', [
-                'attr' => [
-                    'placeholder' => 'player.match.placeholder'
-                ]
-            ])
-
             ->add('save', 'submit', ['label' => 'common.add']);
     }
 

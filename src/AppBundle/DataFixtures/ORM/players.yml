@@ -9,4 +9,3 @@ AppBundle\Entity\Player:
         number: <numberBetween($min = 1, $max = 99)>
         height: <numberBetween($min = 150, $max = 210)>
         weight: <numberBetween($min = 55, $max = 100)>
-        match: <randomDigit()>

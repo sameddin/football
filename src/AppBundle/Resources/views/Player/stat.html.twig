@@ -19,7 +19,6 @@
         <tr>
             <th>{{ 'date'|trans }}</th>
             <th>{{ 'team.tournament'|trans }}</th>
-            <th>{{ 'matches'|trans }}</th>
             <th>{{ 'goals'|trans }}</th>
             <th>{{ 'passes'|trans }}</th>
             <th>{{ 'goal.plus.pass'|trans }}</th>
@@ -30,7 +29,6 @@
         <tr>
             <td>{{ player.team.match.date|date("d.m.Y | H:i") }}</td>
             <td>{{ player.team.tournament.name }}</td>
-            <td>{{ player.match }}</td>
             <td>{{ player.goals|length }}</td>
             <td>{{ player.passes|length }}</td>
             <td>{{ player.goals|length + player.passes|length }}</td>

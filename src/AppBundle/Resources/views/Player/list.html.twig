@@ -14,7 +14,6 @@
             <th>{{ 'season'|trans }}</th>
             <th>{{ 'player.team'|trans }}</th>
             <th>{{ 'player.role'|trans }}</th>
-            <th>{{ 'matches'|trans }}</th>
             <td></td>
         </tr>
         </thead>
@@ -29,7 +28,6 @@
                 <td>{{ player.season.startYear }}/{{ player.season.endYear }}</td>
                 <td><a href="{{ path('team.news', {id: player.team.id }) }}">{{ player.team.name }}</a></td>
                 <td>{{ player.role.name }}</td>
-                <td>{{ player.match }}</td>
                 <td>
                     <a class="btn btn-success btn-xs"
                        href="{{ path('player.edit', {'id': player.id  }) }}" role="button">{{ 'common.edit'|trans }}</a>&nbsp;<a

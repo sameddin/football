@@ -18,7 +18,6 @@
         <tr>
             <th>{{ 'player.number'|trans }}</th>
             <th>{{ 'player.name'|trans }}</th>
-            <th>{{ 'matches'|trans }}</th>
             <th>{{ 'goals'|trans }}</th>
             <th>{{ 'passes'|trans }}</th>
             <th>{{ 'goal.plus.pass'|trans }}</th>
@@ -30,7 +29,6 @@
             <tr>
                 <td>{{ player.number }}</td>
                 <td><a href="{{ path('player.view', {id: player.id}) }}">{{ player.name }}</a></td>
-                <td>{{ player.match }}</td>
                 <td>{{ player.goals|length }}</td>
                 <td>{{ player.passes|length }}</td>
                 <td>{{ player.goals|length + player.passes|length }}</td>
