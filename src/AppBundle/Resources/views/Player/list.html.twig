@@ -15,10 +15,6 @@
             <th>{{ 'player.team'|trans }}</th>
             <th>{{ 'player.role'|trans }}</th>
             <th>{{ 'matches'|trans }}</th>
-            <th>{{ 'goals'|trans }}</th>
-            <th>{{ 'passes'|trans }}</th>
-            <th>{{ 'yellowcards'|trans }}</th>
-            <th>{{ 'redcards'|trans }}</th>
             <td></td>
         </tr>
         </thead>
@@ -34,10 +30,6 @@
                 <td><a href="{{ path('team.news', {id: player.team.id }) }}">{{ player.team.name }}</a></td>
                 <td>{{ player.role.name }}</td>
                 <td>{{ player.match }}</td>
-                <td>{{ player.goals|length }}</td>
-                <td>{{ player.passes|length }}</td>
-                <td>{{ player.yellowCards|length }}</td>
-                <td>{{ player.redCards|length }}</td>
                 <td>
                     <a class="btn btn-success btn-xs"
                        href="{{ path('player.edit', {'id': player.id  }) }}" role="button">{{ 'common.edit'|trans }}</a>&nbsp;<a
