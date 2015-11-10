@@ -58,17 +58,17 @@ CREATE TABLE season
 );
 CREATE TABLE player
 (
-    id          bigserial NOT NULL,
-    team_id     bigint,
-    role_id     bigint,
-    season_id   bigint,
-    name        varchar   NOT NULL,
-    number      bigint,
-    nation      varchar   NOT NULL,
-    birth       date      NOT NULL,
-    height      bigint,
-    weight      bigint,
-    match       bigint,
+    id        bigserial NOT NULL,
+    team_id   bigint,
+    role_id   bigint,
+    season_id bigint,
+    name      varchar   NOT NULL,
+    number    bigint,
+    nation    varchar   NOT NULL,
+    birth     date      NOT NULL,
+    height    bigint,
+    weight    bigint,
+    match     bigint,
 
     PRIMARY KEY (id),
     FOREIGN KEY (team_id) REFERENCES team,
@@ -79,9 +79,11 @@ CREATE TABLE goal
 (
     id        bigserial NOT NULL,
     player_id bigint    NOT NULL,
+    match_id  bigint    NOT NULL,
 
     PRIMARY KEY (id),
-    FOREIGN KEY (player_id) REFERENCES player
+    FOREIGN KEY (player_id) REFERENCES player,
+    FOREIGN KEY (match_id) REFERENCES match
 );
 CREATE TABLE pass
 (

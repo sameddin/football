@@ -6,11 +6,13 @@
         <thead>
             <tr>
                 <th>{{ 'date'|trans }}</th>
+                <th>{{ 'goals'|trans }}</th>
             </tr>
         </thead>
         {% for match in matches %}
             <tr>
                 <td>{{ match.date|date("d.m.Y | H:i") }}</td>
+                <td>{{ match.goals|length }}</td>
             </tr>
         {% endfor %}
     </table>

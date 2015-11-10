@@ -22,9 +22,17 @@ class Match
      */
     protected $date;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Goal", mappedBy="match")
+     *
+     * @var ArrayCollection
+     */
+    private $goals;
+
     public function __construct()
     {
         $this->match = new ArrayCollection();
+        $this->goals = new ArrayCollection();
     }
 
     /**
@@ -61,5 +69,21 @@ class Match
     {
         $this->date = $date;
         return $this;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getGoals()
+    {
+        return $this->goals;
+    }
+
+    /**
+     * @param ArrayCollection $goals
+     */
+    public function setGoals($goals)
+    {
+        $this->goals = $goals;
     }
 }

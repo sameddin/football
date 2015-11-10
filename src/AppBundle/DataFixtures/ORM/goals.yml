@@ -1,3 +1,4 @@
 AppBundle\Entity\Goal:
     goal{1..100}:
         player: @player*
+        match: @match*

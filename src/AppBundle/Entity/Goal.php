@@ -23,6 +23,13 @@ class Goal
     private $player;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Match", inversedBy="goals")
+     *
+     * @var Match
+     */
+    private $match;
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -55,6 +62,24 @@ class Goal
     public function setPlayer(Player $player)
     {
         $this->player = $player;
+        return $this;
+    }
+
+    /**
+     * @return Match
+     */
+    public function getMatch()
+    {
+        return $this->match;
+    }
+
+    /**
+     * @param Match $match
+     * @return self
+     */
+    public function setMatch(Match $match)
+    {
+        $this->match = $match;
         return $this;
     }
 }
