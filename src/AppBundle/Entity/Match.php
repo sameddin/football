@@ -31,7 +31,6 @@ class Match
 
     public function __construct()
     {
-        $this->match = new ArrayCollection();
         $this->goals = new ArrayCollection();
     }
 

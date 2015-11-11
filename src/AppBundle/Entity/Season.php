@@ -2,7 +2,6 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
@@ -25,11 +24,6 @@ class Season
      * @ORM\Column(type="bigint")
      */
     protected $endYear;
-
-    public function __construct()
-    {
-        $this->season = new ArrayCollection();
-    }
 
     /**
      * @return mixed

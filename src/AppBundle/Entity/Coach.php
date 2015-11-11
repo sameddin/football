@@ -2,7 +2,6 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
@@ -20,12 +19,6 @@ class Coach
      * @ORM\Column(type="string")
      */
     protected $name;
-
-    public function __construct()
-    {
-        $this->coach = new ArrayCollection();
-    }
-
     /**
      * @return mixed
      */
