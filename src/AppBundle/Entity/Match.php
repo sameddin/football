@@ -36,10 +36,18 @@ class Match
      */
     private $passes;
 
+    /**
+     * @ORM\OneToMany(targetEntity="YellowCard", mappedBy="match")
+     *
+     * @var ArrayCollection
+     */
+    private $yellowCards;
+
     public function __construct()
     {
         $this->goals = new ArrayCollection();
         $this->passes = new ArrayCollection();
+        $this->yellowCards = new ArrayCollection();
     }
 
     /**
@@ -108,5 +116,21 @@ class Match
     public function setPasses($passes)
     {
         $this->passes = $passes;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getYellowCards()
+    {
+        return $this->yellowCards;
+    }
+
+    /**
+     * @param ArrayCollection $yellowCards
+     */
+    public function setYellowCards($yellowCards)
+    {
+        $this->yellowCards = $yellowCards;
     }
 }

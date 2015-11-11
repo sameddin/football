@@ -8,6 +8,7 @@
                 <th>{{ 'date'|trans }}</th>
                 <th>{{ 'goals'|trans }}</th>
                 <th>{{ 'passes'|trans }}</th>
+                <th>{{ 'yellowcards'|trans }}</th>
             </tr>
         </thead>
         {% for match in matches %}
@@ -15,6 +16,7 @@
                 <td>{{ match.date|date("d.m.Y | H:i") }}</td>
                 <td>{{ match.goals|length }}</td>
                 <td>{{ match.passes|length }}</td>
+                <td>{{ match.yellowCards|length }}</td>
             </tr>
         {% endfor %}
     </table>
