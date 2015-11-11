@@ -1,3 +1,4 @@
 AppBundle\Entity\Pass:
     pass{1..100}:
         player: @player*
+        match: @match*

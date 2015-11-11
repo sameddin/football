@@ -88,9 +88,11 @@ CREATE TABLE pass
 (
     id        bigserial NOT NULL,
     player_id bigint    NOT NULL,
+    match_id  bigint    NOT NULL,
 
     PRIMARY KEY (id),
-    FOREIGN KEY (player_id) REFERENCES player
+    FOREIGN KEY (player_id) REFERENCES player,
+    FOREIGN KEY (match_id) REFERENCES match
 );
 CREATE TABLE yellow_card
 (

@@ -29,9 +29,17 @@ class Match
      */
     private $goals;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Pass", mappedBy="match")
+     *
+     * @var ArrayCollection
+     */
+    private $passes;
+
     public function __construct()
     {
         $this->goals = new ArrayCollection();
+        $this->passes = new ArrayCollection();
     }
 
     /**
@@ -84,5 +92,21 @@ class Match
     public function setGoals($goals)
     {
         $this->goals = $goals;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getPasses()
+    {
+        return $this->passes;
+    }
+
+    /**
+     * @param ArrayCollection $passes
+     */
+    public function setPasses($passes)
+    {
+        $this->passes = $passes;
     }
 }
