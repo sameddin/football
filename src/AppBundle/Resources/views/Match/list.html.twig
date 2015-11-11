@@ -9,6 +9,7 @@
                 <th>{{ 'goals'|trans }}</th>
                 <th>{{ 'passes'|trans }}</th>
                 <th>{{ 'yellowcards'|trans }}</th>
+                <th>{{ 'redcards'|trans }}</th>
             </tr>
         </thead>
         {% for match in matches %}
@@ -17,6 +18,7 @@
                 <td>{{ match.goals|length }}</td>
                 <td>{{ match.passes|length }}</td>
                 <td>{{ match.yellowCards|length }}</td>
+                <td>{{ match.redCards|length }}</td>
             </tr>
         {% endfor %}
     </table>

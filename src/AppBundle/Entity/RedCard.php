@@ -23,6 +23,13 @@ class RedCard
     private $player;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Match", inversedBy="redCards")
+     *
+     * @var Match
+     */
+    private $match;
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -56,5 +63,22 @@ class RedCard
     {
         $this->player = $player;
         return $this;
+    }
+
+    /**
+     * @return Match
+     */
+    public function getMatch()
+    {
+        return $this->match;
+    }
+
+    /**
+     * @param Match $match
+     * @return self
+     */
+    public function setMatch(Match $match)
+    {
+        $this->match = $match;
     }
 }
