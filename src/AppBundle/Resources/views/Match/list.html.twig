@@ -10,6 +10,7 @@
                 <th>{{ 'passes'|trans }}</th>
                 <th>{{ 'yellowcards'|trans }}</th>
                 <th>{{ 'redcards'|trans }}</th>
+                <td></td>
             </tr>
         </thead>
         {% for match in matches %}
@@ -19,6 +20,10 @@
                 <td>{{ match.passes|length }}</td>
                 <td>{{ match.yellowCards|length }}</td>
                 <td>{{ match.redCards|length }}</td>
+                <td>
+                    <a class="btn btn-danger btn-xs" href="{{ path('match.delete',{'id': match.id}) }}"
+                            role="button">{{ 'common.delete'|trans }}</a>
+                </td>
             </tr>
         {% endfor %}
     </table>

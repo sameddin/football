@@ -27,4 +27,18 @@ class MatchController extends Controller
             'matches' => $matches
         ];
     }
+
+    /**
+     * @Route("/delete/{id}", name="match.delete")
+     */
+    public function deleteAction(Match $date)
+    {
+        $db = $this->getDoctrine()->getManager();
+
+        $db->remove($date);
+        $db->flush();
+
+        return $this->redirectToRoute('match.list');
+
+    }
 }

@@ -39,7 +39,7 @@ CREATE TABLE team
     FOREIGN KEY (coach_id) REFERENCES coach,
     FOREIGN KEY (tournament_id) REFERENCES tournament,
     FOREIGN KEY (country_id) REFERENCES country,
-    FOREIGN KEY (match_id) REFERENCES match
+    FOREIGN KEY (match_id) REFERENCES match ON DELETE SET NULL
 );
 CREATE TABLE role
 (
@@ -82,7 +82,7 @@ CREATE TABLE goal
 
     PRIMARY KEY (id),
     FOREIGN KEY (player_id) REFERENCES player,
-    FOREIGN KEY (match_id) REFERENCES match
+    FOREIGN KEY (match_id) REFERENCES match ON DELETE CASCADE
 );
 CREATE TABLE pass
 (
@@ -92,7 +92,7 @@ CREATE TABLE pass
 
     PRIMARY KEY (id),
     FOREIGN KEY (player_id) REFERENCES player,
-    FOREIGN KEY (match_id) REFERENCES match
+    FOREIGN KEY (match_id) REFERENCES match ON DELETE CASCADE
 );
 CREATE TABLE yellow_card
 (
@@ -102,7 +102,7 @@ CREATE TABLE yellow_card
 
     PRIMARY KEY (id),
     FOREIGN KEY (player_id) REFERENCES player,
-    FOREIGN KEY (match_id) REFERENCES match
+    FOREIGN KEY (match_id) REFERENCES match ON DELETE CASCADE
 );
 CREATE TABLE red_card
 (
@@ -112,5 +112,5 @@ CREATE TABLE red_card
 
     PRIMARY KEY (id),
     FOREIGN KEY (player_id) REFERENCES player,
-    FOREIGN KEY (match_id) REFERENCES match
+    FOREIGN KEY (match_id) REFERENCES match ON DELETE CASCADE
 );
