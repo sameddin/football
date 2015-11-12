@@ -23,7 +23,10 @@ class PlayerType extends AbstractType
 
             ->add('birth', 'date', [
                 'widget' => 'single_text',
-                'format' => 'yyyy-MM-dd',
+                'format' => 'dd.MM.yyyy',
+                'attr' => [
+                    'class' => 'date',
+                ]
             ])
 
             ->add('role', 'entity', [

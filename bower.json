@@ -1,0 +1,15 @@
+{
+  "name": "football",
+  "homepage": "https://github.com/sameddin/football",
+  "authors": [
+    "Sameddin Pasizade <sameddin.pasizade@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery.inputmask": "~3.2.3"
+  }
+}

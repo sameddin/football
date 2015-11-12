@@ -58,6 +58,17 @@
 {% block javascripts %}{% endblock %}
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+{% javascripts '@js' %}
+    <script src="{{ asset_url }}"></script>
+{% endjavascripts %}
 
+<script>
+    $(document).ready(function(){
+        $('.date').inputmask("mask", {
+            "mask": "99.99.9999",
+            "placeholder": "дд.мм.гггг"
+        });
+    });
+</script>
 </body>
 </html>
