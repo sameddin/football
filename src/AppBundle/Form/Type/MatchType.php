@@ -10,9 +10,12 @@ class MatchType extends AbstractType
     {
         $builder
             ->add('date', 'datetime', [
-                'date_widget' => "single_text",
-                'time_widget' => "single_text"
-                ])
+                'widget' => 'single_text',
+                'format' => 'dd.MM.yyyy HH:mm',
+                'attr' => [
+                    'class' => 'datetime',
+                ]
+            ])
 
             ->add('save', 'submit', ['label' => 'common.add']);
     }
