@@ -4,14 +4,14 @@
 
     <table class="table table-condensed">
         <thead>
-            <tr>
-                <th>{{ 'date'|trans }}</th>
-                <th>{{ 'goals'|trans }}</th>
-                <th>{{ 'passes'|trans }}</th>
-                <th>{{ 'yellowcards'|trans }}</th>
-                <th>{{ 'redcards'|trans }}</th>
-                <td></td>
-            </tr>
+        <tr>
+            <th>{{ 'date'|trans }}</th>
+            <th>{{ 'goals'|trans }}</th>
+            <th>{{ 'passes'|trans }}</th>
+            <th>{{ 'yellowcards'|trans }}</th>
+            <th>{{ 'redcards'|trans }}</th>
+            <td></td>
+        </tr>
         </thead>
         {% for match in matches %}
             <tr>
@@ -21,10 +21,10 @@
                 <td>{{ match.yellowCards|length }}</td>
                 <td>{{ match.redCards|length }}</td>
                 <td>
-                    <a class="btn btn-success btn-xs"
-                       href="{{ path('match.edit', {'id': match.id  }) }}" role="button">{{ 'common.edit'|trans }}</a>
+                    <a class="btn btn-success btn-xs" href="{{ path('match.edit', {'id': match.id  }) }}"
+                       role="button">{{ 'common.edit'|trans }}</a>
                     <a class="btn btn-danger btn-xs" href="{{ path('match.delete',{'id': match.id}) }}"
-                            role="button">{{ 'common.delete'|trans }}</a>
+                       role="button">{{ 'common.delete'|trans }}</a>
                 </td>
             </tr>
         {% endfor %}
