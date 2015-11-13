@@ -7,7 +7,9 @@ use AppBundle\Form\Type\MatchType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @Route("/matches")
@@ -51,6 +53,33 @@ class MatchController extends Controller
     public function addAction(Request $request)
     {
         $name = new Match();
+        $form = $this->createForm(new MatchType(), $name);
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($name);
+            $em->flush();
+
+            return $this->redirectToRoute('match.list');
+        }
+
+        return [
+            'form' => $form->createView(),
+        ];
+    }
+
+    /**
+     * @Route("/edit/{id}", name="match.edit")
+     * @Template
+     * @param Request $request
+     * @param Match $name
+     * @return RedirectResponse|Response
+     */
+    public function editAction(Request $request, Match $name) {
+
         $form = $this->createForm(new MatchType(), $name);
 
         $form->handleRequest($request);
