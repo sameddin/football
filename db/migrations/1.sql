@@ -81,7 +81,7 @@ CREATE TABLE goal
     match_id  bigint    NOT NULL,
 
     PRIMARY KEY (id),
-    FOREIGN KEY (player_id) REFERENCES player,
+    FOREIGN KEY (player_id) REFERENCES player ON DELETE CASCADE,
     FOREIGN KEY (match_id) REFERENCES match ON DELETE CASCADE
 );
 CREATE TABLE pass
@@ -91,7 +91,7 @@ CREATE TABLE pass
     match_id  bigint    NOT NULL,
 
     PRIMARY KEY (id),
-    FOREIGN KEY (player_id) REFERENCES player,
+    FOREIGN KEY (player_id) REFERENCES player ON DELETE CASCADE,
     FOREIGN KEY (match_id) REFERENCES match ON DELETE CASCADE
 );
 CREATE TABLE yellow_card
@@ -101,7 +101,7 @@ CREATE TABLE yellow_card
     match_id  bigint    NOT NULL,
 
     PRIMARY KEY (id),
-    FOREIGN KEY (player_id) REFERENCES player,
+    FOREIGN KEY (player_id) REFERENCES player ON DELETE CASCADE,
     FOREIGN KEY (match_id) REFERENCES match ON DELETE CASCADE
 );
 CREATE TABLE red_card
@@ -111,6 +111,6 @@ CREATE TABLE red_card
     match_id  bigint    NOT NULL,
 
     PRIMARY KEY (id),
-    FOREIGN KEY (player_id) REFERENCES player,
+    FOREIGN KEY (player_id) REFERENCES player ON DELETE CASCADE,
     FOREIGN KEY (match_id) REFERENCES match ON DELETE CASCADE
 );
