@@ -70,7 +70,7 @@ CREATE TABLE player
     weight    bigint,
 
     PRIMARY KEY (id),
-    FOREIGN KEY (team_id) REFERENCES team,
+    FOREIGN KEY (team_id) REFERENCES team ON DELETE SET NULL,
     FOREIGN KEY (role_id) REFERENCES role,
     FOREIGN KEY (season_id) REFERENCES season
 );

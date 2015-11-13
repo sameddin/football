@@ -5,7 +5,7 @@
     <h3>{{ player.name }}</h3>
     <h5><b>{{ 'player.birth'|trans }}</b> : {{ player.birth|date("d.m.Y") }} | {{ 'player.age'|transchoice(player.age(today)) }}</h5>
     <h5><b>{{ 'player.nation'|trans }}</b> : {{ player.nation }}</h5>
-    <h5><b>{{ 'player.team'|trans }}</b> | <b>{{ 'player.role'|trans }}</b> : <a href="{{ path('team.news', {id: player.team.id }) }}">{{ player.team.name }}</a> | {{ player.role.name }}</h5>
+    <h5><b>{{ 'player.team'|trans }}</b> | <b>{{ 'player.role'|trans }}</b> : {% if player.team is not null %} <a href="{{ path('team.news', {id: player.team.id }) }}">{{ player.team.name }}</a> {%  else  %} <b>{{ 'No team'|trans }}</b> {% endif %} | {{ player.role.name }}</h5>
     <h5><b>{{ 'player.height'|trans }}</b> | <b>{{ 'player.weight'|trans }}</b> : {{ player.height }} | {{ player.weight }}</h5>
 
     <ul class="nav nav-tabs">
@@ -29,8 +29,20 @@
         </thead>
         <tr>
             <td>{{ player.season.startYear }}/{{ player.season.endYear }}</td>
-            <td><a href="{{ path('team.news', {id: player.team.id }) }}">{{ player.team.name }}</a></td>
-            <td>{{ player.team.tournament.name }}</td>
+            <td>
+                {% if player.team is not null %}
+                    <a href="{{ path('team.news', {id: player.team.id }) }}">{{ player.team.name }}</a>
+                {%  else  %}
+                    <b>{{ 'No team'|trans }}</b>
+                {% endif %}
+            </td>
+            <td>
+                {% if player.team is not null %}
+                    {{ player.team.tournament.name }}
+                {%  else  %}
+                    <b>{{ 'No tournament'|trans }}</b>
+                {% endif %}
+            </td>
             <td>{{ player.goals|length }}</td>
             <td>{{ player.passes|length }}</td>
             <td>{{ player.goals|length + player.passes|length }}</td>

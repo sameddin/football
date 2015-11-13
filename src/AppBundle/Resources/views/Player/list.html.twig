@@ -26,7 +26,13 @@
                 <td>{{ player.weight }}</td>
                 <td>{{ player.nation }}</td>
                 <td>{{ player.season.startYear }}/{{ player.season.endYear }}</td>
-                <td><a href="{{ path('team.news', {id: player.team.id }) }}">{{ player.team.name }}</a></td>
+                <td>
+                    {% if player.team is not null %}
+                    <a href="{{ path('team.news', {id: player.team.id }) }}">{{ player.team.name }}</a>
+                    {%  else  %}
+                    <b>{{ 'No team'|trans }}</b>
+                    {% endif %}
+                </td>
                 <td>{{ player.role.name }}</td>
                 <td>
                     <a class="btn btn-success btn-xs" href="{{ path('player.edit', {'id': player.id  }) }}"
