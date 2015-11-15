@@ -114,3 +114,9 @@ CREATE TABLE red_card
     FOREIGN KEY (player_id) REFERENCES player ON DELETE CASCADE,
     FOREIGN KEY (match_id) REFERENCES match ON DELETE CASCADE
 );
+CREATE TABLE membership
+(
+    id bigserial NOT NULL,
+
+    PRIMARY KEY (id)
+)
