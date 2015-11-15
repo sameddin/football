@@ -122,10 +122,18 @@ class Player
      * @var ArrayCollection
      */
     private $redCards;
+
     /**
      * @ORM\ManyToOne(targetEntity="Season")
      */
     protected $season;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Membership", mappedBy="player")
+     *
+     * @var ArrayCollection
+     */
+    private $memberships;
 
     public function __construct()
     {
@@ -133,6 +141,7 @@ class Player
         $this->passes = new ArrayCollection();
         $this->yellowCards = new ArrayCollection();
         $this->redCards = new ArrayCollection();
+        $this->memberships = new ArrayCollection();
     }
 
     /**
@@ -382,5 +391,21 @@ class Player
     public function setRedCards($redCards)
     {
         $this->redCards = $redCards;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getMemberships()
+    {
+        return $this->memberships;
+    }
+
+    /**
+     * @param ArrayCollection $memberships
+     */
+    public function setMemberships($memberships)
+    {
+        $this->memberships = $memberships;
     }
 }

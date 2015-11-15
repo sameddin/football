@@ -16,6 +16,13 @@ class Membership
     protected $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Player", inversedBy="memberships")
+     *
+     * @var Player
+     */
+    private $player;
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -29,5 +36,22 @@ class Membership
     public function setId($id)
     {
         $this->id = $id;
+    }
+
+    /**
+     * @return Player
+     */
+    public function getPlayer()
+    {
+        return $this->player;
+    }
+
+    /**
+     * @param Player $player
+     * @return self
+     */
+    public function setPlayer(Player $player)
+    {
+        $this->player = $player;
     }
 }

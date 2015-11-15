@@ -116,7 +116,9 @@ CREATE TABLE red_card
 );
 CREATE TABLE membership
 (
-    id bigserial NOT NULL,
+    id        bigserial NOT NULL,
+    player_id bigint    NOT NULL,
 
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    FOREIGN KEY (player_id) REFERENCES player
 )
