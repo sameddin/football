@@ -22,5 +22,16 @@ class TournamentController extends Controller
             'tournament' => $tournament,
         ];
     }
+
+    /**
+     * @Route("/{id}/table", name="tournament.table")
+     * @Template
+     */
+    public function tableAction(Tournament $tournament) {
+
+        return [
+            'tournament' => $tournament,
+        ];
+    }
 }
 
