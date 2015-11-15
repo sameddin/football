@@ -23,6 +23,13 @@ class Membership
     private $player;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Match", inversedBy="memberships")
+     *
+     * @var Match
+     */
+    private $match;
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -53,5 +60,22 @@ class Membership
     public function setPlayer(Player $player)
     {
         $this->player = $player;
+    }
+
+    /**
+     * @return Match
+     */
+    public function getMatch()
+    {
+        return $this->match;
+    }
+
+    /**
+     * @param Match $match
+     * @return self
+     */
+    public function setMatch(Match $match)
+    {
+        $this->match = $match;
     }
 }
