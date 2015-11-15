@@ -3,6 +3,7 @@
 {% block body %}
 
     <h3>{{ coach.name }}</h3>
+    <h5><b>{{ 'position'|trans }}</b> : {{ 'Coach'|trans }}</h5>
 
     <ul class="nav nav-tabs">
         <li role="presentation" class="active"><a href="{{ path('coach.news', {id: coach.id }) }}">{{ 'newsline'|trans }}</a></li>
