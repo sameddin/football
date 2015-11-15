@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h3>{{ tournament.name }}</h3>
+
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="{{ path('tournament.news', {id: tournament.id }) }}">{{ 'newsline'|trans }}</a></li>
+    </ul>
+
+{% endblock %}

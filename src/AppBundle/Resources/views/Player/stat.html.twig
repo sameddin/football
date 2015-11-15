@@ -36,7 +36,7 @@
             </td>
             <td>
                 {% if player.team is not null %}
-                    {{ player.team.tournament.name }}
+                    <a href="{{ path('tournament.news', {id: player.team.tournament.id}) }}">{{ player.team.tournament.name }}</a>
                 {%  else  %}
                     <b>{{ 'No tournament'|trans }}</b>
                 {% endif %}

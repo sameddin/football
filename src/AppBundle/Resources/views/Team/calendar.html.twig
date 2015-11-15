@@ -24,7 +24,7 @@
         </thead>
             <tr>
                 <td>{{ team.match.date|date("d.m.Y | H:i") }}</td>
-                <td>{{ team.tournament.name }}</td>
+                <td><a href="{{ path('tournament.news', {id: team.tournament.id}) }}">{{ team.tournament.name }}</a></td>
                 <td></td>
                 <td></td>
             </tr>
