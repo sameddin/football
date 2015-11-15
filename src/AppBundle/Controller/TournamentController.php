@@ -33,5 +33,16 @@ class TournamentController extends Controller
             'tournament' => $tournament,
         ];
     }
+
+    /**
+     * @Route("/{id}/calendar", name="tournament.calendar")
+     * @Template
+     */
+    public function calendarAction(Tournament $tournament) {
+
+        return [
+            'tournament' => $tournament,
+        ];
+    }
 }
 
