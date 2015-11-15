@@ -23,18 +23,18 @@ class Membership
     private $player;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Match", inversedBy="memberships")
-     *
-     * @var Match
-     */
-    private $match;
-
-    /**
      * @ORM\ManyToOne(targetEntity="Season", inversedBy="memberships")
      *
      * @var Season
      */
     private $season;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Team", inversedBy="memberships")
+     *
+     * @var Team
+     */
+    private $team;
 
     /**
      * @return mixed
@@ -70,23 +70,6 @@ class Membership
     }
 
     /**
-     * @return Match
-     */
-    public function getMatch()
-    {
-        return $this->match;
-    }
-
-    /**
-     * @param Match $match
-     * @return self
-     */
-    public function setMatch(Match $match)
-    {
-        $this->match = $match;
-    }
-
-    /**
      * @return Season
      */
     public function getSeason()
@@ -101,5 +84,22 @@ class Membership
     public function setSeason(Season $season)
     {
         $this->season = $season;
+    }
+
+    /**
+     * @return Team
+     */
+    public function getTeam()
+    {
+        return $this->team;
+    }
+
+    /**
+     * @param Team $team
+     * @return self
+     */
+    public function setTeam(Team $team)
+    {
+        $this->team = $team;
     }
 }

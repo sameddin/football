@@ -50,20 +50,12 @@ class Match
      */
     private $redCards;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Membership", mappedBy="match")
-     *
-     * @var ArrayCollection
-     */
-    private $memberships;
-
     public function __construct()
     {
         $this->goals = new ArrayCollection();
         $this->passes = new ArrayCollection();
         $this->yellowCards = new ArrayCollection();
         $this->redCards = new ArrayCollection();
-        $this->memberships = new ArrayCollection();
     }
 
     /**
@@ -164,21 +156,5 @@ class Match
     public function setRedCards($redCards)
     {
         $this->redCards = $redCards;
-    }
-
-    /**
-     * @return ArrayCollection
-     */
-    public function getMemberships()
-    {
-        return $this->memberships;
-    }
-
-    /**
-     * @param ArrayCollection $memberships
-     */
-    public function setMemberships($memberships)
-    {
-        $this->memberships = $memberships;
     }
 }

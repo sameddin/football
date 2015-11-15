@@ -51,9 +51,17 @@ class Team
      */
     private $players;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Membership", mappedBy="team")
+     *
+     * @var ArrayCollection
+     */
+    private $memberships;
+
     public function __construct()
     {
         $this->players = new ArrayCollection();
+        $this->memberships = new ArrayCollection();
     }
 
     /**
@@ -178,5 +186,21 @@ class Team
     {
         $this->match = $match;
         return $this;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getMemberships()
+    {
+        return $this->memberships;
+    }
+
+    /**
+     * @param ArrayCollection $memberships
+     */
+    public function setMemberships($memberships)
+    {
+        $this->memberships = $memberships;
     }
 }

@@ -118,11 +118,11 @@ CREATE TABLE membership
 (
     id        bigserial NOT NULL,
     player_id bigint    NOT NULL,
-    match_id  bigint    NOT NULL,
+    team_id   bigint    NOT NULL,
     season_id bigint    NOT NULL,
 
     PRIMARY KEY (id),
     FOREIGN KEY (player_id) REFERENCES player,
-    FOREIGN KEY (match_id) REFERENCES match,
+    FOREIGN KEY (team_id) REFERENCES team,
     FOREIGN KEY (season_id) REFERENCES season
 )
