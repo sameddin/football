@@ -44,5 +44,16 @@ class TournamentController extends Controller
             'tournament' => $tournament,
         ];
     }
+
+    /**
+     * @Route("/{id}/stat", name="tournament.stat")
+     * @Template
+     */
+    public function statAction(Tournament $tournament) {
+
+        return [
+            'tournament' => $tournament,
+        ];
+    }
 }
 
