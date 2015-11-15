@@ -1,6 +1,7 @@
 <?php
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -24,6 +25,18 @@ class Season
      * @ORM\Column(type="bigint")
      */
     protected $endYear;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Membership", mappedBy="season")
+     *
+     * @var ArrayCollection
+     */
+    private $memberships;
+
+    public function __construct()
+    {
+        $this->memberships = new ArrayCollection();
+    }
 
     /**
      * @return mixed
@@ -77,5 +90,21 @@ class Season
     {
         $this->endYear = $endYear;
         return $this;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getMemberships()
+    {
+        return $this->memberships;
+    }
+
+    /**
+     * @param ArrayCollection $memberships
+     */
+    public function setMemberships($memberships)
+    {
+        $this->memberships = $memberships;
     }
 }

@@ -30,6 +30,13 @@ class Membership
     private $match;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Season", inversedBy="memberships")
+     *
+     * @var Season
+     */
+    private $season;
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -77,5 +84,22 @@ class Membership
     public function setMatch(Match $match)
     {
         $this->match = $match;
+    }
+
+    /**
+     * @return Season
+     */
+    public function getSeason()
+    {
+        return $this->season;
+    }
+
+    /**
+     * @param Season $season
+     * @return self
+     */
+    public function setSeason(Season $season)
+    {
+        $this->season = $season;
     }
 }
