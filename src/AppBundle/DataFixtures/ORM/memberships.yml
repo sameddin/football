@@ -1,5 +1,5 @@
 AppBundle\Entity\Membership:
-    membership{1..100}:
+    membership{1..500}:
         player: @player*
         season: @season*
         team: @team*
