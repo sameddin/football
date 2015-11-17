@@ -51,4 +51,31 @@
         </tr>
     </table>
 
+    <table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>{{ 'season'|trans }}</th>
+                <th>{{ 'player.team'|trans }}</th>
+                <th>{{ 'team.tournament'|trans }}</th>
+                <th>{{ 'goals'|trans }}</th>
+                <th>{{ 'passes'|trans }}</th>
+                <th>{{ 'goal.plus.pass'|trans }}</th>
+                <th>{{ 'yellowcards'|trans }}</th>
+                <th>{{ 'redcards'|trans }}</th>
+            </tr>
+        </thead>
+
+        {% for membership in player.memberships %}
+            <tr>
+                <td>{{ membership.season.startYear }}/{{ membership.season.endYear }}</td>
+                <td><a href="{{ path('team.news', {id: membership.team.id }) }}">{{ membership.team.name }}</a></td>
+                <td><a href="{{ path('tournament.news', {id: membership.team.tournament.id}) }}">{{ membership.team.tournament.name }}</a></td>
+                <td>{{ membership.player.goals|length }}</td>
+                <td>{{ membership.player.passes|length }}</td>
+                <td>{{ membership.player.goals|length + membership.player.passes|length }}</td>
+                <td>{{ membership.player.yellowCards|length }}</td>
+                <td>{{ membership.player.redCards|length }}</td>
+            </tr>
+        {% endfor %}
+    </table>
 {% endblock %}
