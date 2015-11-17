@@ -123,6 +123,6 @@ CREATE TABLE membership
 
     PRIMARY KEY (id),
     FOREIGN KEY (player_id) REFERENCES player,
-    FOREIGN KEY (team_id) REFERENCES team,
+    FOREIGN KEY (team_id) REFERENCES team ON DELETE CASCADE,
     FOREIGN KEY (season_id) REFERENCES season
 )
