@@ -122,7 +122,7 @@ CREATE TABLE membership
     season_id bigint    NOT NULL,
 
     PRIMARY KEY (id),
-    FOREIGN KEY (player_id) REFERENCES player,
+    FOREIGN KEY (player_id) REFERENCES player ON DELETE CASCADE,
     FOREIGN KEY (team_id) REFERENCES team ON DELETE CASCADE,
     FOREIGN KEY (season_id) REFERENCES season
 )
