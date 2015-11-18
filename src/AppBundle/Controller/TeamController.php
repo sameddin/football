@@ -91,6 +91,17 @@ class TeamController extends Controller
     }
 
     /**
+     * @Route("/{id}/video", name="team.video", requirements={"id": "\d+"})
+     * @Template
+     */
+    public function videoAction(Team $team) {
+
+        return [
+            'team' => $team,
+        ];
+    }
+
+    /**
      * @Route("/add", name="team.add")
      * @Template
      */
