@@ -78,6 +78,18 @@ class PlayerController extends Controller
     }
 
     /**
+     * @Route("/{id}/photo", name="player.photo", requirements={"id": "\d+"})
+     * @Template
+     */
+    public function photoAction(Player $player) {
+
+        return [
+            'player' => $player,
+            'today' => new DateTime(),
+        ];
+    }
+
+    /**
      * @Route("/add", name="player.add")
      * @Template
      */
