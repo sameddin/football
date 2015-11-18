@@ -90,6 +90,18 @@ class PlayerController extends Controller
     }
 
     /**
+     * @Route("/{id}/video", name="player.video", requirements={"id": "\d+"})
+     * @Template
+     */
+    public function videoAction(Player $player) {
+
+        return [
+            'player' => $player,
+            'today' => new DateTime(),
+        ];
+    }
+
+    /**
      * @Route("/add", name="player.add")
      * @Template
      */
