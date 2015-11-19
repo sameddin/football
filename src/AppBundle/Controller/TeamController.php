@@ -124,6 +124,17 @@ class TeamController extends Controller
     }
 
     /**
+     * @Route("/{id}/transfers/out", name="transfers.out", requirements={"id": "\d+"})
+     * @Template
+     */
+    public function outAction(Team $team) {
+
+        return [
+            'team' => $team,
+        ];
+    }
+
+    /**
      * @Route("/add", name="team.add")
      * @Template
      */
