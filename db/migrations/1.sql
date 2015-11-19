@@ -129,6 +129,7 @@ CREATE TABLE membership
 CREATE TABLE transfer
 (
     id bigserial NOT NULL,
+    date date NOT NULL,
 
     PRIMARY KEY (id)
 )

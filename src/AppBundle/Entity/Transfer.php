@@ -1,6 +1,7 @@
 <?php
 namespace AppBundle\Entity;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -16,6 +17,12 @@ class Transfer
     protected $id;
 
     /**
+     * @ORM\Column(type="date")
+     * @var DateTime
+     */
+    protected $date;
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -29,5 +36,22 @@ class Transfer
     public function setId($id)
     {
         $this->id = $id;
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param DateTime $date
+     * @return Transfer
+     */
+    public function setDate(DateTime $date)
+    {
+        $this->date = $date;
     }
 }
