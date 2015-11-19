@@ -125,4 +125,10 @@ CREATE TABLE membership
     FOREIGN KEY (player_id) REFERENCES player ON DELETE CASCADE,
     FOREIGN KEY (team_id) REFERENCES team ON DELETE CASCADE,
     FOREIGN KEY (season_id) REFERENCES season
+);
+CREATE TABLE transfer
+(
+    id bigserial NOT NULL,
+
+    PRIMARY KEY (id)
 )
