@@ -113,6 +113,17 @@ class TeamController extends Controller
     }
 
     /**
+     * @Route("/{id}/transfers/in", name="transfers.in", requirements={"id": "\d+"})
+     * @Template
+     */
+    public function inAction(Team $team) {
+
+        return [
+            'team' => $team,
+        ];
+    }
+
+    /**
      * @Route("/add", name="team.add")
      * @Template
      */
