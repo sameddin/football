@@ -35,6 +35,13 @@ class Transfer
     private $player;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Team", inversedBy="transfers")
+     *
+     * @var Team
+     */
+    private $team;
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -98,5 +105,22 @@ class Transfer
     public function setPlayer(Player $player)
     {
         $this->player = $player;
+    }
+
+    /**
+     * @return Team
+     */
+    public function getTeam()
+    {
+        return $this->team;
+    }
+
+    /**
+     * @param Team $team
+     * @return self
+     */
+    public function setTeam(Team $team)
+    {
+        $this->team = $team;
     }
 }

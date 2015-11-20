@@ -3,3 +3,4 @@ AppBundle\Entity\Transfer:
         date: <date($format = 'Y-m-d', $max = 'now')>
         sum: <randomDigitNotNull()>
         player: @player*
+        team: @team*
