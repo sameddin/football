@@ -28,6 +28,13 @@ class Transfer
     protected $sum;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Player", inversedBy="transfers")
+     *
+     * @var Player
+     */
+    private $player;
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -74,5 +81,22 @@ class Transfer
     public function setSum($sum)
     {
         $this->sum = $sum;
+    }
+
+    /**
+     * @return Player
+     */
+    public function getPlayer()
+    {
+        return $this->player;
+    }
+
+    /**
+     * @param Player $player
+     * @return self
+     */
+    public function setPlayer(Player $player)
+    {
+        $this->player = $player;
     }
 }

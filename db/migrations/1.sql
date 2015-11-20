@@ -131,6 +131,8 @@ CREATE TABLE transfer
     id   bigserial NOT NULL,
     date date      NOT NULL,
     sum  bigint    NOT NULL,
+    player_id bigint NOT NULL,
 
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    FOREIGN KEY (player_id) REFERENCES player
 );

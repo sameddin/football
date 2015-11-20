@@ -135,6 +135,13 @@ class Player
      */
     private $memberships;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Transfer", mappedBy="player")
+     *
+     * @var ArrayCollection
+     */
+    private $transfers;
+
     public function __construct()
     {
         $this->goals = new ArrayCollection();
@@ -142,6 +149,7 @@ class Player
         $this->yellowCards = new ArrayCollection();
         $this->redCards = new ArrayCollection();
         $this->memberships = new ArrayCollection();
+        $this->transfers = new ArrayCollection();
     }
 
     /**
@@ -407,5 +415,21 @@ class Player
     public function setMemberships($memberships)
     {
         $this->memberships = $memberships;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getTransfers()
+    {
+        return $this->transfers;
+    }
+
+    /**
+     * @param ArrayCollection $transfers
+     */
+    public function setTransfers($transfers)
+    {
+        $this->transfers = $transfers;
     }
 }
