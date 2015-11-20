@@ -25,7 +25,7 @@
     <table class="table table-condensed">
         <thead>
         <tr>
-            <th>Имя</th>
+            <th>{{ 'player.name'|trans }}</th>
             <th>{{ 'date'|trans }}</th>
             <th>Клуб</th>
             <th>{{ 'sum'|trans }}</th>
@@ -33,7 +33,7 @@
         </tr>
         </thead>
         <tr>
-            <td></td>
+            <td>{{ transfer.player.name }}</td>
             <td>{{ transfer.date.date|date("d.m.Y") }}</td>
             <td></td>
             <td>{{ transfer.sum }}</td>
