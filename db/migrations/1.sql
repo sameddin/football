@@ -128,8 +128,9 @@ CREATE TABLE membership
 );
 CREATE TABLE transfer
 (
-    id bigserial NOT NULL,
-    date date NOT NULL,
+    id   bigserial NOT NULL,
+    date date      NOT NULL,
+    sum  bigint    NOT NULL,
 
     PRIMARY KEY (id)
-)
+);

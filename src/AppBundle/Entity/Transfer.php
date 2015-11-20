@@ -23,6 +23,11 @@ class Transfer
     protected $date;
 
     /**
+     * @ORM\Column(type="bigint")
+     */
+    protected $sum;
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -53,5 +58,21 @@ class Transfer
     public function setDate(DateTime $date)
     {
         $this->date = $date;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSum()
+    {
+        return $this->sum;
+    }
+
+    /**
+     * @param mixed $sum
+     */
+    public function setSum($sum)
+    {
+        $this->sum = $sum;
     }
 }
