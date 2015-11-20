@@ -28,7 +28,7 @@
             <th>Имя</th>
             <th>{{ 'date'|trans }}</th>
             <th>Клуб</th>
-            <th>Сумма</th>
+            <th>{{ 'sum'|trans }}</th>
             <th>Срок</th>
         </tr>
         </thead>
@@ -36,7 +36,7 @@
             <td></td>
             <td>{{ transfer.date.date|date("d.m.Y") }}</td>
             <td></td>
-            <td></td>
+            <td>{{ transfer.sum }}</td>
             <td></td>
         </tr>
     </table>
