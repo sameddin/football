@@ -1,6 +1,6 @@
 AppBundle\Entity\Transfer:
     transfer{1..100}:
         date: <date($format = 'Y-m-d', $max = 'now')>
-        sum: <randomDigitNotNull()>
+        sum: <randomFloat($nbMaxDecimals = NULL, $min = 0, $max = 200)>
         player: @player*
         team: @team*

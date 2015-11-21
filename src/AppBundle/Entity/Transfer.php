@@ -23,7 +23,7 @@ class Transfer
     protected $date;
 
     /**
-     * @ORM\Column(type="bigint")
+     * @ORM\Column(type="decimal")
      */
     protected $sum;
 

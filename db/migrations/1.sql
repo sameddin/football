@@ -130,7 +130,7 @@ CREATE TABLE transfer
 (
     id        bigserial NOT NULL,
     date      date      NOT NULL,
-    sum       bigint    NOT NULL,
+    sum       decimal   NOT NULL,
     player_id bigint    NOT NULL,
     team_id   bigint    NOT NULL,
 
