@@ -27,7 +27,7 @@
         <tr>
             <th>{{ 'player.name'|trans }}</th>
             <th>{{ 'date'|trans }}</th>
-            <th>Клуб</th>
+            <th>{{ 'team.name'|trans }}</th>
             <th>{{ 'sum'|trans }}</th>
             <th>Срок</th>
         </tr>
@@ -35,7 +35,7 @@
         <tr>
             <td>{{ transfer.player.name }}</td>
             <td>{{ transfer.date.date|date("d.m.Y") }}</td>
-            <td></td>
+            <td>{{ team.name }} <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> {{ transfer.team.name }}</td>
             <td>{{ transfer.sum }}</td>
             <td></td>
         </tr>
