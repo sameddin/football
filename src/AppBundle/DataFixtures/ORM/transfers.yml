@@ -2,6 +2,7 @@ AppBundle\Entity\Transfer:
     transfer{1..100}:
         date: <date($format = 'Y-m-d', $max = 'now')>
         sum: <randomFloat($nbMaxDecimals = NULL, $min = 0, $max = 200)>
+        term: <randomElement($array = array ('a','b','c'))>
         player: @player*
         team: @team*
         membership: @membership*

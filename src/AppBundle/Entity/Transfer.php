@@ -28,6 +28,11 @@ class Transfer
     protected $sum;
 
     /**
+     * @ORM\Column(type="string")
+     */
+    protected $term;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Player", inversedBy="transfers")
      *
      * @var Player
@@ -95,6 +100,22 @@ class Transfer
     public function setSum($sum)
     {
         $this->sum = $sum;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTerm()
+    {
+        return $this->term;
+    }
+
+    /**
+     * @param mixed $term
+     */
+    public function setTerm($term)
+    {
+        $this->term = $term;
     }
 
     /**

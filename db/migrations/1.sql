@@ -131,6 +131,7 @@ CREATE TABLE transfer
     id            bigserial NOT NULL,
     date          date      NOT NULL,
     sum           decimal   NOT NULL,
+    term          varchar   NOT NULL,
     player_id     bigint    NOT NULL,
     team_id       bigint    NOT NULL,
     membership_id bigint    NOT NULL,
