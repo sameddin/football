@@ -1,6 +1,7 @@
 <?php
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -35,6 +36,18 @@ class Membership
      * @var Team
      */
     private $team;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Transfer", mappedBy="membership")
+     *
+     * @var ArrayCollection
+     */
+    private $transfers;
+
+    public function __construct()
+    {
+        $this->transfers = new ArrayCollection();
+    }
 
     /**
      * @return mixed
@@ -101,5 +114,21 @@ class Membership
     public function setTeam(Team $team)
     {
         $this->team = $team;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getTransfers()
+    {
+        return $this->transfers;
+    }
+
+    /**
+     * @param ArrayCollection $transfers
+     */
+    public function setTransfers($transfers)
+    {
+        $this->transfers = $transfers;
     }
 }

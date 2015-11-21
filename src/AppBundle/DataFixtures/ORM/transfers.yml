@@ -4,3 +4,4 @@ AppBundle\Entity\Transfer:
         sum: <randomFloat($nbMaxDecimals = NULL, $min = 0, $max = 200)>
         player: @player*
         team: @team*
+        membership: @membership*
