@@ -35,7 +35,7 @@
         <tr>
             <td>{{ transfer.player.name }}</td>
             <td>{{ transfer.date.date|date("d.m.Y") }}</td>
-            <td>{{ team.name }} <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> {{ transfer.team.name }}</td>
+            <td><a href="{{ path('team.news', {id: team.id }) }}">{{ team.name }}</a> <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> <a href="{{ path('team.news', {id: transfer.team.id }) }}">{{ transfer.team.name }}</a></td>
             <td>{{ transfer.sum }}</td>
             <td></td>
         </tr>
