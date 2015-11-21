@@ -29,7 +29,7 @@
             <th>{{ 'date'|trans }}</th>
             <th>{{ 'team.name'|trans }}</th>
             <th>{{ 'sum'|trans }}</th>
-            <th>Срок</th>
+            <th>{{ 'term'|trans }}</th>
         </tr>
         </thead>
         <tr>
@@ -37,7 +37,7 @@
             <td>{{ transfer.date.date|date("d.m.Y") }}</td>
             <td><a href="{{ path('team.news', {id: team.id }) }}">{{ team.name }}</a> <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> <a href="{{ path('team.news', {id: transfer.team.id }) }}">{{ transfer.team.name }}</a></td>
             <td><span class="glyphicon glyphicon-arrow-down" aria-hidden="true" style="color:red"></span> {{ 'euro'|trans }} {{ transfer.sum }} {{ 'million'|trans }}</td>
-            <td></td>
+            <td>{{ transfer.term }}</td>
         </tr>
     </table>
 
