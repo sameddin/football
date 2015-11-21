@@ -33,13 +33,6 @@ class Transfer
     protected $term;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Team", inversedBy="transfers")
-     *
-     * @var Team
-     */
-    private $team;
-
-    /**
      * @ORM\ManyToOne(targetEntity="Membership", inversedBy="transfers")
      *
      * @var Membership
@@ -109,23 +102,6 @@ class Transfer
     public function setTerm($term)
     {
         $this->term = $term;
-    }
-
-    /**
-     * @return Team
-     */
-    public function getTeam()
-    {
-        return $this->team;
-    }
-
-    /**
-     * @param Team $team
-     * @return self
-     */
-    public function setTeam(Team $team)
-    {
-        $this->team = $team;
     }
 
     /**

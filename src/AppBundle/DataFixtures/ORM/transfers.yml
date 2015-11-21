@@ -3,5 +3,4 @@ AppBundle\Entity\Transfer:
         date: <date($format = 'Y-m-d', $max = 'now')>
         sum: <randomFloat($nbMaxDecimals = NULL, $min = 0, $max = 200)>
         term: <randomElement($array = array ('a','b','c'))>
-        team: @team*
         membership: @membership*

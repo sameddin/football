@@ -132,10 +132,8 @@ CREATE TABLE transfer
     date          date      NOT NULL,
     sum           decimal   NOT NULL,
     term          varchar   NOT NULL,
-    team_id       bigint    NOT NULL,
     membership_id bigint    NOT NULL,
 
     PRIMARY KEY (id),
-    FOREIGN KEY (team_id) REFERENCES team,
     FOREIGN KEY (membership_id) REFERENCES membership
 );
