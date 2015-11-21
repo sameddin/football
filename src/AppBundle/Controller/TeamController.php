@@ -3,7 +3,6 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Team;
-use AppBundle\Entity\Transfer;
 use AppBundle\Form\Type\TeamType;
 use DateTime;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -99,42 +98,6 @@ class TeamController extends Controller
 
         return [
             'team' => $team,
-        ];
-    }
-
-    /**
-     * @Route("/{id}/transfers", name="team.transfers", requirements={"id": "\d+"})
-     * @Template
-     */
-    public function transfersAction(Team $team, Transfer $transfer) {
-
-        return [
-            'team' => $team,
-            'transfer' => $transfer,
-        ];
-    }
-
-    /**
-     * @Route("/{id}/transfers/in", name="transfers.in", requirements={"id": "\d+"})
-     * @Template
-     */
-    public function inAction(Team $team, Transfer $transfer) {
-
-        return [
-            'team' => $team,
-            'transfer' => $transfer,
-        ];
-    }
-
-    /**
-     * @Route("/{id}/transfers/out", name="transfers.out", requirements={"id": "\d+"})
-     * @Template
-     */
-    public function outAction(Team $team, Transfer $transfer) {
-
-        return [
-            'team' => $team,
-            'transfer' => $transfer,
         ];
     }
 
