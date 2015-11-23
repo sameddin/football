@@ -4,7 +4,7 @@
 
     <h3>{{ team.name }}</h3>
     <h5><b>{{ 'team.country'|trans }}</b> : {{ team.country.name }}</h5>
-    <h5><b>{{ 'team.coach'|trans }}</b> : <a href="{{ path('coach.news', {id: team.coach.id}) }}">{{ team.coach.name }}</a></h5>
+    <h5><b>{{ 'Coach'|trans }}</b> : <a href="{{ path('coach.news', {id: team.coach.id}) }}">{{ team.coach.name }}</a></h5>
 
     <ul class="nav nav-tabs">
         <li role="presentation"><a href="{{ path('team.news', {id: team.id }) }}">{{ 'newsline'|trans }}</a></li>
