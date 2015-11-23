@@ -1,3 +1,10 @@
+CREATE TABLE country
+(
+    id   bigserial NOT NULL,
+    name varchar   NOT NULL,
+
+    PRIMARY KEY (id)
+);
 CREATE TABLE coach
 (
     id    bigserial NOT NULL,
@@ -6,10 +13,11 @@ CREATE TABLE coach
 
     PRIMARY KEY (id)
 );
-CREATE TABLE country
+CREATE TABLE manager
 (
-    id   bigserial NOT NULL,
-    name varchar   NOT NULL,
+    id    bigserial NOT NULL,
+    name  varchar   NOT NULL,
+    birth date      NOT NULL,
 
     PRIMARY KEY (id)
 );
@@ -137,12 +145,4 @@ CREATE TABLE transfer
 
     PRIMARY KEY (id),
     FOREIGN KEY (membership_id) REFERENCES membership ON DELETE CASCADE
-);
-CREATE TABLE manager
-(
-    id    bigserial NOT NULL,
-    name  varchar   NOT NULL,
-    birth date      NOT NULL,
-
-    PRIMARY KEY (id)
 );
