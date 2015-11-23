@@ -135,5 +135,5 @@ CREATE TABLE transfer
     membership_id bigint    NOT NULL,
 
     PRIMARY KEY (id),
-    FOREIGN KEY (membership_id) REFERENCES membership
+    FOREIGN KEY (membership_id) REFERENCES membership ON DELETE CASCADE
 );
