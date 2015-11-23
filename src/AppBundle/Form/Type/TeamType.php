@@ -14,31 +14,27 @@ class TeamType extends AbstractType
                     'placeholder' => 'team.name.placeholder'
                 ]
             ])
-
             ->add('tournament', 'entity', [
-                    'class' => 'AppBundle:Tournament',
-                    'choice_label' => 'name',
-                    'placeholder' => 'team.tournament.placeholder']
-            )
-
+                'class' => 'AppBundle:Tournament',
+                'choice_label' => 'name',
+                'placeholder' => 'team.tournament.placeholder'
+            ])
             ->add('country', 'entity', [
-                    'class' => 'AppBundle:Country',
-                    'choice_label' => 'name',
-                    'placeholder' => 'team.country.placeholder']
-            )
-
+                'class' => 'AppBundle:Country',
+                'choice_label' => 'name',
+                'placeholder' => 'team.country.placeholder',
+                'label' => 'common.country',
+            ])
             ->add('coach', 'entity', [
                     'class' => 'AppBundle:Coach',
                     'choice_label' => 'name',
                     'placeholder' => 'team.coach.placeholder']
             )
-
             ->add('manager', 'entity', [
                     'class' => 'AppBundle:Manager',
                     'choice_label' => 'name',
                     'placeholder' => 'team.manager.placeholder']
             )
-
             ->add('save', 'submit', ['label' => 'common.add']);
     }
 

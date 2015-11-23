@@ -2,6 +2,7 @@ common.add: Добавить
 common.edit: Изменить
 common.delete: Удалить
 common.submit: Отправить
+common.country: Страна
 player.name.placeholder: Введите имя игрока
 player.nation.placeholder: Введите национальность игрока
 player.team.placeholder: Выберите команду игрока
@@ -50,7 +51,6 @@ Subject: Тема
 Message: Сообщение
 Coach: Тренер
 Tournament: Турнир
-Country: Страна
 feedback.success: Ваше сообщение успешно отправлено
 Email: Email
 Match: Матчи
