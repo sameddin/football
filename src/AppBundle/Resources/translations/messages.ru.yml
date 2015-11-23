@@ -18,7 +18,6 @@ player.list: Игроки
 team.list: Команды
 homepage: Главная
 team.name: Название команды
-team.country: Страна
 team.view: Состав
 player.name: Имя
 player.nation: Гражданство
