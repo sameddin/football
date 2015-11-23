@@ -1,6 +1,6 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
-{% block body %}
+{% block content %}
 
     <h3>{{ manager.name }}</h3>
     <h5><b>{{ 'birth'|trans }}</b> : {{ manager.birth|date("d.m.Y") }} | {{ 'age'|transchoice(manager.age(today)) }}</h5>
