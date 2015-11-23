@@ -86,3 +86,4 @@ term: Срок
 birth: Возраст
 age: %count% год|%count% года|%count% лет
 Manager: Менеджер
+citizenship: Гражданство
