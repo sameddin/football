@@ -7,7 +7,7 @@
         <tr>
             <th>{{ 'player.number'|trans }}</th>
             <th>{{ 'player.name'|trans }}</th>
-            <th>{{ 'player.birth'|trans }}</th>
+            <th>{{ 'birth'|trans }}</th>
             <th>{{ 'player.height'|trans }}</th>
             <th>{{ 'player.weight'|trans }}</th>
             <th>{{ 'player.nation'|trans }}</th>
@@ -20,7 +20,7 @@
             <tr {% if loop.index is odd %}class="color"{% endif %}>
                 <td>{{ player.number }}</td>
                 <td><a href="{{ path('player.view', {id: player.id}) }}">{{ player.name }}</a></td>
-                <td>{{ player.birth|date("d.m.Y") }} | {{ 'player.age'|transchoice(player.age(today)) }}</td>
+                <td>{{ player.birth|date("d.m.Y") }} | {{ 'age'|transchoice(player.age(today)) }}</td>
                 <td>{{ player.height }}</td>
                 <td>{{ player.weight }}</td>
                 <td>{{ player.nation }}</td>

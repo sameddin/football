@@ -23,8 +23,6 @@ team.country: Страна
 team.view: Состав
 player.name: Имя
 player.nation: Гражданство
-player.birth: Возраст
-player.age: %count% год|%count% года|%count% лет
 player.number: Номер
 player.height: Рост
 player.weight: Вес
