@@ -1,7 +1,8 @@
 CREATE TABLE coach
 (
-    id   bigserial NOT NULL,
-    name varchar   NOT NULL,
+    id    bigserial NOT NULL,
+    name  varchar   NOT NULL,
+    birth date      NOT NULL,
 
     PRIMARY KEY (id)
 );

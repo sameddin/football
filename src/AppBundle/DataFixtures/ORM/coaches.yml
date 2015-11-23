@@ -1,3 +1,4 @@
 AppBundle\Entity\Coach:
     coach{1..20}:
         name: <name()>
+        birth: <dateTimeBetween($startDate = '-80 years', $endDate = '-18 years')>

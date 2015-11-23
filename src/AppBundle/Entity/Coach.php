@@ -1,6 +1,7 @@
 <?php
 namespace AppBundle\Entity;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -19,6 +20,18 @@ class Coach
      * @ORM\Column(type="string")
      */
     protected $name;
+
+    /**
+     * @ORM\Column(type="date")
+     * @var DateTime
+     */
+    protected $birth;
+
+    public function getAge(DateTime $currentDate)
+    {
+        return $currentDate->diff($this->birth)->y;
+    }
+
     /**
      * @return mixed
      */
@@ -53,5 +66,22 @@ class Coach
     {
         $this->name = $name;
         return $this;
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getBirth()
+    {
+        return $this->birth;
+    }
+
+    /**
+     * @param DateTime $birth
+     * @return Coach
+     */
+    public function setBirth($birth)
+    {
+        $this->birth = $birth;
     }
 }
