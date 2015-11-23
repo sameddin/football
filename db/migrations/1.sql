@@ -138,3 +138,9 @@ CREATE TABLE transfer
     PRIMARY KEY (id),
     FOREIGN KEY (membership_id) REFERENCES membership ON DELETE CASCADE
 );
+CREATE TABLE manager
+(
+    id bigserial NOT NULL,
+
+    PRIMARY KEY (id)
+);
