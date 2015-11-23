@@ -7,11 +7,13 @@ CREATE TABLE country
 );
 CREATE TABLE coach
 (
-    id    bigserial NOT NULL,
-    name  varchar   NOT NULL,
-    birth date      NOT NULL,
+    id         bigserial NOT NULL,
+    name       varchar   NOT NULL,
+    birth      date      NOT NULL,
+    country_id bigint    NOT NULL,
 
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    FOREIGN KEY (country_id) REFERENCES country
 );
 CREATE TABLE manager
 (
