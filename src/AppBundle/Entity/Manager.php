@@ -1,6 +1,7 @@
 <?php
 namespace AppBundle\Entity;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -19,6 +20,17 @@ class Manager
      * @ORM\Column(type="string")
      */
     protected $name;
+
+    /**
+     * @ORM\Column(type="date")
+     * @var DateTime
+     */
+    protected $birth;
+
+    public function getAge(DateTime $currentDate)
+    {
+        return $currentDate->diff($this->birth)->y;
+    }
 
     /**
      * @return mixed
@@ -50,5 +62,22 @@ class Manager
     public function setName($name)
     {
         $this->name = $name;
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getBirth()
+    {
+        return $this->birth;
+    }
+
+    /**
+     * @param DateTime $birth
+     * @return Manager
+     */
+    public function setBirth($birth)
+    {
+        $this->birth = $birth;
     }
 }

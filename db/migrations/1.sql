@@ -140,8 +140,9 @@ CREATE TABLE transfer
 );
 CREATE TABLE manager
 (
-    id   bigserial NOT NULL,
-    name varchar   NOT NULL,
+    id    bigserial NOT NULL,
+    name  varchar   NOT NULL,
+    birth date      NOT NULL,
 
     PRIMARY KEY (id)
 );
