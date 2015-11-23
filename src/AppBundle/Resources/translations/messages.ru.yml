@@ -12,6 +12,7 @@ player.weight.placeholder: Введите вес игрока
 team.name.placeholder: Введите название команды
 team.tournament.placeholder: Выберите турнир команды
 team.coach.placeholder: Выберите тренера команды
+team.manager.placeholder: Выберите менеджера команды
 team.country.placeholder: Выберите страну команды
 player.list: Игроки
 team.list: Команды
