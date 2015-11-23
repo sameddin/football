@@ -16,6 +16,11 @@ class Manager
     protected $id;
 
     /**
+     * @ORM\Column(type="string")
+     */
+    protected $name;
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -29,5 +34,21 @@ class Manager
     public function setId($id)
     {
         $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
     }
 }
