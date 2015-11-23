@@ -4,6 +4,7 @@
 
     <h3>{{ manager.name }}</h3>
     <h5><b>{{ 'birth'|trans }}</b> : {{ manager.birth|date("d.m.Y") }} | {{ 'age'|transchoice(manager.age(today)) }}</h5>
+    <h5><b>{{ 'citizenship'|trans }}</b> : {{ manager.country.name }}</h5>
     <h5><b>{{ 'position'|trans }}</b> : {{ 'Manager'|trans }}</h5>
 
     <ul class="nav nav-tabs">
