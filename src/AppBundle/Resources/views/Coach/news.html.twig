@@ -3,6 +3,7 @@
 {% block body %}
 
     <h3>{{ coach.name }}</h3>
+    <h5><b>{{ 'birth'|trans }}</b> : {{ coach.birth|date("d.m.Y") }} | {{ 'age'|transchoice(coach.age(today)) }}</h5>
     <h5><b>{{ 'position'|trans }}</b> : {{ 'Coach'|trans }}</h5>
 
     <ul class="nav nav-tabs">
