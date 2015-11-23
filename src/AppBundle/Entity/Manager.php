@@ -27,6 +27,11 @@ class Manager
      */
     protected $birth;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Country")
+     */
+    protected $country;
+
     public function getAge(DateTime $currentDate)
     {
         return $currentDate->diff($this->birth)->y;
@@ -79,5 +84,23 @@ class Manager
     public function setBirth($birth)
     {
         $this->birth = $birth;
+    }
+
+    /**
+     * @return Country
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * @param Country $country
+     * @return Coach
+     */
+    public function setCountry(Country $country)
+    {
+        $this->country = $country;
+        return $this;
     }
 }
