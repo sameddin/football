@@ -3,6 +3,7 @@
 {% block body %}
 
     <h3>{{ manager.name }}</h3>
+    <h5><b>{{ 'birth'|trans }}</b> : {{ manager.birth|date("d.m.Y") }} | {{ 'age'|transchoice(manager.age(today)) }}</h5>
 
     <ul class="nav nav-tabs">
         <li role="presentation" class="active"><a href="{{ path('manager.news', {id: manager.id }) }}">{{ 'newsline'|trans }}</a></li>
