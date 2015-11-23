@@ -46,13 +46,15 @@ CREATE TABLE team
     tournament_id bigint,
     country_id    bigint,
     match_id      bigint,
+    manager_id    bigint    NOT NULL,
     name          varchar   NOT NULL,
 
     PRIMARY KEY (id),
     FOREIGN KEY (coach_id) REFERENCES coach,
     FOREIGN KEY (tournament_id) REFERENCES tournament,
     FOREIGN KEY (country_id) REFERENCES country,
-    FOREIGN KEY (match_id) REFERENCES match ON DELETE SET NULL
+    FOREIGN KEY (match_id) REFERENCES match ON DELETE SET NULL,
+    FOREIGN KEY (manager_id) REFERENCES manager
 );
 CREATE TABLE role
 (

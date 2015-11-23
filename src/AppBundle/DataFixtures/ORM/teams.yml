@@ -5,3 +5,4 @@ AppBundle\Entity\Team:
         coach: @coach*
         country: @country*
         match: @match*
+        manager: @manager*

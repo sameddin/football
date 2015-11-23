@@ -58,6 +58,11 @@ class Team
      */
     private $memberships;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Manager")
+     */
+    protected $manager;
+
     public function __construct()
     {
         $this->players = new ArrayCollection();
@@ -202,5 +207,22 @@ class Team
     public function setMemberships($memberships)
     {
         $this->memberships = $memberships;
+    }
+
+    /**
+     * @return Manager
+     */
+    public function getManager()
+    {
+        return $this->manager;
+    }
+
+    /**
+     * @param Manager $manager
+     * @return Team
+     */
+    public function setManager(Manager $manager)
+    {
+        $this->manager = $manager;
     }
 }
