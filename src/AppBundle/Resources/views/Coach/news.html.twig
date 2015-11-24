@@ -5,7 +5,7 @@
     <h3>{{ coach.name }}</h3>
     <h5><b>{{ 'birth'|trans }}</b> : {{ coach.birth|date("d.m.Y") }} | {{ 'age'|transchoice(coach.age(today)) }}</h5>
     <h5><b>{{ 'citizenship'|trans }}</b> : {{ coach.country.name }}</h5>
-    <h5><b>{{ 'position'|trans }}</b> : {{ 'common.coach'|trans }}</h5>
+    <h5><b>{{ 'common.position'|trans }}</b> : {{ 'common.coach'|trans }}</h5>
 
     <ul class="nav nav-tabs">
         <li role="presentation" class="active"><a href="{{ path('coach.news', {id: coach.id }) }}">{{ 'newsline'|trans }}</a></li>

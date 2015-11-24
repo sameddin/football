@@ -5,6 +5,7 @@ common.submit: Отправить
 common.country: Страна
 common.coach: Тренер
 common.manager: Менеджер
+common.position: Должность
 player.name.placeholder: Введите имя игрока
 player.nation.placeholder: Введите национальность игрока
 player.team.placeholder: Выберите команду игрока
@@ -69,7 +70,6 @@ Date: Дата
 No team: Нет команды
 No tournament: Нет турнира
 No date: Нет даты
-position: Должность
 table: Таблица
 stat: Статистика
 photo: Фото
