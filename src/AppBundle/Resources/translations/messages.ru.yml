@@ -3,6 +3,7 @@ common.edit: Изменить
 common.delete: Удалить
 common.submit: Отправить
 common.country: Страна
+common.coach: Тренер
 player.name.placeholder: Введите имя игрока
 player.nation.placeholder: Введите национальность игрока
 player.team.placeholder: Выберите команду игрока
@@ -49,7 +50,6 @@ Contacts: Контакты
 Feedback: Обратная связь
 Subject: Тема
 Message: Сообщение
-Coach: Тренер
 Tournament: Турнир
 feedback.success: Ваше сообщение успешно отправлено
 Email: Email
