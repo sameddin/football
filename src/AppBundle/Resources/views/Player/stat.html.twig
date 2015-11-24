@@ -4,7 +4,7 @@
 
     <h3>{{ player.name }}</h3>
     <h5><b>{{ 'common.birth'|trans }}</b> : {{ player.birth|date("d.m.Y") }} | {{ 'common.age'|transchoice(player.age(today)) }}</h5>
-    <h5><b>{{ 'player.nation'|trans }}</b> : {{ player.nation }}</h5>
+    <h5><b>{{ 'common.citizenship'|trans }}</b> : {{ player.nation }}</h5>
     <h5><b>{{ 'player.team'|trans }}</b> | <b>{{ 'player.role'|trans }}</b> : {% if player.team is not null %} <a href="{{ path('team.news', {id: player.team.id }) }}">{{ player.team.name }}</a> {%  else  %} <b>{{ 'No team'|trans }}</b> {% endif %} | {{ player.role.name }}</h5>
     <h5><b>{{ 'player.height'|trans }}</b> | <b>{{ 'player.weight'|trans }}</b> : {{ player.height }} | {{ player.weight }}</h5>
 
