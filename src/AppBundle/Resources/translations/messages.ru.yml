@@ -44,12 +44,11 @@ transfers.all: Все трансферы
 transfers.in: Пришли
 transfers.out: Ушли
 homepage: Главная
-team.name: Название команды
+team.name: Команда
 team.view: Состав
 player.number: Номер
 player.height: Рост
 player.weight: Вес
-player.team: Команда
 player.role: Амплуа
 matches: Матчи
 goals: Голы
