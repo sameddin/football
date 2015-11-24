@@ -50,7 +50,6 @@ player.number: Номер
 player.height: Рост
 player.weight: Вес
 player.role: Амплуа
-matches: Матчи
 goals: Голы
 passes: Ассисты
 yellowcards: Жёлтые карты
@@ -64,11 +63,6 @@ About: О нас
 Contacts: Контакты
 Feedback: Обратная связь
 feedback.success: Ваше сообщение успешно отправлено
-Match: Матчи
-Goal: Голы
-Pass: Ассисты
-Yellow card: Жёлтые карты
-Red card: Красные карты
 goal.plus.pass: Гол + Пас
 season: Сезон
 match.list: Матчи
