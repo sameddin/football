@@ -12,6 +12,7 @@ common.newsline: Лента новостей
 common.calendar: Календарь
 common.stat: Статистика
 common.photo: Фото
+common.video: Видео
 player.name.placeholder: Введите имя игрока
 player.nation.placeholder: Введите национальность игрока
 player.team.placeholder: Выберите команду игрока
@@ -74,7 +75,6 @@ No team: Нет команды
 No tournament: Нет турнира
 No date: Нет даты
 table: Таблица
-video: Видео
 transfers: Трансферы
 transfersAll: Все трансферы
 transfersIn: Пришли
