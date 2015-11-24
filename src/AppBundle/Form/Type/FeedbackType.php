@@ -13,22 +13,26 @@ class FeedbackType extends AbstractType
     {
         $builder
             ->add('name', 'text', [
+                'label' => 'common.name',
                 'constraints' => [
                     new NotBlank(),
                 ]
             ])
             ->add('email', 'email', [
+                'label' => 'common.email',
                 'constraints' => [
                     new NotBlank(),
                     new Email(),
                 ]
             ])
             ->add('subject', 'text', [
+                'label' => 'common.subject',
                 'constraints' => [
                     new NotBlank(),
                 ]
             ])
             ->add('message', 'textarea', [
+                'label' => 'common.message',
                 'constraints' => [
                     new NotBlank(),
                     new Length(['min' => 10]),
@@ -45,6 +49,7 @@ class FeedbackType extends AbstractType
                 ]
             ]);
     }
+
     public function getName()
     {
         return 'form';

@@ -3,6 +3,9 @@ common.edit: Изменить
 common.delete: Удалить
 common.submit: Отправить
 common.name: Имя
+common.email: Email
+common.subject: Тема
+common.message: Сообщение
 common.country: Страна
 common.tournament: Турнир
 common.coach: Тренер
@@ -66,10 +69,7 @@ Advertising: Реклама
 About: О нас
 Contacts: Контакты
 Feedback: Обратная связь
-Subject: Тема
-Message: Сообщение
 feedback.success: Ваше сообщение успешно отправлено
-Email: Email
 Match: Матчи
 Goal: Голы
 Pass: Ассисты
