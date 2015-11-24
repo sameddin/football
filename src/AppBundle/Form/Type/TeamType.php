@@ -32,10 +32,11 @@ class TeamType extends AbstractType
                 'label' => 'common.coach',
             ])
             ->add('manager', 'entity', [
-                    'class' => 'AppBundle:Manager',
-                    'choice_label' => 'name',
-                    'placeholder' => 'team.manager.placeholder']
-            )
+                'class' => 'AppBundle:Manager',
+                'choice_label' => 'name',
+                'placeholder' => 'team.manager.placeholder',
+                'label' => 'common.manager',
+            ])
             ->add('save', 'submit', ['label' => 'common.add']);
     }
 

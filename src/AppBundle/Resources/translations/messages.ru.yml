@@ -4,6 +4,7 @@ common.delete: Удалить
 common.submit: Отправить
 common.country: Страна
 common.coach: Тренер
+common.manager: Менеджер
 player.name.placeholder: Введите имя игрока
 player.nation.placeholder: Введите национальность игрока
 player.team.placeholder: Выберите команду игрока
@@ -83,5 +84,4 @@ million: млн
 term: Срок
 birth: Возраст
 age: %count% год|%count% года|%count% лет
-Manager: Менеджер
 citizenship: Гражданство
