@@ -14,9 +14,9 @@ class MatchType extends AbstractType
                 'format' => 'dd.MM.yyyy HH:mm',
                 'attr' => [
                     'class' => 'datetime',
-                ]
+                ],
+                'label' => 'common.date'
             ])
-
             ->add('save', 'submit', ['label' => 'common.add']);
     }
 

@@ -13,6 +13,7 @@ common.calendar: Календарь
 common.stat: Статистика
 common.photo: Фото
 common.video: Видео
+common.date: Дата
 player.name.placeholder: Введите имя игрока
 player.nation.placeholder: Введите национальность игрока
 player.team.placeholder: Выберите команду игрока
@@ -66,11 +67,9 @@ Goal: Голы
 Pass: Ассисты
 Yellow card: Жёлтые карты
 Red card: Красные карты
-date: Дата
 goal.plus.pass: Гол + Пас
 season: Сезон
 match.list: Матчи
-Date: Дата
 No team: Нет команды
 No tournament: Нет турнира
 No date: Нет даты
