@@ -7,6 +7,7 @@ common.coach: Тренер
 common.manager: Менеджер
 common.position: Должность
 common.newsline: Лента новостей
+common.calendar: Календарь
 player.name.placeholder: Введите имя игрока
 player.nation.placeholder: Введите национальность игрока
 player.team.placeholder: Выберите команду игрока
@@ -61,7 +62,6 @@ Goal: Голы
 Pass: Ассисты
 Yellow card: Жёлтые карты
 Red card: Красные карты
-calendar: Календарь
 date: Дата
 goal.plus.pass: Гол + Пас
 season: Сезон
