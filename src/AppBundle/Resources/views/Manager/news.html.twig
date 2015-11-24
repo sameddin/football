@@ -4,7 +4,7 @@
 
     <h3>{{ manager.name }}</h3>
     <h5><b>{{ 'common.birth'|trans }}</b> : {{ manager.birth|date("d.m.Y") }} | {{ 'common.age'|transchoice(manager.age(today)) }}</h5>
-    <h5><b>{{ 'citizenship'|trans }}</b> : {{ manager.country.name }}</h5>
+    <h5><b>{{ 'common.citizenship'|trans }}</b> : {{ manager.country.name }}</h5>
     <h5><b>{{ 'common.position'|trans }}</b> : {{ 'common.manager'|trans }}</h5>
 
     <ul class="nav nav-tabs">
