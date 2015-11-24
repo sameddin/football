@@ -29,6 +29,10 @@ team.manager.placeholder: Выберите менеджера команды
 team.country.placeholder: Выберите страну команды
 player.list: Игроки
 team.list: Команды
+transfers.list: Трансферы
+transfers.all: Все трансферы
+transfers.in: Пришли
+transfers.out: Ушли
 homepage: Главная
 team.name: Название команды
 team.view: Состав
@@ -74,10 +78,6 @@ match.list: Матчи
 No team: Нет команды
 No tournament: Нет турнира
 No date: Нет даты
-transfers: Трансферы
-transfersAll: Все трансферы
-transfersIn: Пришли
-transfersOut: Ушли
 sum: Сумма
 euro: €
 million: млн

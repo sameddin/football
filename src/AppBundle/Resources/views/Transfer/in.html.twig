@@ -13,7 +13,7 @@
         <li role="presentation"><a href="{{ path('team.stat', {id: team.id }) }}">{{ 'common.stat'|trans }}</a></li>
         <li role="presentation"><a href="{{ path('team.photo', {id: team.id }) }}">{{ 'common.photo'|trans }}</a></li>
         <li role="presentation"><a href="{{ path('team.video', {id: team.id }) }}">{{ 'common.video'|trans }}</a></li>
-        <li role="presentation" class="active"><a href="{{ path('team.transfers', {id: team.id }) }}">{{ 'transfers'|trans }}</a></li>
+        <li role="presentation" class="active"><a href="{{ path('team.transfers', {id: team.id }) }}">{{ 'transfers.list'|trans }}</a></li>
     </ul>
 
     <ul class="nav nav-pills">
@@ -28,9 +28,9 @@
                 <li><a href="#">2011/2012</a></li>
             </ul>
         </li>
-        <li role="presentation"><a href="{{ path('team.transfers', {id: team.id }) }}">{{ 'transfersAll'|trans }}</a></li>
-        <li role="presentation" class="active"><a href="{{ path('transfers.in', {id: team.id }) }}">{{ 'transfersIn'|trans }}</a></li>
-        <li role="presentation"><a href="{{ path('transfers.out', {id: team.id }) }}">{{ 'transfersOut'|trans }}</a></li>
+        <li role="presentation"><a href="{{ path('team.transfers', {id: team.id }) }}">{{ 'transfers.all'|trans }}</a></li>
+        <li role="presentation" class="active"><a href="{{ path('transfers.in', {id: team.id }) }}">{{ 'transfers.in'|trans }}</a></li>
+        <li role="presentation"><a href="{{ path('transfers.out', {id: team.id }) }}">{{ 'transfers.out'|trans }}</a></li>
     </ul>
 
     <table class="table table-condensed">
