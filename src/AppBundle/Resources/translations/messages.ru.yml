@@ -2,6 +2,7 @@ common.add: Добавить
 common.edit: Изменить
 common.delete: Удалить
 common.submit: Отправить
+common.name: Имя
 common.country: Страна
 common.tournament: Турнир
 common.coach: Тренер
@@ -41,7 +42,6 @@ redcards: Красные карты
 player.career: Карьера
 Previous: Предыдущая
 Next: Следующая
-Name: Имя
 Role: Амплуа
 Team: Команда
 Number: Номер

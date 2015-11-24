@@ -12,7 +12,8 @@ class PlayerType extends AbstractType
             ->add('name', 'text', [
                 'attr' => [
                     'placeholder' => 'player.name.placeholder'
-                ]
+                ],
+                'label' => 'common.name',
             ])
 
             ->add('nation', 'text', [
