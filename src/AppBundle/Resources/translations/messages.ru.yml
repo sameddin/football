@@ -25,6 +25,7 @@ common.term: Срок
 common.birth: Возраст
 common.age: %count% год|%count% года|%count% лет
 common.citizenship: Гражданство
+common.season: Сезон
 player.name.placeholder: Введите имя игрока
 player.nation.placeholder: Введите национальность игрока
 player.team.placeholder: Выберите команду игрока
@@ -64,7 +65,6 @@ Contacts: Контакты
 Feedback: Обратная связь
 feedback.success: Ваше сообщение успешно отправлено
 goal.plus.pass: Гол + Пас
-season: Сезон
 match.list: Матчи
 No team: Нет команды
 No tournament: Нет турнира
