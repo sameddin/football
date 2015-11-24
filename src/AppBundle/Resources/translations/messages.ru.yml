@@ -10,6 +10,7 @@ common.manager: Менеджер
 common.position: Должность
 common.newsline: Лента новостей
 common.calendar: Календарь
+common.stat: Статистика
 player.name.placeholder: Введите имя игрока
 player.nation.placeholder: Введите национальность игрока
 player.team.placeholder: Выберите команду игрока
@@ -72,7 +73,6 @@ No team: Нет команды
 No tournament: Нет турнира
 No date: Нет даты
 table: Таблица
-stat: Статистика
 photo: Фото
 video: Видео
 transfers: Трансферы
