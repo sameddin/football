@@ -21,7 +21,7 @@
         <tr>
             <th>{{ 'player.number'|trans }}</th>
             <th>{{ 'player.name'|trans }}</th>
-            <th>{{ 'birth'|trans }}</th>
+            <th>{{ 'common.birth'|trans }}</th>
             <th>{{ 'player.height'|trans }}</th>
             <th>{{ 'player.weight'|trans }}</th>
             <th>{{ 'player.role'|trans }}</th>
@@ -31,7 +31,7 @@
             <tr>
                 <td>{{ player.number }}</td>
                 <td><a href="{{ path('player.view', {id: player.id}) }}">{{ player.name }}</a></td>
-                <td>{{ player.birth|date("d.m.Y") }} | {{ 'age'|transchoice(player.age(today)) }}</td>
+                <td>{{ player.birth|date("d.m.Y") }} | {{ 'common.age'|transchoice(player.age(today)) }}</td>
                 <td>{{ player.height }}</td>
                 <td>{{ player.weight }}</td>
                 <td>{{ player.role.name }}</td>
