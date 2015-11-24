@@ -11,55 +11,54 @@ class PlayerType extends AbstractType
         $builder
             ->add('name', 'text', [
                 'attr' => [
-                    'placeholder' => 'player.name.placeholder'
+                    'placeholder' => 'player.name.placeholder',
                 ],
                 'label' => 'common.name',
             ])
-
             ->add('nation', 'text', [
                 'attr' => [
-                    'placeholder' => 'player.nation.placeholder'
-                ]
+                    'placeholder' => 'player.nation.placeholder',
+                ],
+                'label' => 'common.citizenship',
             ])
-
             ->add('birth', 'date', [
                 'widget' => 'single_text',
                 'format' => 'dd.MM.yyyy',
                 'attr' => [
                     'class' => 'date',
-                ]
+                ],
+                'label' => 'common.birth',
             ])
-
             ->add('role', 'entity', [
-                    'class' => 'AppBundle:Role',
-                    'choice_label' => 'name',
-                    'placeholder' => 'player.role.placeholder']
-           )
-
+                'class' => 'AppBundle:Role',
+                'choice_label' => 'name',
+                'placeholder' => 'player.role.placeholder',
+                'label' => 'player.role',
+            ])
             ->add('team', 'entity', [
                 'class' => 'AppBundle:Team',
                 'choice_label' => 'name',
-                'placeholder' => 'player.team.placeholder']
-            )
-
+                'placeholder' => 'player.team.placeholder',
+                'label' => 'team.name',
+            ])
             ->add('height', 'text', [
                 'attr' => [
-                    'placeholder' => 'player.height.placeholder'
-                ]
+                    'placeholder' => 'player.height.placeholder',
+                ],
+                'label' => 'player.height',
             ])
-
             ->add('weight', 'text', [
                 'attr' => [
-                    'placeholder' => 'player.weight.placeholder'
-                ]
+                    'placeholder' => 'player.weight.placeholder',
+                ],
+                'label' => 'player.weight',
             ])
-
             ->add('number', 'text', [
                 'attr' => [
-                    'placeholder' => 'player.number.placeholder'
-                ]
+                    'placeholder' => 'player.number.placeholder',
+                ],
+                'label' => 'player.number',
             ])
-
             ->add('save', 'submit', ['label' => 'common.add']);
     }
 
