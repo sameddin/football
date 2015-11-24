@@ -16,6 +16,9 @@ common.video: Видео
 common.date: Дата
 common.table: Таблица
 common.sum: Сумма
+common.euro: €
+common.million: млн
+common.term: Срок
 player.name.placeholder: Введите имя игрока
 player.nation.placeholder: Введите национальность игрока
 player.team.placeholder: Выберите команду игрока
@@ -79,9 +82,6 @@ match.list: Матчи
 No team: Нет команды
 No tournament: Нет турнира
 No date: Нет даты
-euro: €
-million: млн
-term: Срок
 birth: Возраст
 age: %count% год|%count% года|%count% лет
 citizenship: Гражданство

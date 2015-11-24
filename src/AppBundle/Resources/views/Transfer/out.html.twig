@@ -40,14 +40,14 @@
             <th>{{ 'common.date'|trans }}</th>
             <th>{{ 'team.name'|trans }}</th>
             <th>{{ 'common.sum'|trans }}</th>
-            <th>{{ 'term'|trans }}</th>
+            <th>{{ 'common.term'|trans }}</th>
         </tr>
         </thead>
         <tr>
             <td>{{ transfer.membership.player.name }}</td>
             <td>{{ transfer.date.date|date("d.m.Y") }}</td>
             <td><a href="{{ path('team.news', {id: team.id }) }}">{{ team.name }}</a> <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> <a href="{{ path('team.news', {id: transfer.membership.team.id }) }}">{{ transfer.membership.team.name }}</a></td>
-            <td><span class="glyphicon glyphicon-arrow-down" aria-hidden="true" style="color:red"></span> {{ 'euro'|trans }} {{ transfer.sum }} {{ 'million'|trans }}</td>
+            <td><span class="glyphicon glyphicon-arrow-down" aria-hidden="true" style="color:red"></span> {{ 'common.euro'|trans }} {{ transfer.sum }} {{ 'common.million'|trans }}</td>
             <td>{{ transfer.term }}</td>
         </tr>
     </table>
