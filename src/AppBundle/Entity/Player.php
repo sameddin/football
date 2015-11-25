@@ -60,19 +60,6 @@ class Player
     protected $birth;
 
     /**
-     * @ORM\Column(type="string")
-     * @Assert\NotBlank()
-     * @Assert\NotNull()
-     * @Assert\Length(
-     *      min = 2,
-     *      max = 30,
-     *      minMessage = "nation.min",
-     *      maxMessage = "nation.max"
-     * )
-     */
-    protected $nation;
-
-    /**
      * @ORM\Column(type="integer")
      * @Assert\NotBlank()
      * @Assert\Range(
@@ -254,24 +241,6 @@ class Player
     public function setBirth(DateTime $birth)
     {
         $this->birth = $birth;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getNation()
-    {
-        return $this->nation;
-    }
-
-    /**
-     * @param string $nation
-     * @return Player
-     */
-    public function setNation($nation)
-    {
-        $this->nation = $nation;
         return $this;
     }
 

@@ -80,7 +80,6 @@ CREATE TABLE player
     country_id bigint    NOT NULL,
     name       varchar   NOT NULL,
     number     bigint,
-    nation     varchar   NOT NULL,
     birth      date      NOT NULL,
     height     bigint,
     weight     bigint,

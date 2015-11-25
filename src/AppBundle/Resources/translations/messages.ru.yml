@@ -32,7 +32,6 @@ common.contacts: Контакты
 common.feedback: Обратная связь
 common.advertising: Реклама
 player.name.placeholder: Введите имя игрока
-player.nation.placeholder: Введите национальность игрока
 player.country.placeholder: Выбериту страну игрока
 player.team.placeholder: Выберите команду игрока
 player.role.placeholder: Выберите позицию игрока

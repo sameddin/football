@@ -23,7 +23,7 @@
                 <td>{{ player.birth|date("d.m.Y") }} | {{ 'common.age'|transchoice(player.age(today)) }}</td>
                 <td>{{ player.height }}</td>
                 <td>{{ player.weight }}</td>
-                <td>{{ player.nation }}</td>
+                <td>{{ player.country.name }}</td>
                 <td>
                     {% if player.team is not null %}
                     <a href="{{ path('team.news', {id: player.team.id }) }}">{{ player.team.name }}</a>

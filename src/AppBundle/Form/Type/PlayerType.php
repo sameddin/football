@@ -15,12 +15,6 @@ class PlayerType extends AbstractType
                 ],
                 'label' => 'common.name',
             ])
-            ->add('nation', 'text', [
-                'attr' => [
-                    'placeholder' => 'player.nation.placeholder',
-                ],
-                'label' => 'common.citizenship',
-            ])
             ->add('country', 'entity', [
                 'class' => 'AppBundle:Country',
                 'choice_label' => 'name',
