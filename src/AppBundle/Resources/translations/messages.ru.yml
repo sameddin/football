@@ -24,7 +24,6 @@ common.million: млн
 common.term: Срок
 common.birth: Возраст
 common.age: %count% год|%count% года|%count% лет
-common.citizenship: Гражданство
 common.season: Сезон
 common.career: Карьера
 common.about: О нас
