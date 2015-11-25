@@ -65,6 +65,6 @@ Previous: Предыдущая
 Next: Следующая
 feedback.success: Ваше сообщение успешно отправлено
 goal.plus.pass: Гол + Пас
-No team: Нет команды
-No tournament: Нет турнира
-No date: Нет даты
+team.empty: Нет команды
+tournament.empty: Нет турнира
+date.empty: Нет даты

@@ -30,7 +30,7 @@
                     {% if team.match is not null %}
                         {{ team.match.date|date("d.m.Y | H:i") }}
                     {%  else  %}
-                        <b>{{ 'No date'|trans }}</b>
+                        <b>{{ 'date.empty'|trans }}</b>
                     {% endif %}
                 </td>
                 <td><a href="{{ path('tournament.news', {id: team.tournament.id}) }}">{{ team.tournament.name }}</a></td>

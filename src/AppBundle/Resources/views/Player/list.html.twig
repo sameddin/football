@@ -28,7 +28,7 @@
                     {% if player.team is not null %}
                     <a href="{{ path('team.news', {id: player.team.id }) }}">{{ player.team.name }}</a>
                     {%  else  %}
-                    <b>{{ 'No team'|trans }}</b>
+                    <b>{{ 'team.empty'|trans }}</b>
                     {% endif %}
                 </td>
                 <td>{{ player.role.name }}</td>
