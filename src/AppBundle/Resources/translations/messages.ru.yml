@@ -40,6 +40,11 @@ team.manager.placeholder: Выберите менеджера команды
 team.country.placeholder: Выберите страну команды
 player.list: Игроки
 team.list: Команды
+match.list: Матчи
+goals.list: Голы
+passes.list: Ассисты
+yellowcards.list: Жёлтые карты
+redcards.list: Красные карты
 transfers.list: Трансферы
 transfers.all: Все трансферы
 transfers.in: Пришли
@@ -51,10 +56,6 @@ player.number: Номер
 player.height: Рост
 player.weight: Вес
 player.role: Амплуа
-goals: Голы
-passes: Ассисты
-yellowcards: Жёлтые карты
-redcards: Красные карты
 player.career: Карьера
 Previous: Предыдущая
 Next: Следующая
@@ -65,7 +66,6 @@ Contacts: Контакты
 Feedback: Обратная связь
 feedback.success: Ваше сообщение успешно отправлено
 goal.plus.pass: Гол + Пас
-match.list: Матчи
 No team: Нет команды
 No tournament: Нет турнира
 No date: Нет даты
