@@ -21,6 +21,12 @@ class PlayerType extends AbstractType
                 ],
                 'label' => 'common.citizenship',
             ])
+            ->add('country', 'entity', [
+                'class' => 'AppBundle:Country',
+                'choice_label' => 'name',
+                'placeholder' => 'player.country.placeholder',
+                'label' => 'common.country',
+            ])
             ->add('birth', 'date', [
                 'widget' => 'single_text',
                 'format' => 'dd.MM.yyyy',
