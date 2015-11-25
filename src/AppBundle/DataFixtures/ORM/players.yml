@@ -4,6 +4,7 @@ AppBundle\Entity\Player:
         team: @team*
         role: @role*
         season: @season*
+        country: @country*
         nation: <state()>
         birth: <dateTimeBetween($startDate = '-40 years', $endDate = '-18 years')>
         number: <numberBetween($min = 1, $max = 99)>

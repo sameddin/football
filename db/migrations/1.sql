@@ -73,21 +73,23 @@ CREATE TABLE season
 );
 CREATE TABLE player
 (
-    id        bigserial NOT NULL,
-    team_id   bigint,
-    role_id   bigint,
-    season_id bigint,
-    name      varchar   NOT NULL,
-    number    bigint,
-    nation    varchar   NOT NULL,
-    birth     date      NOT NULL,
-    height    bigint,
-    weight    bigint,
+    id         bigserial NOT NULL,
+    team_id    bigint,
+    role_id    bigint,
+    season_id  bigint,
+    country_id bigint    NOT NULL,
+    name       varchar   NOT NULL,
+    number     bigint,
+    nation     varchar   NOT NULL,
+    birth      date      NOT NULL,
+    height     bigint,
+    weight     bigint,
 
     PRIMARY KEY (id),
     FOREIGN KEY (team_id) REFERENCES team ON DELETE SET NULL,
     FOREIGN KEY (role_id) REFERENCES role,
-    FOREIGN KEY (season_id) REFERENCES season
+    FOREIGN KEY (season_id) REFERENCES season,
+    FOREIGN KEY (country_id) REFERENCES country
 );
 CREATE TABLE goal
 (

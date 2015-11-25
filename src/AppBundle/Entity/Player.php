@@ -135,6 +135,11 @@ class Player
      */
     private $memberships;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Country")
+     */
+    protected $country;
+
     public function __construct()
     {
         $this->goals = new ArrayCollection();
@@ -407,5 +412,23 @@ class Player
     public function setMemberships($memberships)
     {
         $this->memberships = $memberships;
+    }
+
+    /**
+     * @return Country
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * @param Country $country
+     * @return Player
+     */
+    public function setCountry(Country $country)
+    {
+        $this->country = $country;
+        return $this;
     }
 }
