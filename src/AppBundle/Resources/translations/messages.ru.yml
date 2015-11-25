@@ -27,6 +27,10 @@ common.age: %count% год|%count% года|%count% лет
 common.citizenship: Гражданство
 common.season: Сезон
 common.career: Карьера
+common.about: О нас
+common.contacts: Контакты
+common.feedback: Обратная связь
+common.advertising: Реклама
 player.name.placeholder: Введите имя игрока
 player.nation.placeholder: Введите национальность игрока
 player.team.placeholder: Выберите команду игрока
@@ -59,10 +63,6 @@ player.weight: Вес
 player.role: Амплуа
 Previous: Предыдущая
 Next: Следующая
-Advertising: Реклама
-About: О нас
-Contacts: Контакты
-Feedback: Обратная связь
 feedback.success: Ваше сообщение успешно отправлено
 goal.plus.pass: Гол + Пас
 No team: Нет команды
