@@ -96,7 +96,7 @@ class Manager
 
     /**
      * @param Country $country
-     * @return Coach
+     * @return Manager
      */
     public function setCountry(Country $country)
     {
