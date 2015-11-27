@@ -2,6 +2,7 @@ CREATE TABLE country
 (
     id   bigserial NOT NULL,
     name varchar   NOT NULL,
+    code varchar   NOT NULL,
 
     PRIMARY KEY (id)
 );

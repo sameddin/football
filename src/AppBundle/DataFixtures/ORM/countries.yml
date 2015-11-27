@@ -1,3 +1,4 @@
 AppBundle\Entity\Country:
     country{1..250}:
+        code: <countryCode()>
         name: <country()>

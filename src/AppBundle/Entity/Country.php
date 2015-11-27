@@ -21,6 +21,11 @@ class Country
     protected $name;
 
     /**
+     * @ORM\Column(type="string")
+     */
+    protected $code;
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -54,5 +59,22 @@ class Country
     {
         $this->name = $name;
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * @param mixed $code
+     * @return Country
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
     }
 }
