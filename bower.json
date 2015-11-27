@@ -10,6 +10,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "jquery.inputmask": "~3.2.3"
+    "jquery.inputmask": "~3.2.3",
+    "flag-css": "~0.0.5"
   }
 }

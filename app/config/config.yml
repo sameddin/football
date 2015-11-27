@@ -52,6 +52,9 @@ assetic:
         #yui_css:
         #    jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar"
     assets:
+        css:
+            inputs:
+                - %kernel.root_dir%/../bower_components/flag-css/dist/flag-css.min.css
         js:
             inputs:
                 - %kernel.root_dir%/../bower_components/jquery.inputmask/dist/jquery.inputmask.bundle.js
