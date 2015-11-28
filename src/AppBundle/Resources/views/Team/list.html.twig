@@ -20,7 +20,8 @@
                     {{ team.country.name }}</td>
                 <td><a href="{{ path('tournament.news', {id: team.tournament.id}) }}">{{ team.tournament.name }}</a></td>
                 <td><a href="{{ path('team.news', {id: team.id}) }}">{{ team.name }}</a></td>
-                <td><a href="{{ path('coach.news', {id: team.coach.id}) }}">{{ team.coach.name }}</a></td>
+                <td><span class="flag flag-{{ team.coach.country.code|lower }}"></span>
+                    <a href="{{ path('coach.news', {id: team.coach.id}) }}">{{ team.coach.name }}</a></td>
                 <td><a href="{{ path('manager.news', {id: team.manager.id}) }}">{{ team.manager.name }}</a></td>
                 <td>
                     <ul class="nav nav-list">
