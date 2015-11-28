@@ -2,19 +2,21 @@
 
 {% block content %}
 
-<h3>{{ team.name }}</h3>
-<h5><b>{{ 'common.country'|trans }}</b> : <span class="flag flag-{{ team.country.code|lower }}"></span>
-    {{ team.country.name }}</h5>
-<h5><b>{{ 'common.coach'|trans }}</b> : <a href="{{ path('coach.news', {id: team.coach.id}) }}">{{ team.coach.name }}</a></h5>
+    <h3>{{ team.name }}</h3>
+    <h5><b>{{ 'common.country'|trans }}</b> : <span class="flag flag-{{ team.country.code|lower }}"></span>
+        {{ team.country.name }}</h5>
+    <h5><b>{{ 'common.coach'|trans }}</b> : <span class="flag flag-{{ team.coach.country.code|lower }}"></span>
+        <a href="{{ path('coach.news', {id: team.coach.id}) }}">{{ team.coach.name }}</a></h5>
 
-<ul class="nav nav-tabs">
-    <li role="presentation"><a href="{{ path('team.news', {id: team.id }) }}">{{ 'common.newsline'|trans }}</a></li>
-    <li role="presentation"><a href="{{ path('team.calendar', {id: team.id }) }}">{{ 'common.calendar'|trans }}</a></li>
-    <li role="presentation"><a href="{{ path('team.view', {id: team.id }) }}">{{ 'team.view'|trans }}</a></li>
-    <li role="presentation"><a href="{{ path('team.stat', {id: team.id }) }}">{{ 'common.stat'|trans }}</a></li>
-    <li role="presentation" class="active"><a href="{{ path('team.photo', {id: team.id }) }}">{{ 'common.photo'|trans }}</a></li>
-    <li role="presentation"><a href="{{ path('team.video', {id: team.id }) }}">{{ 'common.video'|trans }}</a></li>
-    <li role="presentation"><a href="{{ path('team.transfers', {id: team.id }) }}">{{ 'transfers.list'|trans }}</a></li>
-</ul>
+    <ul class="nav nav-tabs">
+        <li role="presentation"><a href="{{ path('team.news', {id: team.id }) }}">{{ 'common.newsline'|trans }}</a></li>
+        <li role="presentation"><a href="{{ path('team.calendar', {id: team.id }) }}">{{ 'common.calendar'|trans }}</a></li>
+        <li role="presentation"><a href="{{ path('team.view', {id: team.id }) }}">{{ 'team.view'|trans }}</a></li>
+        <li role="presentation"><a href="{{ path('team.stat', {id: team.id }) }}">{{ 'common.stat'|trans }}</a></li>
+        <li role="presentation" class="active"><a href="{{ path('team.photo', {id: team.id }) }}">{{ 'common.photo'|trans }}</a></li>
+        <li role="presentation"><a href="{{ path('team.video', {id: team.id }) }}">{{ 'common.video'|trans }}</a></li>
+        <li role="presentation"><a href="{{ path('team.transfers', {id: team.id }) }}">{{ 'transfers.list'|trans }}</a>
+        </li>
+    </ul>
 
 {% endblock %}
