@@ -28,10 +28,12 @@ CREATE TABLE manager
 );
 CREATE TABLE tournament
 (
-    id   bigserial NOT NULL,
-    name varchar   NOT NULL,
+    id         bigserial NOT NULL,
+    name       varchar   NOT NULL,
+    country_id bigint    NOT NULL,
 
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    FOREIGN KEY (country_id) REFERENCES country
 );
 CREATE TABLE match
 (

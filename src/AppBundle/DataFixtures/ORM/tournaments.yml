@@ -1,3 +1,4 @@
 AppBundle\Entity\Tournament:
     tournament{1..5}:
         name: <company()>
+        country: @country*

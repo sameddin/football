@@ -21,6 +21,11 @@ class Tournament
     protected $name;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Country")
+     */
+    protected $country;
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -53,6 +58,24 @@ class Tournament
     public function setName($name)
     {
         $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * @return Country
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * @param Country $country
+     * @return Tournament
+     */
+    public function setCountry(Country $country)
+    {
+        $this->country = $country;
         return $this;
     }
 }
