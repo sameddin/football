@@ -3,6 +3,8 @@
 {% block content %}
 
     <h3>{{ tournament.name }}</h3>
+    <h5><b>{{ 'common.country'|trans }}</b> : <span class="flag flag-{{ tournament.country.code|lower }}"></span>
+        {{ tournament.country.name }}</h5>
 
     <ul class="nav nav-tabs">
         <li role="presentation"><a href="{{ path('tournament.news', {id: tournament.id }) }}">{{ 'common.newsline'|trans }}</a></li>
