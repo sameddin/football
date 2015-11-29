@@ -32,7 +32,10 @@
         {% for player in team.players %}
             <tr>
                 <td>{{ player.number }}</td>
-                <td><a href="{{ path('player.view', {id: player.id}) }}">{{ player.name }}</a></td>
+                <td>
+                    <span class="flag flag-{{ player.country.code|lower }}"></span>
+                    <a href="{{ path('player.view', {id: player.id}) }}">{{ player.name }}</a>
+                </td>
                 <td>{{ player.birth|date("d.m.Y") }} | {{ 'common.age'|transchoice(player.age(today)) }}</td>
                 <td>{{ player.height }}</td>
                 <td>{{ player.weight }}</td>
