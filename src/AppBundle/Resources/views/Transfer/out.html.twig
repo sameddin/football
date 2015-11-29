@@ -49,6 +49,7 @@
             <td>
                 <span class="flag flag-{{ transfer.membership.player.country.code|lower }}"></span>
                 {{ transfer.membership.player.name }}
+                <p><small>{{ transfer.membership.player.role.name }}</small></p>
             </td>
             <td>{{ transfer.date.date|date("d.m.Y") }}</td>
             <td>
