@@ -33,6 +33,7 @@
         <tr>
             <td>{{ player.season.startYear }}/{{ player.season.endYear }}</td>
             <td>
+                <span class="flag flag-{{ player.team.country.code|lower }}"></span>
                 {% if player.team is not null %}
                     <a href="{{ path('team.news', {id: player.team.id }) }}">{{ player.team.name }}</a>
                 {%  else  %}
@@ -71,7 +72,10 @@
         {% for membership in player.memberships %}
             <tr>
                 <td>{{ membership.season.startYear }}/{{ membership.season.endYear }}</td>
-                <td><a href="{{ path('team.news', {id: membership.team.id }) }}">{{ membership.team.name }}</a></td>
+                <td>
+                    <span class="flag flag-{{ membership.team.country.code|lower }}"></span>
+                    <a href="{{ path('team.news', {id: membership.team.id }) }}">{{ membership.team.name }}</a>
+                </td>
                 <td><a href="{{ path('tournament.news', {id: membership.team.tournament.id}) }}">{{ membership.team.tournament.name }}</a></td>
                 <td>{{ membership.player.goals|length }}</td>
                 <td>{{ membership.player.passes|length }}</td>
