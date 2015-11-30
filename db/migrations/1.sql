@@ -156,3 +156,13 @@ CREATE TABLE transfer
     PRIMARY KEY (id),
     FOREIGN KEY (membership_id) REFERENCES membership ON DELETE CASCADE
 );
+CREATE TABLE "user"
+(
+    id         bigserial NOT NULL,
+    first_name varchar   NOT NULL,
+    last_name  varchar   NOT NULL,
+    email      varchar   NOT NULL,
+    password   varchar   NOT NULL,
+
+    PRIMARY KEY (id)
+)
