@@ -72,9 +72,13 @@
 
     {% block content %}{% endblock %}
 
-    <div class="panel-footer">
-        <p><a href="{{ path('about') }}">{{ 'common.about'|trans }}</a> | <a href="{{ path('contacts') }}">{{ 'common.contacts'|trans }}</a> | <a href="{{ path('feedback') }}">{{ 'common.feedback'|trans }}</a> | <a href="{{ path('advertising') }}">{{ 'common.advertising'|trans }}</a></p>
-        <p>&copy; <a href="http://sameddin.pro/">Sameddin</a> 2015 All rights reserved.</p>
-    </div>
 </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted"><a href="{{ path('about') }}">{{ 'common.about'|trans }}</a> | <a href="{{ path('contacts') }}">{{ 'common.contacts'|trans }}</a> | <a href="{{ path('feedback') }}">{{ 'common.feedback'|trans }}</a> | <a href="{{ path('advertising') }}">{{ 'common.advertising'|trans }}</a></p>
+            <p class="text-muted">&copy; <a href="http://sameddin.pro/">Sameddin</a> 2015 All rights reserved.</p>
+        </div>
+    </footer>
+
 {% endblock %}
