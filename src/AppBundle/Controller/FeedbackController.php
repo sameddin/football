@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Form\Type\FeedbackType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -11,6 +12,7 @@ class FeedbackController extends Controller
 {
     /**
      * @Route("/feedback", name="feedback")
+     * @Template
      */
     public function feedbackAction(Request $request)
     {
@@ -22,7 +24,7 @@ class FeedbackController extends Controller
             $data = $form->getData();
 
             $message = \Swift_Message::newInstance()
-                ->setSubject('Football App: '.$data['subject'])
+                ->setSubject('Football App: ' . $data['subject'])
                 ->setFrom($data['email'])
                 ->setTo('sameddin.pasizade@gmail.com')
                 ->setBody($data['message']);
@@ -33,8 +35,8 @@ class FeedbackController extends Controller
             return $this->redirectToRoute('feedback');
         }
 
-        return $this->render('@App/Feedback/feedback.html.twig', [
+        return [
             'form' => $form->createView(),
-        ]);
+        ];
     }
 }
