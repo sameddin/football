@@ -16,7 +16,6 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class MatchController extends Controller
 {
-
     /**
      * @Route(name="match.list")
      * @Template
@@ -34,6 +33,9 @@ class MatchController extends Controller
 
     /**
      * @Route("/delete/{id}", name="match.delete")
+     *
+     * @param Match $date
+     * @return RedirectResponse
      */
     public function deleteAction(Match $date)
     {
@@ -49,6 +51,9 @@ class MatchController extends Controller
     /**
      * @Route("/add", name="match.add")
      * @Template
+     *
+     * @param Request $request
+     * @return array|RedirectResponse
      */
     public function addAction(Request $request)
     {
@@ -74,12 +79,13 @@ class MatchController extends Controller
     /**
      * @Route("/edit/{id}", name="match.edit")
      * @Template
+     *
      * @param Request $request
      * @param Match $name
      * @return RedirectResponse|Response
      */
-    public function editAction(Request $request, Match $name) {
-
+    public function editAction(Request $request, Match $name)
+    {
         $form = $this->createForm(new MatchType(), $name);
 
         $form->handleRequest($request);

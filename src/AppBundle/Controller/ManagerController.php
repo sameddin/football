@@ -16,9 +16,12 @@ class ManagerController extends Controller
     /**
      * @Route("/{id}", name="manager.news")
      * @Template
+     * 
+     * @param Manager $manager
+     * @return array
      */
-    public function newsAction(Manager $manager) {
-
+    public function newsAction(Manager $manager)
+    {
         return [
             'manager' => $manager,
             'today' => new DateTime(),

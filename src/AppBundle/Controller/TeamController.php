@@ -17,14 +17,12 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class TeamController extends Controller
 {
-
-
     /**
      * @Route(name="team.list")
      * @Template
      */
-    public function listAction() {
-
+    public function listAction()
+    {
         $teams = $this->getDoctrine()
             ->getRepository('AppBundle:Team')
             ->findAll();
@@ -37,9 +35,12 @@ class TeamController extends Controller
     /**
      * @Route("/{id}", name="team.news", requirements={"id": "\d+"})
      * @Template
+     *
+     * @param Team $team
+     * @return array
      */
-    public function newsAction(Team $team) {
-
+    public function newsAction(Team $team)
+    {
         return [
             'team' => $team,
         ];
@@ -48,9 +49,12 @@ class TeamController extends Controller
     /**
      * @Route("/{id}/stat", name="team.stat", requirements={"id": "\d+"})
      * @Template
+     *
+     * @param Team $team
+     * @return array
      */
-    public function statAction(Team $team) {
-
+    public function statAction(Team $team)
+    {
         return [
             'team' => $team,
         ];
@@ -59,9 +63,12 @@ class TeamController extends Controller
     /**
      * @Route("/{id}/view", name="team.view", requirements={"id": "\d+"})
      * @Template
+     *
+     * @param Team $team
+     * @return array
      */
-    public function viewAction(Team $team) {
-
+    public function viewAction(Team $team)
+    {
         return [
             'team' => $team,
             'today' => new DateTime(),
@@ -71,9 +78,12 @@ class TeamController extends Controller
     /**
      * @Route("/{id}/calendar", name="team.calendar", requirements={"id": "\d+"})
      * @Template
+     *
+     * @param Team $team
+     * @return array
      */
-    public function calendarAction(Team $team) {
-
+    public function calendarAction(Team $team)
+    {
         return [
             'team' => $team,
         ];
@@ -82,9 +92,12 @@ class TeamController extends Controller
     /**
      * @Route("/{id}/photo", name="team.photo", requirements={"id": "\d+"})
      * @Template
+     *
+     * @param Team $team
+     * @return array
      */
-    public function photoAction(Team $team) {
-
+    public function photoAction(Team $team)
+    {
         return [
             'team' => $team,
         ];
@@ -93,9 +106,12 @@ class TeamController extends Controller
     /**
      * @Route("/{id}/video", name="team.video", requirements={"id": "\d+"})
      * @Template
+     *
+     * @param Team $team
+     * @return array
      */
-    public function videoAction(Team $team) {
-
+    public function videoAction(Team $team)
+    {
         return [
             'team' => $team,
         ];
@@ -104,6 +120,9 @@ class TeamController extends Controller
     /**
      * @Route("/add", name="team.add")
      * @Template
+     *
+     * @param Request $request
+     * @return array|RedirectResponse
      */
     public function addAction(Request $request)
     {
@@ -128,6 +147,9 @@ class TeamController extends Controller
 
     /**
      * @Route("/delete/{id}", name="team.delete")
+     *
+     * @param Team $name
+     * @return RedirectResponse
      */
     public function deleteAction(Team $name)
     {
@@ -143,12 +165,13 @@ class TeamController extends Controller
     /**
      * @Route("/edit/{id}", name="team.edit")
      * @Template
+     *
      * @param Request $request
      * @param Team $name
      * @return RedirectResponse|Response
      */
-    public function editAction(Request $request, Team $name) {
-
+    public function editAction(Request $request, Team $name)
+    {
         $form = $this->createForm(new TeamType(), $name);
 
         $form->handleRequest($request);

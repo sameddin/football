@@ -16,9 +16,12 @@ class CoachController extends Controller
     /**
      * @Route("/{id}", name="coach.news")
      * @Template
+     *
+     * @param Coach $coach
+     * @return array
      */
-    public function newsAction(Coach $coach) {
-
+    public function newsAction(Coach $coach)
+    {
         return [
             'coach' => $coach,
             'today' => new DateTime()

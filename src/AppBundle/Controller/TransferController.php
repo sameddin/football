@@ -16,10 +16,13 @@ class TransferController extends Controller
     /**
      * @Route("/{id}/transfers", name="team.transfers", requirements={"id": "\d+"})
      * @Template
+     *
+     * @param Team $team
+     * @param Transfer $transfer
+     * @return array
      */
     public function transfersAction(Team $team, Transfer $transfer)
     {
-
         return [
             'team' => $team,
             'transfer' => $transfer,
@@ -29,10 +32,13 @@ class TransferController extends Controller
     /**
      * @Route("/{id}/transfers/in", name="transfers.in", requirements={"id": "\d+"})
      * @Template
+     *
+     * @param Team $team
+     * @param Transfer $transfer
+     * @return array
      */
     public function inAction(Team $team, Transfer $transfer)
     {
-
         return [
             'team' => $team,
             'transfer' => $transfer,
@@ -42,10 +48,13 @@ class TransferController extends Controller
     /**
      * @Route("/{id}/transfers/out", name="transfers.out", requirements={"id": "\d+"})
      * @Template
+     *
+     * @param Team $team
+     * @param Transfer $transfer
+     * @return array
      */
     public function outAction(Team $team, Transfer $transfer)
     {
-
         return [
             'team' => $team,
             'transfer' => $transfer,

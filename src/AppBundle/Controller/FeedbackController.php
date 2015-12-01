@@ -6,6 +6,7 @@ use AppBundle\Form\Type\FeedbackType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 class FeedbackController extends Controller
@@ -13,6 +14,9 @@ class FeedbackController extends Controller
     /**
      * @Route("/feedback", name="feedback")
      * @Template
+     *
+     * @param Request $request
+     * @return array|RedirectResponse
      */
     public function feedbackAction(Request $request)
     {
