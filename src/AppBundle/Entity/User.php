@@ -6,12 +6,13 @@ use Doctrine\ORM\Mapping\Entity;
 use Doctrine\ORM\Mapping\GeneratedValue;
 use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\Table;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @Entity
  * @Table(name="`user`")
  */
-class User
+class User implements UserInterface
 {
     /**
      * @Column(type="bigint")
@@ -128,5 +129,23 @@ class User
     public function setPassword($password)
     {
         $this->password = $password;
+    }
+
+    public function getRoles()
+    {
+        return ['ROLE_USER'];
+    }
+
+    public function getSalt()
+    {
+    }
+
+    public function getUsername()
+    {
+        return $this->getEmail();
+    }
+
+    public function eraseCredentials()
+    {
     }
 }
