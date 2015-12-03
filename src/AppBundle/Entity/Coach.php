@@ -23,28 +23,28 @@ class Coach
      *
      * @var int
      */
-    protected $id;
+    private $id;
 
     /**
      * @ManyToOne(targetEntity="Country")
      *
      * @var Country
      */
-    protected $country;
+    private $country;
 
     /**
      * @Column(type="string")
      *
      * @var string
      */
-    protected $name;
+    private $name;
 
     /**
      * @Column(type="date")
      *
      * @var DateTime
      */
-    protected $birth;
+    private $birth;
 
     /**
      * @return int
