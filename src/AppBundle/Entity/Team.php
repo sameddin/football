@@ -15,7 +15,7 @@ class Team
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    private $id;
 
     /**
      * @ORM\Column(type="string")
@@ -28,24 +28,24 @@ class Team
      *      maxMessage = "team.name.max"
      * )
      */
-    protected $name;
+    private $name;
 
     /**
      * @ORM\ManyToOne(targetEntity="Match")
      */
-    protected $match;
+    private $match;
     /**
      * @ORM\ManyToOne(targetEntity="Tournament")
      */
-    protected $tournament;
+    private $tournament;
     /**
      * @ORM\ManyToOne(targetEntity="Coach")
      */
-    protected $coach;
+    private $coach;
     /**
      * @ORM\ManyToOne(targetEntity="Country")
      */
-    protected $country;
+    private $country;
     /**
      * @ORM\OneToMany(targetEntity="Player", mappedBy="team")
      */
@@ -61,7 +61,7 @@ class Team
     /**
      * @ORM\ManyToOne(targetEntity="Manager")
      */
-    protected $manager;
+    private $manager;
 
     public function __construct()
     {

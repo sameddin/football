@@ -13,17 +13,17 @@ class Country
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    private $id;
 
     /**
      * @ORM\Column(type="string")
      */
-    protected $name;
+    private $name;
 
     /**
      * @ORM\Column(type="string")
      */
-    protected $code;
+    private $code;
 
     /**
      * @return mixed

@@ -15,12 +15,12 @@ class Match
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    private $id;
     /**
      * @ORM\Column(type="datetime")
      * @var DateTime
      */
-    protected $date;
+    private $date;
 
     /**
      * @ORM\OneToMany(targetEntity="Goal", mappedBy="match")

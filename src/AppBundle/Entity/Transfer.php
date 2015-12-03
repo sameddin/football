@@ -14,23 +14,23 @@ class Transfer
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    private $id;
 
     /**
      * @ORM\Column(type="date")
      * @var DateTime
      */
-    protected $date;
+    private $date;
 
     /**
      * @ORM\Column(type="decimal")
      */
-    protected $sum;
+    private $sum;
 
     /**
      * @ORM\Column(type="string")
      */
-    protected $term;
+    private $term;
 
     /**
      * @ORM\ManyToOne(targetEntity="Membership", inversedBy="transfers")

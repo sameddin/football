@@ -13,17 +13,17 @@ class Tournament
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    private $id;
 
     /**
      * @ORM\Column(type="string")
      */
-    protected $name;
+    private $name;
 
     /**
      * @ORM\ManyToOne(targetEntity="Country")
      */
-    protected $country;
+    private $country;
 
     /**
      * @return mixed

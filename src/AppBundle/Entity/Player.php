@@ -16,7 +16,7 @@ class Player
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    private $id;
 
     /**
      * @ORM\Column(type="string")
@@ -29,12 +29,12 @@ class Player
      *      maxMessage = "player.name.max"
      * )
      */
-    protected $name;
+    private $name;
 
     /**
      * @ORM\ManyToOne(targetEntity="Team", inversedBy="players")
      */
-    protected $team;
+    private $team;
 
     /**
      * @ORM\Column(type="integer")
@@ -46,18 +46,18 @@ class Player
      *      maxMessage = "number.max"
      * )
      */
-    protected $number;
+    private $number;
 
     /**
      * @ORM\ManyToOne(targetEntity="Role")
      */
-    protected $role;
+    private $role;
 
     /**
      * @ORM\Column(type="date")
      * @var DateTime
      */
-    protected $birth;
+    private $birth;
 
     /**
      * @ORM\Column(type="integer")
@@ -69,7 +69,7 @@ class Player
      *      maxMessage = "height.max"
      * )
      */
-    protected $height;
+    private $height;
     /**
      * @ORM\Column(type="integer")
      * @Assert\NotBlank()
@@ -80,7 +80,7 @@ class Player
      *      maxMessage = "weight.max"
      * )
      */
-    protected $weight;
+    private $weight;
 
     /**
      * @ORM\OneToMany(targetEntity="Goal", mappedBy="player")
@@ -113,7 +113,7 @@ class Player
     /**
      * @ORM\ManyToOne(targetEntity="Season")
      */
-    protected $season;
+    private $season;
 
     /**
      * @ORM\OneToMany(targetEntity="Membership", mappedBy="player")
@@ -125,7 +125,7 @@ class Player
     /**
      * @ORM\ManyToOne(targetEntity="Country")
      */
-    protected $country;
+    private $country;
 
     public function __construct()
     {

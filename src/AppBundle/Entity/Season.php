@@ -14,17 +14,17 @@ class Season
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    private $id;
 
     /**
      * @ORM\Column(type="bigint")
      */
-    protected $startYear;
+    private $startYear;
 
     /**
      * @ORM\Column(type="bigint")
      */
-    protected $endYear;
+    private $endYear;
 
     /**
      * @ORM\OneToMany(targetEntity="Membership", mappedBy="season")
