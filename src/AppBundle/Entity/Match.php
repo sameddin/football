@@ -21,10 +21,14 @@ class Match
      * @Column(type="integer")
      * @Id
      * @GeneratedValue(strategy="AUTO")
+     *
+     * @var int
      */
     private $id;
+
     /**
      * @Column(type="datetime")
+     *
      * @var DateTime
      */
     private $date;
@@ -66,7 +70,7 @@ class Match
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getId()
     {
@@ -74,13 +78,12 @@ class Match
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Match
      */
     public function setId($id)
     {
         $this->id = $id;
-        return $this;
     }
 
     /**
@@ -98,7 +101,6 @@ class Match
     public function setDate(DateTime $date)
     {
         $this->date = $date;
-        return $this;
     }
 
     /**

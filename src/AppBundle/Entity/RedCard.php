@@ -19,6 +19,8 @@ class RedCard
      * @Column(type="bigint")
      * @Id
      * @GeneratedValue(strategy="AUTO")
+     *
+     * @var int
      */
     private $id;
 
@@ -37,7 +39,7 @@ class RedCard
     private $match;
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getId()
     {
@@ -45,13 +47,12 @@ class RedCard
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return RedCard
      */
     public function setId($id)
     {
         $this->id = $id;
-        return $this;
     }
 
     /**
@@ -64,12 +65,11 @@ class RedCard
 
     /**
      * @param Player $player
-     * @return self
+     * @return RedCard
      */
     public function setPlayer(Player $player)
     {
         $this->player = $player;
-        return $this;
     }
 
     /**
@@ -82,7 +82,7 @@ class RedCard
 
     /**
      * @param Match $match
-     * @return self
+     * @return RedCard
      */
     public function setMatch(Match $match)
     {

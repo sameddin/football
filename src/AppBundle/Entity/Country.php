@@ -18,21 +18,27 @@ class Country
      * @Column(type="integer")
      * @Id
      * @GeneratedValue(strategy="AUTO")
+     *
+     * @var int
      */
     private $id;
 
     /**
      * @Column(type="string")
+     *
+     * @var string
      */
     private $name;
 
     /**
      * @Column(type="string")
+     *
+     * @var string
      */
     private $code;
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getId()
     {
@@ -40,7 +46,7 @@ class Country
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Country
      */
     public function setId($id)
@@ -50,7 +56,7 @@ class Country
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getName()
     {
@@ -58,7 +64,7 @@ class Country
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      * @return Country
      */
     public function setName($name)
@@ -68,7 +74,7 @@ class Country
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getCode()
     {
@@ -76,7 +82,7 @@ class Country
     }
 
     /**
-     * @param mixed $code
+     * @param string $code
      * @return Country
      */
     public function setCode($code)

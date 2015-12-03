@@ -35,7 +35,7 @@ class Manager
     /**
      * @Column(type="string")
      *
-     * var string
+     * @var string
      */
     private $name;
 

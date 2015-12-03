@@ -23,6 +23,8 @@ class Player
      * @Column(type="integer")
      * @Id
      * @GeneratedValue(strategy="AUTO")
+     *
+     * @var int
      */
     private $id;
 
@@ -36,11 +38,15 @@ class Player
      *      minMessage = "player.name.min",
      *      maxMessage = "player.name.max"
      * )
+     *
+     * @var string
      */
     private $name;
 
     /**
      * @ManyToOne(targetEntity="Team", inversedBy="players")
+     *
+     * @var Team
      */
     private $team;
 
@@ -53,16 +59,21 @@ class Player
      *      minMessage = "number.min",
      *      maxMessage = "number.max"
      * )
+     *
+     * @var int
      */
     private $number;
 
     /**
      * @ManyToOne(targetEntity="Role")
+     *
+     * @var Role
      */
     private $role;
 
     /**
      * @Column(type="date")
+     *
      * @var DateTime
      */
     private $birth;
@@ -76,8 +87,11 @@ class Player
      *      minMessage = "height.min",
      *      maxMessage = "height.max"
      * )
+     *
+     * @var int
      */
     private $height;
+
     /**
      * @Column(type="integer")
      * @Assert\NotBlank()
@@ -87,6 +101,8 @@ class Player
      *      minMessage = "weight.min",
      *      maxMessage = "weight.max"
      * )
+     *
+     * @var int
      */
     private $weight;
 
@@ -120,6 +136,8 @@ class Player
 
     /**
      * @ManyToOne(targetEntity="Season")
+     *
+     * @var Season
      */
     private $season;
 
@@ -132,6 +150,8 @@ class Player
 
     /**
      * @ManyToOne(targetEntity="Country")
+     *
+     * @var Country
      */
     private $country;
 
@@ -145,7 +165,7 @@ class Player
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getId()
     {
@@ -153,13 +173,12 @@ class Player
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Player
      */
     public function setId($id)
     {
         $this->id = $id;
-        return $this;
     }
 
     /**
@@ -177,7 +196,6 @@ class Player
     public function setName($name)
     {
         $this->name = $name;
-        return $this;
     }
 
     /**
@@ -195,11 +213,10 @@ class Player
     public function setTeam(Team $team)
     {
         $this->team = $team;
-        return $this;
     }
 
     /**
-     * @return integer
+     * @return int
      */
     public function getNumber()
     {
@@ -207,13 +224,12 @@ class Player
     }
 
     /**
-     * @param integer $number
+     * @param int $number
      * @return Player
      */
     public function setNumber($number)
     {
         $this->number = $number;
-        return $this;
     }
 
     /**
@@ -231,7 +247,6 @@ class Player
     public function setRole(Role $role)
     {
         $this->role = $role;
-        return $this;
     }
 
     /**
@@ -249,16 +264,10 @@ class Player
     public function setBirth(DateTime $birth)
     {
         $this->birth = $birth;
-        return $this;
-    }
-
-    public function getAge(DateTime $currentDate)
-    {
-        return $currentDate->diff($this->birth)->y;
     }
 
     /**
-     * @return integer
+     * @return int
      */
     public function getHeight()
     {
@@ -266,17 +275,16 @@ class Player
     }
 
     /**
-     * @param integer $height
+     * @param int $height
      * @return Player
      */
     public function setHeight($height)
     {
         $this->height = $height;
-        return $this;
     }
 
     /**
-     * @return integer
+     * @return int
      */
     public function getWeight()
     {
@@ -284,31 +292,12 @@ class Player
     }
 
     /**
-     * @param integer $weight
+     * @param int $weight
      * @return Player
      */
     public function setWeight($weight)
     {
         $this->weight = $weight;
-        return $this;
-    }
-
-    /**
-     * @return Season
-     */
-    public function getSeason()
-    {
-        return $this->season;
-    }
-
-    /**
-     * @param Season $season
-     * @return Player
-     */
-    public function setSeason(Season $season)
-    {
-        $this->season = $season;
-        return $this;
     }
 
     /**
@@ -376,6 +365,23 @@ class Player
     }
 
     /**
+     * @return Season
+     */
+    public function getSeason()
+    {
+        return $this->season;
+    }
+
+    /**
+     * @param Season $season
+     * @return Player
+     */
+    public function setSeason(Season $season)
+    {
+        $this->season = $season;
+    }
+
+    /**
      * @return ArrayCollection
      */
     public function getMemberships()
@@ -406,6 +412,5 @@ class Player
     public function setCountry(Country $country)
     {
         $this->country = $country;
-        return $this;
     }
 }

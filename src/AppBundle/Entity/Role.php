@@ -18,16 +18,20 @@ class Role
      * @Column(type="integer")
      * @Id
      * @GeneratedValue(strategy="AUTO")
+     *
+     * @var int
      */
     private $id;
 
     /**
      * @Column(type="string")
+     *
+     * @var string
      */
     private $name;
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getId()
     {
@@ -35,17 +39,16 @@ class Role
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Role
      */
     public function setId($id)
     {
         $this->id = $id;
-        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getName()
     {
@@ -53,12 +56,11 @@ class Role
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      * @return Role
      */
     public function setName($name)
     {
         $this->name = $name;
-        return $this;
     }
 }

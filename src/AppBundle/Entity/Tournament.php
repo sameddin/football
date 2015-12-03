@@ -19,21 +19,27 @@ class Tournament
      * @Column(type="integer")
      * @Id
      * @GeneratedValue(strategy="AUTO")
+     *
+     * @var int
      */
     private $id;
 
     /**
      * @Column(type="string")
+     *
+     * @var string
      */
     private $name;
 
     /**
      * @ManyToOne(targetEntity="Country")
+     *
+     * @var Country
      */
     private $country;
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getId()
     {
@@ -41,17 +47,16 @@ class Tournament
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Tournament
      */
     public function setId($id)
     {
         $this->id = $id;
-        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getName()
     {
@@ -59,13 +64,12 @@ class Tournament
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      * @return Tournament
      */
     public function setName($name)
     {
         $this->name = $name;
-        return $this;
     }
 
     /**
@@ -83,6 +87,5 @@ class Tournament
     public function setCountry(Country $country)
     {
         $this->country = $country;
-        return $this;
     }
 }

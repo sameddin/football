@@ -22,6 +22,8 @@ class Team
      * @Column(type="integer")
      * @Id
      * @GeneratedValue(strategy="AUTO")
+     *
+     * @var int
      */
     private $id;
 
@@ -35,31 +37,43 @@ class Team
      *      minMessage = "team.name.min",
      *      maxMessage = "team.name.max"
      * )
+     *
+     * @var string
      */
     private $name;
 
     /**
      * @ManyToOne(targetEntity="Match")
+     *
+     * @var Match
      */
     private $match;
 
     /**
      * @ManyToOne(targetEntity="Tournament")
+     *
+     * @var Tournament
      */
     private $tournament;
 
     /**
      * @ManyToOne(targetEntity="Coach")
+     *
+     * @var Coach
      */
     private $coach;
 
     /**
      * @ManyToOne(targetEntity="Country")
+     *
+     * @var Country
      */
     private $country;
 
     /**
      * @OneToMany(targetEntity="Player", mappedBy="team")
+     *
+     * @var Player
      */
     private $players;
 
@@ -72,6 +86,8 @@ class Team
 
     /**
      * @ManyToOne(targetEntity="Manager")
+     *
+     * @var Manager
      */
     private $manager;
 
@@ -82,7 +98,7 @@ class Team
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getId()
     {
@@ -90,17 +106,16 @@ class Team
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Team
      */
     public function setId($id)
     {
         $this->id = $id;
-        return $this;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getName()
     {
@@ -108,83 +123,12 @@ class Team
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      * @return Team
      */
     public function setName($name)
     {
         $this->name = $name;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPlayers()
-    {
-        return $this->players;
-    }
-
-    /**
-     * @param $players
-     */
-    public function setPlayers($players)
-    {
-        $this->players = $players;
-    }
-
-    /**
-     * @return Tournament
-     */
-    public function getTournament()
-    {
-        return $this->tournament;
-    }
-
-    /**
-     * @param Tournament $tournament
-     * @return Team
-     */
-    public function setTournament(Tournament $tournament)
-    {
-        $this->tournament = $tournament;
-        return $this;
-    }
-
-    /**
-     * @return Coach
-     */
-    public function getCoach()
-    {
-        return $this->coach;
-    }
-
-    /**
-     * @param Coach $coach
-     * @return Team
-     */
-    public function setCoach(Coach $coach)
-    {
-        $this->coach = $coach;
-        return $this;
-    }
-
-    /**
-     * @return Country
-     */
-    public function getCountry()
-    {
-        return $this->country;
-    }
-
-    /**
-     * @param Country $country
-     * @return Team
-     */
-    public function setCountry(Country $country)
-    {
-        $this->country = $country;
-        return $this;
     }
 
     /**
@@ -202,7 +146,74 @@ class Team
     public function setMatch(Match $match)
     {
         $this->match = $match;
-        return $this;
+    }
+
+    /**
+     * @return Tournament
+     */
+    public function getTournament()
+    {
+        return $this->tournament;
+    }
+
+    /**
+     * @param Tournament $tournament
+     * @return Team
+     */
+    public function setTournament(Tournament $tournament)
+    {
+        $this->tournament = $tournament;
+    }
+
+    /**
+     * @return Coach
+     */
+    public function getCoach()
+    {
+        return $this->coach;
+    }
+
+    /**
+     * @param Coach $coach
+     * @return Team
+     */
+    public function setCoach(Coach $coach)
+    {
+        $this->coach = $coach;
+    }
+
+    /**
+     * @return Country
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * @param Country $country
+     * @return Team
+     */
+    public function setCountry(Country $country)
+    {
+        $this->country = $country;
+    }
+
+    /**
+     * @return Player
+     */
+    public function getPlayers()
+    {
+        return $this->players;
+    }
+
+    /**
+     * @param Player $players
+     * @return Team
+     */
+    public function setPlayers($players)
+    {
+        $this->players = $players;
     }
 
     /**

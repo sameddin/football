@@ -20,22 +20,29 @@ class Transfer
      * @Column(type="bigint")
      * @Id
      * @GeneratedValue(strategy="AUTO")
+     *
+     * @var int
      */
     private $id;
 
     /**
      * @Column(type="date")
+     *
      * @var DateTime
      */
     private $date;
 
     /**
      * @Column(type="decimal")
+     *
+     * @var int
      */
     private $sum;
 
     /**
      * @Column(type="string")
+     *
+     * @var string
      */
     private $term;
 
@@ -47,7 +54,7 @@ class Transfer
     private $membership;
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getId()
     {
@@ -55,7 +62,8 @@ class Transfer
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
+     * @return Transfer
      */
     public function setId($id)
     {
@@ -80,7 +88,7 @@ class Transfer
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getSum()
     {
@@ -88,7 +96,8 @@ class Transfer
     }
 
     /**
-     * @param mixed $sum
+     * @param int $sum
+     * @return Transfer
      */
     public function setSum($sum)
     {
@@ -96,7 +105,7 @@ class Transfer
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getTerm()
     {
@@ -104,7 +113,8 @@ class Transfer
     }
 
     /**
-     * @param mixed $term
+     * @param string $term
+     * @return Transfer
      */
     public function setTerm($term)
     {
@@ -121,7 +131,7 @@ class Transfer
 
     /**
      * @param Membership $membership
-     * @return self
+     * @return Transfer
      */
     public function setMembership(Membership $membership)
     {

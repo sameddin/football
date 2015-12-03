@@ -21,6 +21,8 @@ class Membership
      * @Column(type="bigint")
      * @Id
      * @GeneratedValue(strategy="AUTO")
+     *
+     * @var int
      */
     private $id;
 
@@ -58,7 +60,7 @@ class Membership
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getId()
     {
@@ -66,7 +68,8 @@ class Membership
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
+     * @return Membership
      */
     public function setId($id)
     {
@@ -83,7 +86,7 @@ class Membership
 
     /**
      * @param Player $player
-     * @return self
+     * @return Membership
      */
     public function setPlayer(Player $player)
     {
@@ -100,7 +103,7 @@ class Membership
 
     /**
      * @param Season $season
-     * @return self
+     * @return Membership
      */
     public function setSeason(Season $season)
     {
@@ -117,7 +120,7 @@ class Membership
 
     /**
      * @param Team $team
-     * @return self
+     * @return Membership
      */
     public function setTeam(Team $team)
     {

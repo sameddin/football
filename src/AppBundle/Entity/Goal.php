@@ -19,6 +19,8 @@ class Goal
      * @Column(type="bigint")
      * @Id
      * @GeneratedValue(strategy="AUTO")
+     *
+     * @var int
      */
     private $id;
 
@@ -37,7 +39,7 @@ class Goal
     private $match;
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getId()
     {
@@ -45,13 +47,12 @@ class Goal
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Goal
      */
     public function setId($id)
     {
         $this->id = $id;
-        return $this;
     }
 
     /**
@@ -64,12 +65,11 @@ class Goal
 
     /**
      * @param Player $player
-     * @return self
+     * @return Goal
      */
     public function setPlayer(Player $player)
     {
         $this->player = $player;
-        return $this;
     }
 
     /**
@@ -82,11 +82,10 @@ class Goal
 
     /**
      * @param Match $match
-     * @return self
+     * @return Goal
      */
     public function setMatch(Match $match)
     {
         $this->match = $match;
-        return $this;
     }
 }

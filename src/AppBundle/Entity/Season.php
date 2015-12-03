@@ -20,16 +20,22 @@ class Season
      * @Column(type="bigint")
      * @Id
      * @GeneratedValue(strategy="AUTO")
+     *
+     * @var int
      */
     private $id;
 
     /**
      * @Column(type="bigint")
+     *
+     * @var int
      */
     private $startYear;
 
     /**
      * @Column(type="bigint")
+     *
+     * @var int
      */
     private $endYear;
 
@@ -46,7 +52,7 @@ class Season
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getId()
     {
@@ -54,17 +60,16 @@ class Season
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      * @return Season
      */
     public function setId($id)
     {
         $this->id = $id;
-        return $this;
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getStartYear()
     {
@@ -72,17 +77,16 @@ class Season
     }
 
     /**
-     * @param mixed $startYear
+     * @param int $startYear
      * @return Season
      */
     public function setStartYear($startYear)
     {
         $this->startYear = $startYear;
-        return $this;
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getEndYear()
     {
@@ -90,13 +94,12 @@ class Season
     }
 
     /**
-     * @param mixed $endYear
+     * @param int $endYear
      * @return Season
      */
     public function setEndYear($endYear)
     {
         $this->endYear = $endYear;
-        return $this;
     }
 
     /**
