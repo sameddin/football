@@ -26,6 +26,13 @@ class Manager
     protected $id;
 
     /**
+     * @ManyToOne(targetEntity="Country")
+     *
+     * @var Country
+     */
+    protected $country;
+
+    /**
      * @ORM\Column(type="string")
      *
      * var string
@@ -38,18 +45,6 @@ class Manager
      * @var DateTime
      */
     protected $birth;
-
-    /**
-     * @ManyToOne(targetEntity="Country")
-     *
-     * @var Country
-     */
-    protected $country;
-
-    public function getAge(DateTime $currentDate)
-    {
-        return $currentDate->diff($this->birth)->y;
-    }
 
     /**
      * @return int
@@ -65,6 +60,23 @@ class Manager
     public function setId($id)
     {
         $this->id = $id;
+    }
+
+    /**
+     * @return Country
+     */
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    /**
+     * @param Country $country
+     * @return Manager
+     */
+    public function setCountry(Country $country)
+    {
+        $this->country = $country;
     }
 
     /**
@@ -100,20 +112,8 @@ class Manager
         $this->birth = $birth;
     }
 
-    /**
-     * @return Country
-     */
-    public function getCountry()
+    public function getAge(DateTime $currentDate)
     {
-        return $this->country;
-    }
-
-    /**
-     * @param Country $country
-     * @return Manager
-     */
-    public function setCountry(Country $country)
-    {
-        $this->country = $country;
+        return $currentDate->diff($this->birth)->y;
     }
 }
