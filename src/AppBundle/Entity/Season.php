@@ -26,6 +26,13 @@ class Season
     private $id;
 
     /**
+     * @OneToMany(targetEntity="Membership", mappedBy="season")
+     *
+     * @var ArrayCollection
+     */
+    private $memberships;
+
+    /**
      * @Column(type="bigint")
      *
      * @var int
@@ -38,18 +45,6 @@ class Season
      * @var int
      */
     private $endYear;
-
-    /**
-     * @OneToMany(targetEntity="Membership", mappedBy="season")
-     *
-     * @var ArrayCollection
-     */
-    private $memberships;
-
-    public function __construct()
-    {
-        $this->memberships = new ArrayCollection();
-    }
 
     /**
      * @return int
@@ -66,6 +61,27 @@ class Season
     public function setId($id)
     {
         $this->id = $id;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getMemberships()
+    {
+        return $this->memberships;
+    }
+
+    /**
+     * @param ArrayCollection $memberships
+     */
+    public function setMemberships($memberships)
+    {
+        $this->memberships = $memberships;
+    }
+
+    public function __construct()
+    {
+        $this->memberships = new ArrayCollection();
     }
 
     /**
@@ -100,21 +116,5 @@ class Season
     public function setEndYear($endYear)
     {
         $this->endYear = $endYear;
-    }
-
-    /**
-     * @return ArrayCollection
-     */
-    public function getMemberships()
-    {
-        return $this->memberships;
-    }
-
-    /**
-     * @param ArrayCollection $memberships
-     */
-    public function setMemberships($memberships)
-    {
-        $this->memberships = $memberships;
     }
 }

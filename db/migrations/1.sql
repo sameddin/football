@@ -9,9 +9,9 @@ CREATE TABLE country
 CREATE TABLE coach
 (
     id         bigserial NOT NULL,
+    country_id bigint    NOT NULL,
     name       varchar   NOT NULL,
     birth      date      NOT NULL,
-    country_id bigint    NOT NULL,
 
     PRIMARY KEY (id),
     FOREIGN KEY (country_id) REFERENCES country
@@ -19,9 +19,9 @@ CREATE TABLE coach
 CREATE TABLE manager
 (
     id         bigserial NOT NULL,
+    country_id bigint    NOT NULL,
     name       varchar   NOT NULL,
     birth      date      NOT NULL,
-    country_id bigint    NOT NULL,
 
     PRIMARY KEY (id),
     FOREIGN KEY (country_id) REFERENCES country
@@ -29,8 +29,8 @@ CREATE TABLE manager
 CREATE TABLE tournament
 (
     id         bigserial NOT NULL,
-    name       varchar   NOT NULL,
     country_id bigint    NOT NULL,
+    name       varchar   NOT NULL,
 
     PRIMARY KEY (id),
     FOREIGN KEY (country_id) REFERENCES country
@@ -148,10 +148,10 @@ CREATE TABLE membership
 CREATE TABLE transfer
 (
     id            bigserial NOT NULL,
+    membership_id bigint    NOT NULL,
     date          date      NOT NULL,
     sum           decimal   NOT NULL,
     term          varchar   NOT NULL,
-    membership_id bigint    NOT NULL,
 
     PRIMARY KEY (id),
     FOREIGN KEY (membership_id) REFERENCES membership ON DELETE CASCADE

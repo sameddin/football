@@ -25,18 +25,18 @@ class Tournament
     private $id;
 
     /**
-     * @Column(type="string")
-     *
-     * @var string
-     */
-    private $name;
-
-    /**
      * @ManyToOne(targetEntity="Country")
      *
      * @var Country
      */
     private $country;
+
+    /**
+     * @Column(type="string")
+     *
+     * @var string
+     */
+    private $name;
 
     /**
      * @return int
@@ -56,23 +56,6 @@ class Tournament
     }
 
     /**
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * @param string $name
-     * @return Tournament
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    /**
      * @return Country
      */
     public function getCountry()
@@ -87,5 +70,22 @@ class Tournament
     public function setCountry(Country $country)
     {
         $this->country = $country;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     * @return Tournament
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
     }
 }

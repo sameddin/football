@@ -27,13 +27,6 @@ class Match
     private $id;
 
     /**
-     * @Column(type="datetime")
-     *
-     * @var DateTime
-     */
-    private $date;
-
-    /**
      * @OneToMany(targetEntity="Goal", mappedBy="match")
      *
      * @var ArrayCollection
@@ -61,13 +54,12 @@ class Match
      */
     private $redCards;
 
-    public function __construct()
-    {
-        $this->goals = new ArrayCollection();
-        $this->passes = new ArrayCollection();
-        $this->yellowCards = new ArrayCollection();
-        $this->redCards = new ArrayCollection();
-    }
+    /**
+     * @Column(type="datetime")
+     *
+     * @var DateTime
+     */
+    private $date;
 
     /**
      * @return int
@@ -84,23 +76,6 @@ class Match
     public function setId($id)
     {
         $this->id = $id;
-    }
-
-    /**
-     * @return DateTime
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    /**
-     * @param DateTime $date
-     * @return Match
-     */
-    public function setDate(DateTime $date)
-    {
-        $this->date = $date;
     }
 
     /**
@@ -165,5 +140,30 @@ class Match
     public function setRedCards($redCards)
     {
         $this->redCards = $redCards;
+    }
+
+    public function __construct()
+    {
+        $this->goals = new ArrayCollection();
+        $this->passes = new ArrayCollection();
+        $this->yellowCards = new ArrayCollection();
+        $this->redCards = new ArrayCollection();
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param DateTime $date
+     * @return Match
+     */
+    public function setDate(DateTime $date)
+    {
+        $this->date = $date;
     }
 }

@@ -26,6 +26,13 @@ class Transfer
     private $id;
 
     /**
+     * @ManyToOne(targetEntity="Membership", inversedBy="transfers")
+     *
+     * @var Membership
+     */
+    private $membership;
+
+    /**
      * @Column(type="date")
      *
      * @var DateTime
@@ -47,13 +54,6 @@ class Transfer
     private $term;
 
     /**
-     * @ManyToOne(targetEntity="Membership", inversedBy="transfers")
-     *
-     * @var Membership
-     */
-    private $membership;
-
-    /**
      * @return int
      */
     public function getId()
@@ -68,6 +68,23 @@ class Transfer
     public function setId($id)
     {
         $this->id = $id;
+    }
+
+    /**
+     * @return Membership
+     */
+    public function getMembership()
+    {
+        return $this->membership;
+    }
+
+    /**
+     * @param Membership $membership
+     * @return Transfer
+     */
+    public function setMembership(Membership $membership)
+    {
+        $this->membership = $membership;
     }
 
     /**
@@ -119,22 +136,5 @@ class Transfer
     public function setTerm($term)
     {
         $this->term = $term;
-    }
-
-    /**
-     * @return Membership
-     */
-    public function getMembership()
-    {
-        return $this->membership;
-    }
-
-    /**
-     * @param Membership $membership
-     * @return Transfer
-     */
-    public function setMembership(Membership $membership)
-    {
-        $this->membership = $membership;
     }
 }

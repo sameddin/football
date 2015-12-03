@@ -29,6 +29,69 @@ class Player
     private $id;
 
     /**
+     * @ManyToOne(targetEntity="Team", inversedBy="players")
+     *
+     * @var Team
+     */
+    private $team;
+
+    /**
+     * @ManyToOne(targetEntity="Role")
+     *
+     * @var Role
+     */
+    private $role;
+
+    /**
+     * @ManyToOne(targetEntity="Season")
+     *
+     * @var Season
+     */
+    private $season;
+
+    /**
+     * @ManyToOne(targetEntity="Country")
+     *
+     * @var Country
+     */
+    private $country;
+
+    /**
+     * @OneToMany(targetEntity="Goal", mappedBy="player")
+     *
+     * @var ArrayCollection
+     */
+    private $goals;
+
+    /**
+     * @OneToMany(targetEntity="Pass", mappedBy="player")
+     *
+     * @var ArrayCollection
+     */
+    private $passes;
+
+    /**
+     * @OneToMany(targetEntity="YellowCard", mappedBy="player")
+     *
+     * @var ArrayCollection
+     */
+    private $yellowCards;
+
+    /**
+     * @OneToMany(targetEntity="RedCard", mappedBy="player")
+     *
+     * @var ArrayCollection
+     */
+    private $redCards;
+
+    /**
+     * @OneToMany(targetEntity="Membership", mappedBy="player")
+     *
+     * @var ArrayCollection
+     */
+    private $memberships;
+
+    /**
      * @Column(type="string")
      * @Assert\NotBlank()
      * @Assert\NotNull()
@@ -44,13 +107,6 @@ class Player
     private $name;
 
     /**
-     * @ManyToOne(targetEntity="Team", inversedBy="players")
-     *
-     * @var Team
-     */
-    private $team;
-
-    /**
      * @Column(type="integer")
      * @Assert\NotBlank()
      * @Assert\Range(
@@ -63,13 +119,6 @@ class Player
      * @var int
      */
     private $number;
-
-    /**
-     * @ManyToOne(targetEntity="Role")
-     *
-     * @var Role
-     */
-    private $role;
 
     /**
      * @Column(type="date")
@@ -107,64 +156,6 @@ class Player
     private $weight;
 
     /**
-     * @OneToMany(targetEntity="Goal", mappedBy="player")
-     *
-     * @var ArrayCollection
-     */
-    private $goals;
-
-    /**
-     * @OneToMany(targetEntity="Pass", mappedBy="player")
-     *
-     * @var ArrayCollection
-     */
-    private $passes;
-
-    /**
-     * @OneToMany(targetEntity="YellowCard", mappedBy="player")
-     *
-     * @var ArrayCollection
-     */
-    private $yellowCards;
-
-    /**
-     * @OneToMany(targetEntity="RedCard", mappedBy="player")
-     *
-     * @var ArrayCollection
-     */
-    private $redCards;
-
-    /**
-     * @ManyToOne(targetEntity="Season")
-     *
-     * @var Season
-     */
-    private $season;
-
-    /**
-     * @OneToMany(targetEntity="Membership", mappedBy="player")
-     *
-     * @var ArrayCollection
-     */
-    private $memberships;
-
-    /**
-     * @ManyToOne(targetEntity="Country")
-     *
-     * @var Country
-     */
-    private $country;
-
-    public function __construct()
-    {
-        $this->goals = new ArrayCollection();
-        $this->passes = new ArrayCollection();
-        $this->yellowCards = new ArrayCollection();
-        $this->redCards = new ArrayCollection();
-        $this->memberships = new ArrayCollection();
-    }
-
-    /**
      * @return int
      */
     public function getId()
@@ -179,23 +170,6 @@ class Player
     public function setId($id)
     {
         $this->id = $id;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * @param string $name
-     * @return Player
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
     }
 
     /**
@@ -216,23 +190,6 @@ class Player
     }
 
     /**
-     * @return int
-     */
-    public function getNumber()
-    {
-        return $this->number;
-    }
-
-    /**
-     * @param int $number
-     * @return Player
-     */
-    public function setNumber($number)
-    {
-        $this->number = $number;
-    }
-
-    /**
      * @return Role
      */
     public function getRole()
@@ -250,54 +207,37 @@ class Player
     }
 
     /**
-     * @return DateTime
+     * @return Season
      */
-    public function getBirth()
+    public function getSeason()
     {
-        return $this->birth;
+        return $this->season;
     }
 
     /**
-     * @param DateTime $birth
+     * @param Season $season
      * @return Player
      */
-    public function setBirth(DateTime $birth)
+    public function setSeason(Season $season)
     {
-        $this->birth = $birth;
+        $this->season = $season;
     }
 
     /**
-     * @return int
+     * @return Country
      */
-    public function getHeight()
+    public function getCountry()
     {
-        return $this->height;
+        return $this->country;
     }
 
     /**
-     * @param int $height
+     * @param Country $country
      * @return Player
      */
-    public function setHeight($height)
+    public function setCountry(Country $country)
     {
-        $this->height = $height;
-    }
-
-    /**
-     * @return int
-     */
-    public function getWeight()
-    {
-        return $this->weight;
-    }
-
-    /**
-     * @param int $weight
-     * @return Player
-     */
-    public function setWeight($weight)
-    {
-        $this->weight = $weight;
+        $this->country = $country;
     }
 
     /**
@@ -365,23 +305,6 @@ class Player
     }
 
     /**
-     * @return Season
-     */
-    public function getSeason()
-    {
-        return $this->season;
-    }
-
-    /**
-     * @param Season $season
-     * @return Player
-     */
-    public function setSeason(Season $season)
-    {
-        $this->season = $season;
-    }
-
-    /**
      * @return ArrayCollection
      */
     public function getMemberships()
@@ -397,20 +320,97 @@ class Player
         $this->memberships = $memberships;
     }
 
-    /**
-     * @return Country
-     */
-    public function getCountry()
+    public function __construct()
     {
-        return $this->country;
+        $this->goals = new ArrayCollection();
+        $this->passes = new ArrayCollection();
+        $this->yellowCards = new ArrayCollection();
+        $this->redCards = new ArrayCollection();
+        $this->memberships = new ArrayCollection();
     }
 
     /**
-     * @param Country $country
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
      * @return Player
      */
-    public function setCountry(Country $country)
+    public function setName($name)
     {
-        $this->country = $country;
+        $this->name = $name;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
+
+    /**
+     * @param int $number
+     * @return Player
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getBirth()
+    {
+        return $this->birth;
+    }
+
+    /**
+     * @param DateTime $birth
+     * @return Player
+     */
+    public function setBirth(DateTime $birth)
+    {
+        $this->birth = $birth;
+    }
+
+    /**
+     * @return int
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * @param int $height
+     * @return Player
+     */
+    public function setHeight($height)
+    {
+        $this->height = $height;
+    }
+
+    /**
+     * @return int
+     */
+    public function getWeight()
+    {
+        return $this->weight;
+    }
+
+    /**
+     * @param int $weight
+     * @return Player
+     */
+    public function setWeight($weight)
+    {
+        $this->weight = $weight;
     }
 }
