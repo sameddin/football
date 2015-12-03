@@ -23,28 +23,28 @@ class Manager
      *
      * @var int
      */
-    protected $id;
+    private $id;
 
     /**
      * @ManyToOne(targetEntity="Country")
      *
      * @var Country
      */
-    protected $country;
+    private $country;
 
     /**
      * @ORM\Column(type="string")
      *
      * var string
      */
-    protected $name;
+    private $name;
 
     /**
      * @ORM\Column(type="date")
      *
      * @var DateTime
      */
-    protected $birth;
+    private $birth;
 
     /**
      * @return int
