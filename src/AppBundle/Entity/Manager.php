@@ -33,14 +33,14 @@ class Manager
     private $country;
 
     /**
-     * @ORM\Column(type="string")
+     * @Column(type="string")
      *
      * var string
      */
     private $name;
 
     /**
-     * @ORM\Column(type="date")
+     * @Column(type="date")
      *
      * @var DateTime
      */

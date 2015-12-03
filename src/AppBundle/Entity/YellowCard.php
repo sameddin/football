@@ -2,28 +2,35 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\GeneratedValue;
+use Doctrine\ORM\Mapping\Id;
+use Doctrine\ORM\Mapping\ManyToOne;
+use Doctrine\ORM\Mapping\Table;
 
 /**
- * @ORM\Entity
+ * @Entity
+ * @Table(name="yellow_card")
  */
 class YellowCard
 {
     /**
-     * @ORM\Column(type="bigint")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @Column(type="bigint")
+     * @Id
+     * @GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Player", inversedBy="yellowCards")
+     * @ManyToOne(targetEntity="Player", inversedBy="yellowCards")
      *
      * @var Player
      */
     private $player;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Match", inversedBy="yellowCards")
+     * @ManyToOne(targetEntity="Match", inversedBy="yellowCards")
      *
      * @var Match
      */

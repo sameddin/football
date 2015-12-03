@@ -3,42 +3,50 @@ namespace AppBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\GeneratedValue;
+use Doctrine\ORM\Mapping\Id;
+use Doctrine\ORM\Mapping\ManyToOne;
+use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\ORM\Mapping\Table;
 
 /**
- * @ORM\Entity
+ * @Entity
+ * @Table(name="membership")
  */
 class Membership
 {
     /**
-     * @ORM\Column(type="bigint")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @Column(type="bigint")
+     * @Id
+     * @GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Player", inversedBy="memberships")
+     * @ManyToOne(targetEntity="Player", inversedBy="memberships")
      *
      * @var Player
      */
     private $player;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Season", inversedBy="memberships")
+     * @ManyToOne(targetEntity="Season", inversedBy="memberships")
      *
      * @var Season
      */
     private $season;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Team", inversedBy="memberships")
+     * @ManyToOne(targetEntity="Team", inversedBy="memberships")
      *
      * @var Team
      */
     private $team;
 
     /**
-     * @ORM\OneToMany(targetEntity="Transfer", mappedBy="membership")
+     * @OneToMany(targetEntity="Transfer", mappedBy="membership")
      *
      * @var ArrayCollection
      */

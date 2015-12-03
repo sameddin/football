@@ -3,37 +3,44 @@ namespace AppBundle\Entity;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\GeneratedValue;
+use Doctrine\ORM\Mapping\Id;
+use Doctrine\ORM\Mapping\ManyToOne;
+use Doctrine\ORM\Mapping\Table;
 
 /**
- * @ORM\Entity
+ * @Entity
+ * @Table(name="transfer")
  */
 class Transfer
 {
     /**
-     * @ORM\Column(type="bigint")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @Column(type="bigint")
+     * @Id
+     * @GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
-     * @ORM\Column(type="date")
+     * @Column(type="date")
      * @var DateTime
      */
     private $date;
 
     /**
-     * @ORM\Column(type="decimal")
+     * @Column(type="decimal")
      */
     private $sum;
 
     /**
-     * @ORM\Column(type="string")
+     * @Column(type="string")
      */
     private $term;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Membership", inversedBy="transfers")
+     * @ManyToOne(targetEntity="Membership", inversedBy="transfers")
      *
      * @var Membership
      */

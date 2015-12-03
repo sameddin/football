@@ -3,31 +3,38 @@ namespace AppBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\GeneratedValue;
+use Doctrine\ORM\Mapping\Id;
+use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\ORM\Mapping\Table;
 
 /**
- * @ORM\Entity
+ * @Entity
+ * @Table(name="season")
  */
 class Season
 {
     /**
-     * @ORM\Column(type="bigint")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @Column(type="bigint")
+     * @Id
+     * @GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
-     * @ORM\Column(type="bigint")
+     * @Column(type="bigint")
      */
     private $startYear;
 
     /**
-     * @ORM\Column(type="bigint")
+     * @Column(type="bigint")
      */
     private $endYear;
 
     /**
-     * @ORM\OneToMany(targetEntity="Membership", mappedBy="season")
+     * @OneToMany(targetEntity="Membership", mappedBy="season")
      *
      * @var ArrayCollection
      */

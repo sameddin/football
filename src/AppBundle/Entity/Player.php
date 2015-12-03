@@ -4,22 +4,30 @@ namespace AppBundle\Entity;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\GeneratedValue;
+use Doctrine\ORM\Mapping\Id;
+use Doctrine\ORM\Mapping\ManyToOne;
+use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\ORM\Mapping\Table;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity
+ * @Entity
+ * @Table(name="player")
  */
 class Player
 {
     /**
-     * @ORM\Column(type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @Column(type="integer")
+     * @Id
+     * @GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
-     * @ORM\Column(type="string")
+     * @Column(type="string")
      * @Assert\NotBlank()
      * @Assert\NotNull()
      * @Assert\Length(
@@ -32,12 +40,12 @@ class Player
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Team", inversedBy="players")
+     * @ManyToOne(targetEntity="Team", inversedBy="players")
      */
     private $team;
 
     /**
-     * @ORM\Column(type="integer")
+     * @Column(type="integer")
      * @Assert\NotBlank()
      * @Assert\Range(
      *      min = 1,
@@ -49,18 +57,18 @@ class Player
     private $number;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Role")
+     * @ManyToOne(targetEntity="Role")
      */
     private $role;
 
     /**
-     * @ORM\Column(type="date")
+     * @Column(type="date")
      * @var DateTime
      */
     private $birth;
 
     /**
-     * @ORM\Column(type="integer")
+     * @Column(type="integer")
      * @Assert\NotBlank()
      * @Assert\Range(
      *      min = 150,
@@ -71,7 +79,7 @@ class Player
      */
     private $height;
     /**
-     * @ORM\Column(type="integer")
+     * @Column(type="integer")
      * @Assert\NotBlank()
      * @Assert\Range(
      *      min = 55,
@@ -83,47 +91,47 @@ class Player
     private $weight;
 
     /**
-     * @ORM\OneToMany(targetEntity="Goal", mappedBy="player")
+     * @OneToMany(targetEntity="Goal", mappedBy="player")
      *
      * @var ArrayCollection
      */
     private $goals;
 
     /**
-     * @ORM\OneToMany(targetEntity="Pass", mappedBy="player")
+     * @OneToMany(targetEntity="Pass", mappedBy="player")
      *
      * @var ArrayCollection
      */
     private $passes;
 
     /**
-     * @ORM\OneToMany(targetEntity="YellowCard", mappedBy="player")
+     * @OneToMany(targetEntity="YellowCard", mappedBy="player")
      *
      * @var ArrayCollection
      */
     private $yellowCards;
 
     /**
-     * @ORM\OneToMany(targetEntity="RedCard", mappedBy="player")
+     * @OneToMany(targetEntity="RedCard", mappedBy="player")
      *
      * @var ArrayCollection
      */
     private $redCards;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Season")
+     * @ManyToOne(targetEntity="Season")
      */
     private $season;
 
     /**
-     * @ORM\OneToMany(targetEntity="Membership", mappedBy="player")
+     * @OneToMany(targetEntity="Membership", mappedBy="player")
      *
      * @var ArrayCollection
      */
     private $memberships;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Country")
+     * @ManyToOne(targetEntity="Country")
      */
     private $country;
 

@@ -2,49 +2,56 @@
 namespace AppBundle\Entity;
 
 use DateTime;
-use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\GeneratedValue;
+use Doctrine\ORM\Mapping\Id;
+use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\ORM\Mapping\Table;
 
 /**
- * @ORM\Entity
+ * @Entity
+ * @Table(name="match")
  */
 class Match
 {
     /**
-     * @ORM\Column(type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @Column(type="integer")
+     * @Id
+     * @GeneratedValue(strategy="AUTO")
      */
     private $id;
     /**
-     * @ORM\Column(type="datetime")
+     * @Column(type="datetime")
      * @var DateTime
      */
     private $date;
 
     /**
-     * @ORM\OneToMany(targetEntity="Goal", mappedBy="match")
+     * @OneToMany(targetEntity="Goal", mappedBy="match")
      *
      * @var ArrayCollection
      */
     private $goals;
 
     /**
-     * @ORM\OneToMany(targetEntity="Pass", mappedBy="match")
+     * @OneToMany(targetEntity="Pass", mappedBy="match")
      *
      * @var ArrayCollection
      */
     private $passes;
 
     /**
-     * @ORM\OneToMany(targetEntity="YellowCard", mappedBy="match")
+     * @OneToMany(targetEntity="YellowCard", mappedBy="match")
      *
      * @var ArrayCollection
      */
     private $yellowCards;
 
     /**
-     * @ORM\OneToMany(targetEntity="RedCard", mappedBy="match")
+     * @OneToMany(targetEntity="RedCard", mappedBy="match")
      *
      * @var ArrayCollection
      */

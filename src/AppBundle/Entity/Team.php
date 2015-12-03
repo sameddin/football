@@ -1,24 +1,32 @@
 <?php
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\GeneratedValue;
+use Doctrine\ORM\Mapping\Id;
+use Doctrine\ORM\Mapping\ManyToOne;
+use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\ORM\Mapping\Table;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity
+ * @Entity
+ * @Table(name="team")
  */
 class Team
 {
     /**
-     * @ORM\Column(type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @Column(type="integer")
+     * @Id
+     * @GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
-     * @ORM\Column(type="string")
+     * @Column(type="string")
      * @Assert\NotBlank()
      * @Assert\NotNull()
      * @Assert\Length(
@@ -31,35 +39,39 @@ class Team
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Match")
+     * @ManyToOne(targetEntity="Match")
      */
     private $match;
+
     /**
-     * @ORM\ManyToOne(targetEntity="Tournament")
+     * @ManyToOne(targetEntity="Tournament")
      */
     private $tournament;
+
     /**
-     * @ORM\ManyToOne(targetEntity="Coach")
+     * @ManyToOne(targetEntity="Coach")
      */
     private $coach;
+
     /**
-     * @ORM\ManyToOne(targetEntity="Country")
+     * @ManyToOne(targetEntity="Country")
      */
     private $country;
+
     /**
-     * @ORM\OneToMany(targetEntity="Player", mappedBy="team")
+     * @OneToMany(targetEntity="Player", mappedBy="team")
      */
     private $players;
 
     /**
-     * @ORM\OneToMany(targetEntity="Membership", mappedBy="team")
+     * @OneToMany(targetEntity="Membership", mappedBy="team")
      *
      * @var ArrayCollection
      */
     private $memberships;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Manager")
+     * @ManyToOne(targetEntity="Manager")
      */
     private $manager;
 
