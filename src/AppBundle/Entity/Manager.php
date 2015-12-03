@@ -3,32 +3,46 @@ namespace AppBundle\Entity;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\Column;
+use Doctrine\ORM\Mapping\Entity;
+use Doctrine\ORM\Mapping\GeneratedValue;
+use Doctrine\ORM\Mapping\Id;
+use Doctrine\ORM\Mapping\ManyToOne;
+use Doctrine\ORM\Mapping\Table;
 
 /**
- * @ORM\Entity
+ * @Entity
+ * @Table(name="manager")
  */
 class Manager
 {
     /**
-     * @ORM\Column(type="bigint")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @Column(type="bigint")
+     * @Id
+     * @GeneratedValue(strategy="AUTO")
+     *
+     * @var int
      */
     protected $id;
 
     /**
      * @ORM\Column(type="string")
+     *
+     * var string
      */
     protected $name;
 
     /**
      * @ORM\Column(type="date")
+     *
      * @var DateTime
      */
     protected $birth;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Country")
+     * @ManyToOne(targetEntity="Country")
+     *
+     * @var Country
      */
     protected $country;
 
@@ -38,7 +52,7 @@ class Manager
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getId()
     {
@@ -46,7 +60,7 @@ class Manager
     }
 
     /**
-     * @param mixed $id
+     * @param int $id
      */
     public function setId($id)
     {
@@ -54,7 +68,7 @@ class Manager
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getName()
     {
@@ -62,7 +76,7 @@ class Manager
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      */
     public function setName($name)
     {
@@ -101,6 +115,5 @@ class Manager
     public function setCountry(Country $country)
     {
         $this->country = $country;
-        return $this;
     }
 }
