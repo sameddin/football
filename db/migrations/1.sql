@@ -45,19 +45,19 @@ CREATE TABLE match
 CREATE TABLE team
 (
     id            bigserial NOT NULL,
-    coach_id      bigint,
-    tournament_id bigint,
-    country_id    bigint,
     match_id      bigint,
+    tournament_id bigint,
+    coach_id      bigint,
     manager_id    bigint    NOT NULL,
+    country_id    bigint,
     name          varchar   NOT NULL,
 
     PRIMARY KEY (id),
-    FOREIGN KEY (coach_id) REFERENCES coach,
-    FOREIGN KEY (tournament_id) REFERENCES tournament,
-    FOREIGN KEY (country_id) REFERENCES country,
     FOREIGN KEY (match_id) REFERENCES match ON DELETE SET NULL,
-    FOREIGN KEY (manager_id) REFERENCES manager
+    FOREIGN KEY (tournament_id) REFERENCES tournament,
+    FOREIGN KEY (coach_id) REFERENCES coach,
+    FOREIGN KEY (manager_id) REFERENCES manager,
+    FOREIGN KEY (country_id) REFERENCES country
 );
 CREATE TABLE role
 (

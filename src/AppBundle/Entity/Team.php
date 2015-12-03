@@ -28,21 +28,6 @@ class Team
     private $id;
 
     /**
-     * @Column(type="string")
-     * @Assert\NotBlank()
-     * @Assert\NotNull()
-     * @Assert\Length(
-     *      min = 2,
-     *      max = 50,
-     *      minMessage = "team.name.min",
-     *      maxMessage = "team.name.max"
-     * )
-     *
-     * @var string
-     */
-    private $name;
-
-    /**
      * @ManyToOne(targetEntity="Match")
      *
      * @var Match
@@ -62,6 +47,13 @@ class Team
      * @var Coach
      */
     private $coach;
+
+    /**
+     * @ManyToOne(targetEntity="Manager")
+     *
+     * @var Manager
+     */
+    private $manager;
 
     /**
      * @ManyToOne(targetEntity="Country")
@@ -85,17 +77,19 @@ class Team
     private $memberships;
 
     /**
-     * @ManyToOne(targetEntity="Manager")
+     * @Column(type="string")
+     * @Assert\NotBlank()
+     * @Assert\NotNull()
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 50,
+     *      minMessage = "team.name.min",
+     *      maxMessage = "team.name.max"
+     * )
      *
-     * @var Manager
+     * @var string
      */
-    private $manager;
-
-    public function __construct()
-    {
-        $this->players = new ArrayCollection();
-        $this->memberships = new ArrayCollection();
-    }
+    private $name;
 
     /**
      * @return int
@@ -112,23 +106,6 @@ class Team
     public function setId($id)
     {
         $this->id = $id;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * @param string $name
-     * @return Team
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
     }
 
     /**
@@ -183,6 +160,23 @@ class Team
     }
 
     /**
+     * @return Manager
+     */
+    public function getManager()
+    {
+        return $this->manager;
+    }
+
+    /**
+     * @param Manager $manager
+     * @return Team
+     */
+    public function setManager(Manager $manager)
+    {
+        $this->manager = $manager;
+    }
+
+    /**
      * @return Country
      */
     public function getCountry()
@@ -232,20 +226,26 @@ class Team
         $this->memberships = $memberships;
     }
 
-    /**
-     * @return Manager
-     */
-    public function getManager()
+    public function __construct()
     {
-        return $this->manager;
+        $this->players = new ArrayCollection();
+        $this->memberships = new ArrayCollection();
     }
 
     /**
-     * @param Manager $manager
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
      * @return Team
      */
-    public function setManager(Manager $manager)
+    public function setName($name)
     {
-        $this->manager = $manager;
+        $this->name = $name;
     }
 }
