@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Elnur\DatabaseBundle\ElnurDatabaseBundle(),
+            new Ornicar\GravatarBundle\OrnicarGravatarBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
