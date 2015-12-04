@@ -380,6 +380,11 @@ class Player
         $this->birth = $birth;
     }
 
+    public function getAge(DateTime $currentDate)
+    {
+        return $currentDate->diff($this->birth)->y;
+    }
+
     /**
      * @return int
      */
