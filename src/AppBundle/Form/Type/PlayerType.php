@@ -2,6 +2,8 @@
 namespace AppBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 class PlayerType extends AbstractType
@@ -9,7 +11,7 @@ class PlayerType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', 'text', [
+            ->add('name', TextType::class, [
                 'attr' => [
                     'placeholder' => 'player.name.placeholder',
                 ],
@@ -41,28 +43,28 @@ class PlayerType extends AbstractType
                 'placeholder' => 'player.team.placeholder',
                 'label' => 'team.name',
             ])
-            ->add('height', 'text', [
+            ->add('height', TextType::class, [
                 'attr' => [
                     'placeholder' => 'player.height.placeholder',
                 ],
                 'label' => 'player.height',
             ])
-            ->add('weight', 'text', [
+            ->add('weight', TextType::class, [
                 'attr' => [
                     'placeholder' => 'player.weight.placeholder',
                 ],
                 'label' => 'player.weight',
             ])
-            ->add('number', 'text', [
+            ->add('number', TextType::class, [
                 'attr' => [
                     'placeholder' => 'player.number.placeholder',
                 ],
                 'label' => 'player.number',
             ])
-            ->add('save', 'submit', ['label' => 'common.add']);
+            ->add('save', SubmitType::class, ['label' => 'common.add']);
     }
 
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'name';
     }

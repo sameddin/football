@@ -2,6 +2,10 @@
 namespace AppBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\Length;
@@ -12,26 +16,26 @@ class FeedbackType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', 'text', [
+            ->add('name', TextType::class, [
                 'label' => 'common.name',
                 'constraints' => [
                     new NotBlank(),
                 ]
             ])
-            ->add('email', 'email', [
+            ->add('email', EmailType::class, [
                 'label' => 'common.email',
                 'constraints' => [
                     new NotBlank(),
                     new Email(),
                 ]
             ])
-            ->add('subject', 'text', [
+            ->add('subject', TextType::class, [
                 'label' => 'common.subject',
                 'constraints' => [
                     new NotBlank(),
                 ]
             ])
-            ->add('message', 'textarea', [
+            ->add('message', TextareaType::class, [
                 'label' => 'common.message',
                 'constraints' => [
                     new NotBlank(),
@@ -42,7 +46,7 @@ class FeedbackType extends AbstractType
                     'rows' => 10,
                 ]
             ])
-            ->add('submit', 'submit', [
+            ->add('submit', SubmitType::class, [
                 'label' => 'common.submit',
                 'attr' => [
                     'class' => 'btn-default',
@@ -50,7 +54,7 @@ class FeedbackType extends AbstractType
             ]);
     }
 
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'form';
     }

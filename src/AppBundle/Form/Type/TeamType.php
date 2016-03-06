@@ -2,6 +2,8 @@
 namespace AppBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 class TeamType extends AbstractType
@@ -9,7 +11,7 @@ class TeamType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', 'text', [
+            ->add('name', TextType::class, [
                 'attr' => [
                     'placeholder' => 'team.name.placeholder'
                 ],
@@ -39,10 +41,10 @@ class TeamType extends AbstractType
                 'placeholder' => 'team.manager.placeholder',
                 'label' => 'common.manager',
             ])
-            ->add('save', 'submit', ['label' => 'common.add']);
+            ->add('save', SubmitType::class, ['label' => 'common.add']);
     }
 
-    public function getName()
+    public function getBlockPrefix()
     {
         return 'name';
     }
