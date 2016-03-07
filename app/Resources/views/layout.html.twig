@@ -1,23 +1,20 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
+    {% stylesheets '@css' %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-    {% stylesheets '@css' %}
-        <link rel="stylesheet" href="{{ asset_url }}" />
     {% endstylesheets %}
 {% endblock %}
 
 {% block javascripts %}
+    {% javascripts '@js' %}
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    {% javascripts '@js' %}
-        <script src="{{ asset_url }}"></script>
-    {% endjavascripts %}
-
+    <script src="{{ asset_url }}"></script>
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             $('.date').inputmask("mask", {
                 "mask": "99.99.9999",
                 "placeholder": "дд.мм.гггг"
@@ -28,60 +25,64 @@
             });
         });
     </script>
+    {% endjavascripts %}
 {% endblock %}
 
 {% block body %}
-<div class="container">
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#menu" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="{{ path('homepage') }}">{{ 'homepage'|trans }}</a>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#menu" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ path('homepage') }}">{{ 'homepage'|trans }}</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ path('team.list') }}">{{ 'team.list'|trans }}</a></li>
+                        <li><a href="{{ path('player.list') }}">{{ 'player.list'|trans }}</a></li>
+                        <li><a href="{{ path('match.list') }}">{{ 'match.list'|trans }}</a></li>
+                        <li><a href="{{ path('user.list') }}">{{ 'user.list'|trans }}</a></li>
+                        <li><a href="{{ path('security.login') }}">{{ 'security.login'|trans }}</a></li>
+                        <li><a href="{{ path('registration') }}">{{ 'registration'|trans }}</a></li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="collapse navbar-collapse" id="menu">
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ path('team.list') }}">{{ 'team.list'|trans }}</a></li>
-                    <li><a href="{{ path('player.list') }}">{{ 'player.list'|trans }}</a></li>
-                    <li><a href="{{ path('match.list') }}">{{ 'match.list'|trans }}</a></li>
-                    <li><a href="{{ path('user.list') }}">{{ 'user.list'|trans }}</a></li>
-                    <li><a href="{{ path('security.login') }}">{{ 'security.login'|trans }}</a></li>
-                    <li><a href="{{ path('registration') }}">{{ 'registration'|trans }}</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        </nav>
 
 
-    {% if app.session.flashbag.keys is not empty %}
-        <div class="row">
-            <div class="col-xs-12">
-                {% for type, flashMessages in app.session.flashbag.all() %}
-                    {% for flashMessage in flashMessages %}
-                        <div class="alert alert-{{ type }}">
-                            {{ flashMessage|trans }}
-                        </div>
+        {% if app.session.flashbag.keys is not empty %}
+            <div class="row">
+                <div class="col-xs-12">
+                    {% for type, flashMessages in app.session.flashbag.all() %}
+                        {% for flashMessage in flashMessages %}
+                            <div class="alert alert-{{ type }}">
+                                {{ flashMessage|trans }}
+                            </div>
+                        {% endfor %}
                     {% endfor %}
-                {% endfor %}
+                </div>
             </div>
-        </div>
-    {% endif %}
+        {% endif %}
 
 
-    {% block content %}{% endblock %}
+        {% block content %}{% endblock %}
 
-</div>
+    </div>
 
     <footer class="footer">
         <div class="container">
             <p class="text-muted pull-right">
-                <a href="{{ path('about') }}">{{ 'common.about'|trans }}</a> | <a href="{{ path('contacts') }}">{{ 'common.contacts'|trans }}</a> | <a href="{{ path('feedback') }}">{{ 'common.feedback'|trans }}</a> | <a href="{{ path('advertising') }}">{{ 'common.advertising'|trans }}</a>
+                <a href="{{ path('about') }}">{{ 'common.about'|trans }}</a> | <a
+                        href="{{ path('contacts') }}">{{ 'common.contacts'|trans }}</a> | <a
+                        href="{{ path('feedback') }}">{{ 'common.feedback'|trans }}</a> | <a
+                        href="{{ path('advertising') }}">{{ 'common.advertising'|trans }}</a>
             </p>
             <p class="text-muted">
                 <i class="fa fa-copyright"></i> <a href="http://sameddin.pro/">Sameddin</a> 2016 All rights reserved.
