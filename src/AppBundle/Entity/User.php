@@ -7,6 +7,8 @@ use Doctrine\ORM\Mapping\GeneratedValue;
 use Doctrine\ORM\Mapping\Id;
 use Doctrine\ORM\Mapping\Table;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints\Email;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 /**
  * @Entity
@@ -24,28 +26,33 @@ class User implements UserInterface
     private $id;
 
     /**
-     * @Column(type="string")
+     * @Column(type="string", length=255)
+     * @NotBlank()
      *
      * @var string
      */
     private $firstName;
 
     /**
-     * @Column(type="string")
+     * @Column(type="string", length=255)
+     * @NotBlank()
      *
      * @var string
      */
     private $lastName;
 
     /**
-     * @Column(type="string")
+     * @Column(type="string", length=255)
+     * @NotBlank()
+     * @Email()
      *
      * @var string
      */
     private $email;
 
     /**
-     * @Column(type="string")
+     * @Column(type="string", length=64)
+     * @NotBlank()
      *
      * @var string
      */
