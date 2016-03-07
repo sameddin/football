@@ -1,1 +1,1 @@
-dropdb football && createdb football -O football && app/console e:d:m && app/console h:f:l -n
+dropdb football && createdb football -O football && app/console e:d:m && app/console h:d:f:l -n
