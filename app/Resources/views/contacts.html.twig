@@ -4,8 +4,14 @@
         <h1>Football App</h1>
     </div>
     <div class="container">
-        <p>Телефон: +994 (XXX) XXX-XX-XX</p>
-        <p>E-mail: football@sameddin.pro</p>
-        <p>Если вы хотите работать с нами: jobs@sameddin.pro</p>
+        <address>
+            <strong>Football App</strong><br>
+            Baku, Azerbaijan<br>
+            {{ 'phone'|trans }} : (012) 345-67-89
+        </address>
+        <address>
+            <strong>Если вы хотите работать с нами:</strong>
+            <a href="mailto:jobs@sameddin.pro">jobs@sameddin.pro</a>
+        </address>
     </div>
 {% endblock %}

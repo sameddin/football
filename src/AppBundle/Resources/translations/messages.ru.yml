@@ -76,3 +76,4 @@ user.last_name: Фамилия
 user.password: Пароль
 user.password.repeat: Ещё раз пароль
 security.login: Войти
+phone: Телефон
