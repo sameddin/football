@@ -78,3 +78,5 @@ user.password.repeat: Ещё раз пароль
 security.login: Войти
 security.logout: Выйти
 phone: Телефон
+email.placeholder: Email
+password.placeholder: Пароль

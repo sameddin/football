@@ -49,17 +49,35 @@
                         <li><a href="{{ path('player.list') }}">{{ 'player.list'|trans }}</a></li>
                         <li><a href="{{ path('match.list') }}">{{ 'match.list'|trans }}</a></li>
                         <li><a href="{{ path('user.list') }}">{{ 'user.list'|trans }}</a></li>
-                        <li><a href="{{ path('security.login') }}">{{ 'security.login'|trans }}</a></li>
-                        <li><a href="{{ path('registration') }}">{{ 'registration'|trans }}</a></li>
+                        {% if not is_granted(expression('is_authenticated()')) %}
+                            <li><a href="{{ path('registration') }}">{{ 'registration'|trans }}</a></li>
+                        {% endif %}
                     </ul>
+
+                    {% if is_granted(expression('is_authenticated()')) %}
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a class="btn btn-link" href="{{ logout_url('main') }}" role="button">
+                                    <i class="fa fa-sign-out"></i> {{ 'security.logout'|trans }}</a></li>
+                        </ul>
+                    {% else %}
+
+                        <form class="navbar-form navbar-right" action="{{ path('security.login') }}" method="post">
+                            <div class="form-group">
+                                <input name="email" type="text" placeholder="{{ 'email.placeholder'|trans }}"
+                                       class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input name="password" type="password" placeholder="{{ 'password.placeholder'|trans }}"
+                                       class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-default">
+                                <i class="fa fa-sign-in"></i> {{ 'security.login'|trans }}</button>
+                        </form>
+
+                    {% endif %}
                 </div>
-
-                <a class="btn btn-default" href="{{ logout_path('main') }}" role="button">
-                    <i class="fa fa-sign-out fa-lg"></i> {{ 'security.logout'|trans }}</a>
-
             </div>
         </nav>
-
 
         {% if app.session.flashbag.keys is not empty %}
             <div class="row">
@@ -74,7 +92,6 @@
                 </div>
             </div>
         {% endif %}
-
 
         {% block content %}{% endblock %}
 
