@@ -27,17 +27,19 @@
                     {{ player.country.name }}</td>
                 <td>
                     {% if player.team is not null %}
-                    <a href="{{ path('team.news', {id: player.team.id }) }}">{{ player.team.name }}</a>
+                        <a href="{{ path('team.news', {id: player.team.id }) }}">{{ player.team.name }}</a>
                     {%  else  %}
-                    <b>{{ 'team.empty'|trans }}</b>
+                        <b>{{ 'team.empty'|trans }}</b>
                     {% endif %}
                 </td>
                 <td>{{ player.role.name }}</td>
                 <td>
                     <a class="btn btn-success btn-xs" href="{{ path('player.edit', {'id': player.id  }) }}"
-                       role="button">{{ 'common.edit'|trans }}</a>
+                       role="button">
+                        <i class="fa fa-pencil fa-lg"></i> {{ 'common.edit'|trans }}</a>
                     <a class="btn btn-danger btn-xs" href="{{ path('player.delete',{'id': player.id}) }}"
-                       role="button">{{ 'common.delete'|trans }}</a>
+                       role="button">
+                        <i class="fa fa-trash-o fa-lg"></i> {{ 'common.delete'|trans }}</a>
                 </td>
             </tr>
         {% endfor %}
@@ -47,7 +49,7 @@
         {{ knp_pagination_render(pagination) }}
     </div>
 
+    <a class="btn btn-default" href="{{ path('player.add') }}" role="button">
+        <i class="fa fa-plus fa-lg"></i> {{ 'common.add'|trans }}</a>
 
-    <a class="btn btn-default" href="{{ path('player.add') }}" role="button">{{ 'common.add'|trans }}</a>
 {% endblock %}
-

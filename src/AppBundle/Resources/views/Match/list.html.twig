@@ -21,13 +21,16 @@
                 <td>{{ match.yellowCards|length }}</td>
                 <td>{{ match.redCards|length }}</td>
                 <td>
-                    <a class="btn btn-success btn-xs" href="{{ path('match.edit', {'id': match.id  }) }}"
-                       role="button">{{ 'common.edit'|trans }}</a>
-                    <a class="btn btn-danger btn-xs" href="{{ path('match.delete',{'id': match.id}) }}"
-                       role="button">{{ 'common.delete'|trans }}</a>
+                    <a class="btn btn-success btn-xs" href="{{ path('match.edit', {'id': match.id  }) }}" role="button">
+                        <i class="fa fa-pencil fa-lg"></i> {{ 'common.edit'|trans }}</a>
+                    <a class="btn btn-danger btn-xs" href="{{ path('match.delete',{'id': match.id}) }}" role="button">
+                        <i class="fa fa-trash-o fa-lg"></i> {{ 'common.delete'|trans }}</a>
                 </td>
             </tr>
         {% endfor %}
     </table>
-    <a class="btn btn-default" href="{{ path('match.add') }}" role="button">{{ 'common.add'|trans }}</a>
+
+    <a class="btn btn-default" href="{{ path('match.add') }}" role="button">
+        <i class="fa fa-plus fa-lg"></i> {{ 'common.add'|trans }}</a>
+
 {% endblock %}
